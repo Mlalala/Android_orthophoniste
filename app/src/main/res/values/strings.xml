@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Orthophonie</string>
+
+    <string name="title_arti">Articulation</string>
+    <string name="title_phono">Phonologie</string>
+    <string name="title_visu">Visuel</string>
+
+</resources>
