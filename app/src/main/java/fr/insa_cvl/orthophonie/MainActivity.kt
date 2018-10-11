@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
     )
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
                 super.onCreate(savedInstanceState)
                 setContentView(R.layout.activity_main)
@@ -59,7 +58,14 @@ class MainActivity : AppCompatActivity() {
 
 
                 //TODO : CLICK LISTENER
-                Toast.makeText(this, "salut", 2000).show();
+                Toast.makeText(this, "salut", Toast.LENGTH_LONG).show()
+
+                list.setOnItemClickListener { parent, view, position, id ->
+                    Toast.makeText(this, "Position Clicked:"+" "+position,Toast.LENGTH_LONG).show()
+                    val intent = Intent(this,activity_list[position])
+                    startActivity(intent)
+                    finish()
+                }
 
             }
 
