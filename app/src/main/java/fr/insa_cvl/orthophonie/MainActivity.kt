@@ -52,13 +52,11 @@ class MainActivity : AppCompatActivity() {
 
                 val menuAdapter = MenuListAdapter(this, R.layout.menu_list_layout, menuList)
 
-                val list = findViewById(R.id.menu_list) as ListView
+                var list = findViewById(R.id.menu_list) as ListView
 
                 list.adapter = menuAdapter
 
 
-                //TODO : CLICK LISTENER
-                Toast.makeText(this, "salut", Toast.LENGTH_LONG).show()
 
                 list.setOnItemClickListener { parent, view, position, id ->
                     Toast.makeText(this, "Position Clicked:"+" "+position,Toast.LENGTH_LONG).show()
