@@ -5,11 +5,14 @@ import android.os.Bundle
 import android.widget.ListView
 import android.app.Activity
 import android.content.Intent
+import android.os.PersistableBundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemClickListener
 import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.view.menu.MenuAdapter
+import android.view.Menu
+import android.view.MenuInflater
 import android.widget.Toast
 import android.widget.TextView
 import android.widget.LinearLayout
@@ -65,8 +68,13 @@ class MainActivity : AppCompatActivity() {
                     finish()
                 }
 
-            }
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_main,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
 }
 
 

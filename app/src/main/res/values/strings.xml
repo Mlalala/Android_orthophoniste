@@ -5,4 +5,7 @@
     <string name="title_phono">Phonologie</string>
     <string name="title_visu">Visuel</string>
 
+    <string name="settings">Paramètre</string>
+    <string name="aboutus">A propos de nous</string>
+
 </resources>
