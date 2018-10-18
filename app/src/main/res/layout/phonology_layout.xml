@@ -28,7 +28,8 @@
         android:orientation="vertical"
         android:gravity="bottom"
         android:layout_gravity="bottom"
-        android:layout_margin="10dp">
+        android:layout_margin="20dp"
+        android:layout_marginBottom="40dp">
 
         <Button
             android:id="@+id/phono_button1"
@@ -42,19 +43,5 @@
             android:layout_height="wrap_content"
             android:text="Button" />
 
-        <Button
-            android:id="@+id/phono_button3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/phono_button4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-
     </LinearLayout>
-
-
 </LinearLayout>
