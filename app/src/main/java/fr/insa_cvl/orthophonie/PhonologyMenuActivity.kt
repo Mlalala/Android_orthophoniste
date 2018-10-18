@@ -18,8 +18,8 @@ class PhonologyMenuActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.phonology_menu_layout)
 
-        phonology_list.add("Série 1 - p/b")
-        phonology_list.add("Série 2 - q/g")
+        phonology_list.add("Série 1 - P/B")
+        phonology_list.add("Série 2 - C/G")
 
         adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,phonology_list)
         var listview = findViewById(R.id.phonology_list_menu) as ListView
