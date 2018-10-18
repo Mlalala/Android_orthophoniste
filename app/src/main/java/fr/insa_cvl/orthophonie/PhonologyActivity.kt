@@ -13,7 +13,6 @@ import android.view.WindowManager
 import android.util.DisplayMetrics
 
 
-
 class PhonologyActivity : AppCompatActivity(){
 
     private var index_in_serie : Int = 0
@@ -84,12 +83,10 @@ class PhonologyActivity : AppCompatActivity(){
 
     fun isCorrect(answer : Int, response : Int){
         if (answer == response) {
-            Toast.makeText(this, "Correct" + answer.toString() + "| R = " + response.toString() , Toast.LENGTH_SHORT).show()
-            manageItem("Correct")
+            manageItem("CORRECT !")
         }
         else{
-            Toast.makeText(this, "False" + answer.toString() + "| R = " + response.toString(), Toast.LENGTH_SHORT).show()
-            manageItem("Faux")
+            manageItem("FAUX !")
         }
     }
 
@@ -98,19 +95,19 @@ class PhonologyActivity : AppCompatActivity(){
         val inflater = this.layoutInflater
         val dialogView = inflater.inflate(R.layout.alert_phonology_layout, null)
 
-        //builder.setTitle(title).setView(dialogView)
+        builder.setTitle(title).setView(dialogView)
 
-        val myMsg = TextView(this)
+        /*val myMsg = TextView(this)
         myMsg.text = title
         myMsg.gravity = Gravity.CENTER
         myMsg.textSize = 35f
-        myMsg.setTextColor(resources.getColor(R.color.alertcolour))
+        myMsg.setTextColor(resources.getColor(R.color.alertcolour))*/
 
         //set custom title
-        builder.setCustomTitle(myMsg)
+        builder//.setCustomTitle(myMsg)
 
         // Add the buttons
-        if (title == "Correct"){
+        if (title == "CORRECT !"){
             if (index_in_serie < length_serie - 1){
                 builder.setPositiveButton("Suivant") { dialog, id ->
                     index_in_serie += 1
@@ -135,36 +132,14 @@ class PhonologyActivity : AppCompatActivity(){
         val dialog = builder.create()
         dialog.show()
 
-
-        val displayMetrics = DisplayMetrics()
+        /*val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
-        // The absolute width of the available display size in pixels.
         val displayWidth = displayMetrics.widthPixels
-
-        // Initialize a new window manager layout parameters
         val layoutParams = WindowManager.LayoutParams()
-
-        // Copy the alert dialog window attributes to new layout parameter instance
         layoutParams.copyFrom(dialog.window.attributes)
-
-        // Set the alert dialog window width and height
-        // Set alert dialog width equal to screen width 90%
-        // int dialogWindowWidth = (int) (displayWidth * 0.9f);
-        // Set alert dialog height equal to screen height 90%
-        // int dialogWindowHeight = (int) (displayHeight * 0.9f);
-
-        // Set alert dialog width equal to screen width 70%
         val dialogWindowWidth = (displayWidth * 0.65f).toInt()
-
-
-        // Set the width and height for the layout parameters
-        // This will bet the width and height of alert dialog
         layoutParams.width = dialogWindowWidth
-        //layoutParams.height = dialogWindowHeight
-
-        // Apply the newly created layout parameters to the alert dialog window
-        dialog.window.attributes = layoutParams
-
+        dialog.window.attributes = layoutParams*/
     }
 
 
