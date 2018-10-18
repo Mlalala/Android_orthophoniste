@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/phono_text_serie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:layout_margin="15dp"
+        android:text="TextView" />
+
     <ImageView
         android:id="@+id/imagePlay"
         android:layout_width="200dp"
@@ -22,25 +31,25 @@
         android:layout_margin="10dp">
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/phono_button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/phono_button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/phono_button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/phono_button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />

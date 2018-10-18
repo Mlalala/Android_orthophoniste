@@ -34,11 +34,10 @@ class MainActivity : AppCompatActivity() {
             R.drawable.logovisu
     )
 
-    //destinationActivity::class.java
 
     private val activity_list = arrayOf(
             ArticulationActivity::class.java,
-            PhonologyActivity::class.java,
+            PhonologyMenuActivity::class.java,
             VisualActivity::class.java
     )
 
@@ -62,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
 
                 list.setOnItemClickListener { parent, view, position, id ->
-                    Toast.makeText(this, "Position Clicked:"+" "+position,Toast.LENGTH_LONG).show()
+                    //Toast.makeText(this, "Position Clicked:"+" "+position,Toast.LENGTH_LONG).show()
                     val intent = Intent(this,activity_list[position])
                     startActivity(intent)
                     finish()
