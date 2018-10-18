@@ -151,6 +151,4 @@ class PhonologyActivity : AppCompatActivity(){
             true
         } else super.onKeyDown(keyCode, event)
     }
-
-
 }
