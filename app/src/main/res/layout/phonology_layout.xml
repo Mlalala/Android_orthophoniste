@@ -35,13 +35,15 @@
             android:id="@+id/phono_button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:textSize="30dp"
+            android:layout_margin="5dp"/>
 
         <Button
             android:id="@+id/phono_button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:textSize="30dp"
+            android:layout_margin="5dp"/>
 
     </LinearLayout>
 </LinearLayout>

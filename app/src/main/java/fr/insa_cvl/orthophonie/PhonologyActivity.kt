@@ -26,13 +26,14 @@ class PhonologyActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.phonology_layout)
+
         index_serie = intent.getIntExtra("EXTRA_POSITION",0)
 
         //Serie lengh
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
         var sql_query = databaseAccess.count(index_serie+1)
-        length_serie = sql_query.toInt()
+        length_serie = sql_query
         //databaseAccess.close()
 
         //init proposals, answer and audio
