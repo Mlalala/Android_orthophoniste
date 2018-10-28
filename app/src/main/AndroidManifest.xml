@@ -22,10 +22,10 @@
         <activity android:label="@string/title_arti" android:name=".ArticulationActivity">
         </activity>
 
-        <activity android:label="@string/title_phono" android:name=".PhonologyActivity">
+        <activity android:label="@string/title_phono" android:name=".AudioToWordPhonoActivity">
         </activity>
 
-        <activity android:label="@string/title_phono_menu" android:name=".PhonologyMenuActivity">
+        <activity android:label="@string/title_phono_menu" android:name=".AudioToWordPhonoMenuActivity">
         </activity>
 
         <activity android:label="@string/title_visu" android:name=".VisualActivity">

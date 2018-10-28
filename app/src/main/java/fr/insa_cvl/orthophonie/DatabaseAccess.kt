@@ -12,9 +12,9 @@ private constructor(context: Context) {
     private val openHelper: SQLiteOpenHelper
     private var database: SQLiteDatabase? = null
 
-    fun get_serie(num_serie : Int, num : Int): ArrayList<String>{
+    fun get_AudioToWordPhono(num_serie : Int, num : Int): ArrayList<String>{
         val list = ArrayList<String>()
-        val cursor = database!!.rawQuery("SELECT proposals,answer FROM series WHERE No_serie = " + num_serie.toString()+ " AND No = " + num.toString(), null)
+        val cursor = database!!.rawQuery("SELECT proposals,answer FROM AudioToWordPhono WHERE No_serie = " + num_serie.toString()+ " AND No = " + num.toString(), null)
         cursor.moveToFirst()
 
         list.add(cursor.getString(0))
@@ -25,9 +25,9 @@ private constructor(context: Context) {
         return list
     }
 
-    fun count(num_serie : Int):Int{
+    fun count_AudioToWordPhono(num_serie : Int):Int{
         val cursor = database!!.rawQuery("SELECT COUNT(No)\n" +
-                "FROM series\n" +
+                "FROM AudioToWordPhono\n" +
                 "WHERE No_serie = " + num_serie.toString(),null)
         cursor.moveToFirst()
         return cursor.getInt(0)

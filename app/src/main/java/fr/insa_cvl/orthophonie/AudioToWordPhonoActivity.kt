@@ -7,13 +7,10 @@ import android.view.KeyEvent
 import android.widget.*
 import android.media.MediaPlayer
 import android.app.AlertDialog
-import android.view.Gravity
 import android.widget.TextView
-import android.view.WindowManager
-import android.util.DisplayMetrics
 
 
-class PhonologyActivity : AppCompatActivity(){
+class AudioToWordPhonoActivity : AppCompatActivity(){
 
     private var index_in_serie : Int = 0
     private var index_serie : Int = 0
@@ -32,7 +29,7 @@ class PhonologyActivity : AppCompatActivity(){
         //Serie lengh
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        var sql_query = databaseAccess.count(index_serie+1)
+        var sql_query = databaseAccess.count_AudioToWordPhono(index_serie+1)
         length_serie = sql_query
         //databaseAccess.close()
 
@@ -48,7 +45,7 @@ class PhonologyActivity : AppCompatActivity(){
 
     fun init_serie_data(databaseAccess : DatabaseAccess){
         //databaseAccess.open()
-        var sql_query = databaseAccess.get_serie(index_serie+1,index_in_serie+1)
+        var sql_query = databaseAccess.get_AudioToWordPhono(index_serie+1,index_in_serie+1)
         //databaseAccess.close()
 
         proposal = sql_query[0].toString().split("-")
@@ -107,7 +104,7 @@ class PhonologyActivity : AppCompatActivity(){
             }
             else {
                 builder.setPositiveButton("Revenir au menu") { dialog, id ->
-                    val intent = Intent(this, PhonologyMenuActivity::class.java)
+                    val intent = Intent(this, AudioToWordPhonoMenuActivity::class.java)
                     databaseAccess.close()
                     startActivity(intent)
                     finish()
@@ -123,7 +120,7 @@ class PhonologyActivity : AppCompatActivity(){
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this,PhonologyMenuActivity::class.java)
+            val intent = Intent(this,AudioToWordPhonoMenuActivity::class.java)
             startActivity(intent)
             finish()
             true

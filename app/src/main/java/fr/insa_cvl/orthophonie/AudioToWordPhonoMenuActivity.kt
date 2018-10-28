@@ -4,12 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.Toast
 
-class PhonologyMenuActivity : AppCompatActivity(){
+class AudioToWordPhonoMenuActivity : AppCompatActivity(){
 
     val phonology_list = ArrayList<String>()
     var adapter_simple : ArrayAdapter<String>? = null
@@ -28,7 +26,7 @@ class PhonologyMenuActivity : AppCompatActivity(){
 
         listview.setOnItemClickListener { parent, view, position, id ->
             //Toast.makeText(this, "Position Clicked:"+" "+position, Toast.LENGTH_LONG).show()
-            var intent = Intent(this,PhonologyActivity::class.java)
+            var intent = Intent(this,AudioToWordPhonoActivity::class.java)
             intent.putExtra("EXTRA_POSITION",position)
             startActivity(intent)
             finish()

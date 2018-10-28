@@ -1,0 +1,20 @@
+### Modules de l'application ###
+
+Phonologie :
+	- MemoryPhono
+	- AudioToWordPhono	ok
+	- PictureToPhonemePhono
+	- WordToRhymePhono
+	- AudioToSyllablePositionPhono
+
+Articulation :
+	- DescriptionArti
+	- AudioRecordListenArti
+
+Mémoire et attention :
+	- SymbolsMemo
+	- AudioToOrderMemo
+
+Visuel :
+	- MemorySyllablesVisu
+	- SearchSyllableVisu
