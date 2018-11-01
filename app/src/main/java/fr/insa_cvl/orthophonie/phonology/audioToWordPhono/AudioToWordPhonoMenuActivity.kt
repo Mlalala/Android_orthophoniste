@@ -19,10 +19,10 @@ class AudioToWordPhonoMenuActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.phonology_menu_layout)
+        setContentView(R.layout.simple_list_layout)
 
         adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,phonology_list)
-        var listview = findViewById(R.id.phonology_list_menu) as ListView
+        var listview = findViewById(R.id.list_menu) as ListView
         listview.adapter = adapter_simple
 
 

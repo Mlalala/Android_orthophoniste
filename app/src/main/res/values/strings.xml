@@ -1,10 +1,18 @@
 <resources>
     <string name="app_name">Orthophonie</string>
 
+    <!-- Main titles -->
     <string name="title_arti">Articulation</string>
     <string name="title_phono">Phonologie</string>
     <string name="title_phono_menu">Phonologie Menu</string>
     <string name="title_visu">Visuel</string>
+    <string name="title_memo">Mémoire et attention</string>
+
+    <!-- Phonology titles -->
+    <string name="title_AudioToWordPhono">Du son au mot</string>
+
+    <!-- Memory titles -->
+    <string name="title_AudioToOrderMemo">Ecoute puis remet dans l\'ordre</string>
 
 
 

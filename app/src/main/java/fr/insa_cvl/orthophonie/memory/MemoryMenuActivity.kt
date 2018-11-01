@@ -1,4 +1,4 @@
-package fr.insa_cvl.orthophonie.phonology
+package fr.insa_cvl.orthophonie.memory
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,18 +10,19 @@ import fr.insa_cvl.orthophonie.MainActivity
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity
 
-class PhonologyMenuActivity : AppCompatActivity() {
+class MemoryMenuActivity : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.simple_list_layout)
 
-        val menu_title = arrayOf(
-                getString(R.string.title_AudioToWordPhono)
+        val menu_title = arrayOf<String>(
+                getString(R.string.title_AudioToOrderMemo)
         )
 
         val activity_list = arrayOf(
-                AudioToWordPhonoMenuActivity::class.java
+                MainActivity::class.java
         )
 
         var adapter_simple : ArrayAdapter<String>? = null

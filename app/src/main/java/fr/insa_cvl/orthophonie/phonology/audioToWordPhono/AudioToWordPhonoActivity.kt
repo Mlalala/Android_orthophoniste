@@ -24,7 +24,7 @@ class AudioToWordPhonoActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.phonology_layout)
+        setContentView(R.layout.audio_to_word_phono_layout)
 
         index_serie = intent.getIntExtra("EXTRA_POSITION",0)
 
