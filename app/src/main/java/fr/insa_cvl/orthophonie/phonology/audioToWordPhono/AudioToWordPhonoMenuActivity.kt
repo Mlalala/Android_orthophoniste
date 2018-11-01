@@ -1,4 +1,4 @@
-package fr.insa_cvl.orthophonie.phonology
+package fr.insa_cvl.orthophonie.phonology.audioToWordPhono
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,20 +6,20 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import fr.insa_cvl.orthophonie.MainActivity
 import fr.insa_cvl.orthophonie.R
+import fr.insa_cvl.orthophonie.phonology.PhonologyMenuActivity
 
 class AudioToWordPhonoMenuActivity : AppCompatActivity(){
 
-    val phonology_list = ArrayList<String>()
-    var adapter_simple : ArrayAdapter<String>? = null
+    private val phonology_list = arrayListOf<String>(
+            "Série 1 - P/B",
+            "Série 2 - C/G"
+    )
+     private var adapter_simple : ArrayAdapter<String>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.phonology_menu_layout)
-
-        phonology_list.add("Série 1 - P/B")
-        phonology_list.add("Série 2 - C/G")
 
         adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,phonology_list)
         var listview = findViewById(R.id.phonology_list_menu) as ListView
@@ -39,11 +39,10 @@ class AudioToWordPhonoMenuActivity : AppCompatActivity(){
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, PhonologyMenuActivity::class.java)
             startActivity(intent)
             finish()
             true
         } else super.onKeyDown(keyCode, event)
-
     }
 }

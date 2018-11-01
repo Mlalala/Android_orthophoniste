@@ -22,10 +22,13 @@
         <activity android:label="@string/title_arti" android:name=".articulation.ArticulationActivity">
         </activity>
 
-        <activity android:label="@string/title_phono" android:name=".phonology.AudioToWordPhonoActivity">
+        <activity android:label="@string/title_phono" android:name=".phonology.PhonologyMenuActivity">
         </activity>
 
-        <activity android:label="@string/title_phono_menu" android:name=".phonology.AudioToWordPhonoMenuActivity">
+        <activity android:label="Du son au mot" android:name=".phonology.audioToWordPhono.AudioToWordPhonoActivity">
+        </activity>
+
+        <activity android:label="@string/title_phono_menu" android:name=".phonology.audioToWordPhono.AudioToWordPhonoMenuActivity">
         </activity>
 
         <activity android:label="@string/title_visu" android:name=".visual.VisualActivity">

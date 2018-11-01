@@ -1,4 +1,4 @@
-package fr.insa_cvl.orthophonie.phonology
+package fr.insa_cvl.orthophonie.phonology.audioToWordPhono
 
 import android.content.Intent
 import android.os.Bundle
