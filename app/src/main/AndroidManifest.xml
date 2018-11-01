@@ -24,6 +24,8 @@
         </activity>
         <activity android:label="@string/title_AudioToWordPhono" android:name=".phonology.audioToWordPhono.AudioToWordPhonoActivity">
         </activity>
+        <activity android:label="@string/title_AudioToWordPhono" android:name=".phonology.audioToWordPhono.AudioToWordPhonoMenuActivity">
+        </activity>
 
         <!-- Articulation -->
         <activity android:label="@string/title_arti" android:name=".articulation.ArticulationActivity">
