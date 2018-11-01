@@ -9,11 +9,23 @@
     <string name="title_memo">Mémoire et attention</string>
 
     <!-- Phonology titles -->
-    <string name="title_AudioToWordPhono">Du son au mot</string>
+    <string name="title_MemoryPhono">Du son au mot</string>
+    <string name="title_AudioToWordPhono">Du mot au son</string>
+    <string name="title_PictureToPhonemePhono">De l\'image au phoneme</string>
+    <string name="title_WordToRhymePhono"></string>
+    <string name="title_AudioToSyllablePositionPhono">Du son au mot</string>
 
     <!-- Memory titles -->
-    <string name="title_AudioToOrderMemo">Ecoute puis remet dans l\'ordre</string>
+    <string name="SymbolsMemo">Ecouter puis remetre les mots dans l\'ordre</string>
+    <string name="title_AudioToOrderMemo">Regarder puis remetre les symboles dans l\'ordre</string>
 
+    <!-- Articulation titles -->
+    <string name="DescriptionArti">Liste des phonemes avec audio (aide visuelle ?)</string>
+    <string name="AudioRecordListenArti">Teste ton articulation</string>
+
+    <!-- Visual titles -->
+    <string name="MemorySyllablesVisu">Trouve les paires de syllabes</string>
+    <string name="SearchSyllableVisu">Confusion visuelles des syllabes</string>
 
 
     <string name="settings">Paramètre</string>
