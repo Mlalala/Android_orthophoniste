@@ -19,16 +19,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:label="@string/title_arti" android:name=".ArticulationActivity">
+        <activity android:label="@string/title_arti" android:name=".articulation.ArticulationActivity">
         </activity>
 
-        <activity android:label="@string/title_phono" android:name=".AudioToWordPhonoActivity">
+        <activity android:label="@string/title_phono" android:name=".phonology.AudioToWordPhonoActivity">
         </activity>
 
-        <activity android:label="@string/title_phono_menu" android:name=".AudioToWordPhonoMenuActivity">
+        <activity android:label="@string/title_phono_menu" android:name=".phonology.AudioToWordPhonoMenuActivity">
         </activity>
 
-        <activity android:label="@string/title_visu" android:name=".VisualActivity">
+        <activity android:label="@string/title_visu" android:name=".visual.VisualActivity">
         </activity>
     </application>
 

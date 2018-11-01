@@ -1,11 +1,11 @@
-package fr.insa_cvl.orthophonie
+package fr.insa_cvl.orthophonie.articulation
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
-import android.view.KeyEvent.KEYCODE_BACK
-
+import fr.insa_cvl.orthophonie.MainActivity
+import fr.insa_cvl.orthophonie.R
 
 
 class ArticulationActivity : AppCompatActivity(){
@@ -16,7 +16,7 @@ class ArticulationActivity : AppCompatActivity(){
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
             true

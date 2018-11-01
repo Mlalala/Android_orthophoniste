@@ -1,4 +1,4 @@
-package fr.insa_cvl.orthophonie
+package fr.insa_cvl.orthophonie.db_utils
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

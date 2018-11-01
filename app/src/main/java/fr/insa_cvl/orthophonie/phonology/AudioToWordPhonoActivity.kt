@@ -1,4 +1,4 @@
-package fr.insa_cvl.orthophonie
+package fr.insa_cvl.orthophonie.phonology
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,8 @@ import android.widget.*
 import android.media.MediaPlayer
 import android.app.AlertDialog
 import android.widget.TextView
+import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
+import fr.insa_cvl.orthophonie.R
 
 
 class AudioToWordPhonoActivity : AppCompatActivity(){
@@ -120,7 +122,7 @@ class AudioToWordPhonoActivity : AppCompatActivity(){
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this,AudioToWordPhonoMenuActivity::class.java)
+            val intent = Intent(this, AudioToWordPhonoMenuActivity::class.java)
             startActivity(intent)
             finish()
             true

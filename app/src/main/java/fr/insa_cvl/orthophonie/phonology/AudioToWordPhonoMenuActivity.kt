@@ -1,4 +1,4 @@
-package fr.insa_cvl.orthophonie
+package fr.insa_cvl.orthophonie.phonology
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import fr.insa_cvl.orthophonie.MainActivity
+import fr.insa_cvl.orthophonie.R
 
 class AudioToWordPhonoMenuActivity : AppCompatActivity(){
 
@@ -26,7 +28,7 @@ class AudioToWordPhonoMenuActivity : AppCompatActivity(){
 
         listview.setOnItemClickListener { parent, view, position, id ->
             //Toast.makeText(this, "Position Clicked:"+" "+position, Toast.LENGTH_LONG).show()
-            var intent = Intent(this,AudioToWordPhonoActivity::class.java)
+            var intent = Intent(this, AudioToWordPhonoActivity::class.java)
             intent.putExtra("EXTRA_POSITION",position)
             startActivity(intent)
             finish()
@@ -37,7 +39,7 @@ class AudioToWordPhonoMenuActivity : AppCompatActivity(){
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
             true
