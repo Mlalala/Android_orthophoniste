@@ -1,15 +1,15 @@
 ### Modules de l'application ###
 
 Phonologie :
-	- MemoryPhono
+	- MemoryPhono	Simon
 	- AudioToWordPhono	ok
 	- PictureToPhonemePhono
 	- WordToRhymePhono
 	- AudioToSyllablePositionPhono
 
 Articulation :
-	- DescriptionArti
-	- AudioRecordListenArti
+	- DescriptionArti	Maxime 5/11
+	- AudioRecordListenArti	del
 
 Mémoire et attention :
 	- SymbolsMemo

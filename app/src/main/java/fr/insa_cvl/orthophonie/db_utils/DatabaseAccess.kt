@@ -37,6 +37,16 @@ private constructor(context: Context) {
         this.openHelper = DatabaseOpenHelper(context)
     }
 
+    fun get_MemoryPhono(num_serie : Int): ArrayList<String>{
+        val cursor = database!!.rawQuery("SELECT elements FROM MemoryPhono WHERE serie = " + num_serie.toString(), null)
+        cursor.moveToFirst()
+        val list = ArrayList((cursor.getString(0)).split(","))
+
+        cursor.close()
+
+        return list
+    }
+
 
     fun open() {
         this.database = openHelper.writableDatabase

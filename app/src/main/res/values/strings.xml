@@ -9,7 +9,7 @@
     <string name="title_memo">Mémoire et attention</string>
 
     <!-- Phonology titles -->
-    <string name="title_MemoryPhono">Du son au mot</string>
+    <string name="title_MemoryPhono">Trouver les paires de son (syllabes)</string>
     <string name="title_AudioToWordPhono">Du mot au son</string>
     <string name="title_PictureToPhonemePhono">De l\'image au phoneme</string>
     <string name="title_WordToRhymePhono"></string>
@@ -24,7 +24,7 @@
     <string name="AudioRecordListenArti">Teste ton articulation</string>
 
     <!-- Visual titles -->
-    <string name="MemorySyllablesVisu">Trouve les paires de syllabes</string>
+    <string name="MemorySyllablesVisu">Trouver les paires de syllabes</string>
     <string name="SearchSyllableVisu">Confusion visuelles des syllabes</string>
 
 

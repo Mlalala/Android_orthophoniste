@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#6c86be</color>
     <color name="colorAccent">#3893e8</color>
     <color name="alertcolour">#ba160c</color>
+
+    <color name="memoryPhonoSelected">#00E4F6</color>
+    <color name="memoryPhonoValid">#C6CA53</color>
+
 </resources>
