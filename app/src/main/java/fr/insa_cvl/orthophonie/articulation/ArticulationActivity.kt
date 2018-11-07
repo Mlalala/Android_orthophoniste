@@ -44,7 +44,12 @@ class ArticulationActivity : AppCompatActivity(){
         var listview = findViewById(R.id.articulation_menu) as ListView
         listview.adapter = adapter_simple
 
-        
+
+        listview.setOnItemClickListener { parent, view, position, id ->
+            var intent = Intent(this, activity_list[position])
+            startActivity(intent)
+            finish()
+        }
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
