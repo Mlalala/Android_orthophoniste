@@ -33,10 +33,6 @@ private constructor(context: Context) {
         return cursor.getInt(0)
     }
 
-    init {
-        this.openHelper = DatabaseOpenHelper(context)
-    }
-
     fun get_MemoryPhono(num_serie : Int): ArrayList<String>{
         val cursor = database!!.rawQuery("SELECT elements FROM MemoryPhono WHERE serie = " + num_serie.toString(), null)
         cursor.moveToFirst()
@@ -56,6 +52,10 @@ private constructor(context: Context) {
         if (database != null) {
             this.database!!.close()
         }
+    }
+
+    init {
+        this.openHelper = DatabaseOpenHelper(context)
     }
 
     companion object {
