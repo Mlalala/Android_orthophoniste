@@ -42,8 +42,14 @@
         <activity android:label="niveau articulation" android:name=".articulation.Articulationlevel"></activity>
 
         <!-- Visuel -->
-        <activity android:label="@string/title_visu" android:name=".visual.VisualActivity">
+        <activity android:label="@string/title_visu" android:name=".visual.VisualMenuActivity">
         </activity>
+
+        <activity android:label="@string/MemorySyllablesVisu" android:name=".visual.memorySyllabesVisu.MemorySyllabesVisuActivity">
+        </activity>
+        <activity android:label="@string/MemorySyllablesVisu" android:name=".visual.memorySyllabesVisu.MemorySyllabesVisuMenuActivity">
+        </activity>
+
 
         <!-- Memory -->
         <activity android:label="@string/title_memo" android:name=".memory.MemoryMenuActivity">
