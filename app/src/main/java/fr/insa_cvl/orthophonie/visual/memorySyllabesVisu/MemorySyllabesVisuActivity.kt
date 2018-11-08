@@ -56,7 +56,7 @@ class MemorySyllabesVisuActivity : AppCompatActivity() {
             for (j in 0..1){
                 var button = Button(this)
                 button.setAllCaps(false)
-                button.textSize = 20f
+                button.textSize = 0f
                 button.text = list_elements[j+i*2]
                 button.layoutParams = button_param
                 button.setBackgroundColor(getColor(R.color.memoryDefault))
@@ -77,10 +77,12 @@ class MemorySyllabesVisuActivity : AppCompatActivity() {
     fun click_process(){
         if (selected.size == 1){
             buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memorySelected))
+            buttonlist[selected[0]].textSize = 20f
         }
         else {
             buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memorySelected))
-            //Thread.sleep(500)
+            buttonlist[selected[1]].textSize = 20f
+
             if (selected[0] != selected[1] && buttonlist[selected[0]].text == buttonlist[selected[1]].text){
                 Toast.makeText(this, "correct", Toast.LENGTH_LONG).show()
                 buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryValid))
@@ -106,10 +108,13 @@ class MemorySyllabesVisuActivity : AppCompatActivity() {
                         Thread.sleep(750)
                         this@MemorySyllabesVisuActivity.buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryDefault))
                         this@MemorySyllabesVisuActivity.buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryDefault))
-
+                        buttonlist[selected[0]].textSize = 0f
+                        buttonlist[selected[1]].textSize = 0f
                         this@MemorySyllabesVisuActivity.selected.clear()
                     })
                 }).start()
+
+
             }
 
         }

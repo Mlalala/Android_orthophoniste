@@ -9,7 +9,6 @@ import android.widget.ListView
 import fr.insa_cvl.orthophonie.MainActivity
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
-import fr.insa_cvl.orthophonie.phonology.memoryPhono.MemoryPhonoActivity
 
 class MemorySyllabesVisuMenuActivity : AppCompatActivity() {
     private var adapter_simple : ArrayAdapter<String>? = null
