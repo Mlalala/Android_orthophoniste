@@ -24,11 +24,11 @@ class DescriptionArtiLevel: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.articulation_layout)
-        lettre = intent.getIntExtra("EXTRA_POSITION",0)
+        //lettre = intent.getIntExtra("EXTRA_POSITION",0)
 
         val choice_list = arrayOf(
                 DescriptionArtiInitiallevel::class.java,
-                DescriptionArtiMediane_level::class.java,
+                DescriptionArtiMedianelevel::class.java,
                 DescriptionArtiFinallevel::class.java
         )
 

@@ -7,7 +7,7 @@ import android.view.KeyEvent
 import fr.insa_cvl.orthophonie.MainActivity
 import fr.insa_cvl.orthophonie.R
 
-class DescriptionArtiMediane_level: AppCompatActivity() {
+class DescriptionArtiMedianelevel: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
