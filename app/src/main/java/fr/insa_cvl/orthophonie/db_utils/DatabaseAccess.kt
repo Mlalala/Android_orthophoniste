@@ -65,9 +65,6 @@ private constructor(context: Context) {
         }
     }
 
-    init {
-        this.openHelper = DatabaseOpenHelper(context)
-    }
 
     companion object {
         private var instance: DatabaseAccess? = null
