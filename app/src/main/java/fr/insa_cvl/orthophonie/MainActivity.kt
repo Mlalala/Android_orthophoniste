@@ -6,7 +6,7 @@ import android.widget.ListView
 import android.content.Intent
 import android.view.Menu
 import android.view.MenuInflater
-import fr.insa_cvl.orthophonie.articulation.ArticulationActivity
+import fr.insa_cvl.orthophonie.articulation.DescriptionArtiActivity
 import fr.insa_cvl.orthophonie.memory.MemoryMenuActivity
 import fr.insa_cvl.orthophonie.phonology.PhonologyMenuActivity
 import fr.insa_cvl.orthophonie.visual.VisualActivity
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     )
 
     private val activity_list = arrayOf(
-            ArticulationActivity::class.java,
+            DescriptionArtiActivity::class.java,
             PhonologyMenuActivity::class.java,
             VisualActivity::class.java,
             MemoryMenuActivity::class.java
