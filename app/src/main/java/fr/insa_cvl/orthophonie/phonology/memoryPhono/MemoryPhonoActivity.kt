@@ -23,13 +23,14 @@ class MemoryPhonoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.memory_phono_layout)
+        setContentView(R.layout.memory_game_layout)
 
         val index_serie = intent.getIntExtra("EXTRA_POSITION",0)
 
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
         var list_elements = databaseAccess.get_MemoryPhono(index_serie+1)
+        databaseAccess.close()
         serie_size = list_elements.size
         list_elements.addAll(list_elements)
         list_elements.shuffle()
@@ -82,7 +83,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
         else {
             buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memorySelected))
             //Thread.sleep(500)
-            if (buttonlist[selected[0]].text == buttonlist[selected[1]].text){
+            if (selected[0] != selected[0] && buttonlist[selected[0]].text == buttonlist[selected[1]].text){
                 Toast.makeText(this, "correct",Toast.LENGTH_LONG).show()
                 buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryValid))
                 buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryValid))
