@@ -36,10 +36,13 @@
 
 
         <!-- Articulation -->
-        <activity android:label="@string/title_arti" android:name=".articulation.ArticulationActivity">
+        <activity android:label="@string/title_arti" android:name=".articulation.DescriptionArtiActivity">
         </activity>
 
-        <activity android:label="niveau articulation" android:name=".articulation.Articulationlevel"></activity>
+        <activity android:label="niveau articulation" android:name=".articulation.DescriptionArtiLevel"></activity>
+        <activity android:label="niveau initial articulation" android:name=".articulation.DescriptionArtiInitiallevel"></activity>
+        <activity android:label="niveau median articulation" android:name=".articulation.DescriptionArtiMediane_level"></activity>
+        <activity android:label="niveau final articulation" android:name=".articulation.DescriptionArtiFinallevel"></activity>
 
         <!-- Visuel -->
         <activity android:label="@string/title_visu" android:name=".visual.VisualMenuActivity">

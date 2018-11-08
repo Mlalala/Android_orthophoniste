@@ -8,10 +8,10 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import fr.insa_cvl.orthophonie.MainActivity
 import fr.insa_cvl.orthophonie.R
-import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity
 
 
-class ArticulationActivity : AppCompatActivity(){
+
+class DescriptionArtiActivity : AppCompatActivity(){
 
     private val articulation_list = arrayListOf<String>(
             "B",
@@ -31,7 +31,7 @@ class ArticulationActivity : AppCompatActivity(){
 
 
         val activity_list = arrayOf(
-               Articulationlevel::class.java
+               DescriptionArtiLevel::class.java
         )
 
         val menu_title = arrayOf(
