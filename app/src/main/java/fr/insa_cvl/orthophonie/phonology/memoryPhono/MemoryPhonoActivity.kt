@@ -1,12 +1,8 @@
 package fr.insa_cvl.orthophonie.phonology.memoryPhono
 
 import android.app.AlertDialog
-import android.content.Context
 import android.content.Intent
-import android.media.MediaPlayer
-import android.os.AsyncTask
 import android.os.Bundle
-import android.support.v4.content.res.ResourcesCompat.getColor
 import android.support.v7.app.AppCompatActivity
 import android.view.Gravity
 import android.view.KeyEvent
@@ -16,7 +12,6 @@ import android.widget.TableRow
 import android.widget.Toast
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
-import kotlinx.android.synthetic.main.memory_phono_layout.*
 
 
 class MemoryPhonoActivity : AppCompatActivity() {
@@ -53,7 +48,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
                 TableRow.LayoutParams.MATCH_PARENT,
                 1.0f
         )
-        button_param.setMargins(5,5,5,5)
+        button_param.setMargins(10,10,10,10)
 
         val table = findViewById<TableLayout>(R.id.memoryphonotable)
         for (i in 0..list_elements.size/2-1){
@@ -65,7 +60,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
                 var button = Button(this)
                 button.text = list_elements[j+i*2]
                 button.layoutParams = button_param
-                button.setBackgroundColor(getColor(R.color.memoryPhonoDefault))
+                button.setBackgroundColor(getColor(R.color.memoryDefault))
                 row.addView(button)
                 buttonlist.add(button)
 
@@ -82,15 +77,15 @@ class MemoryPhonoActivity : AppCompatActivity() {
 
     fun click_process(){
         if (selected.size == 1){
-            buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryPhonoSelected))
+            buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memorySelected))
         }
         else {
-            buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryPhonoSelected))
+            buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memorySelected))
             //Thread.sleep(500)
             if (buttonlist[selected[0]].text == buttonlist[selected[1]].text){
                 Toast.makeText(this, "correct",Toast.LENGTH_LONG).show()
-                buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryPhonoValid))
-                buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryPhonoValid))
+                buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryValid))
+                buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryValid))
                 buttonlist[selected[0]].setOnClickListener(null)
                 buttonlist[selected[1]].setOnClickListener(null)
                 selected.clear()
@@ -101,13 +96,26 @@ class MemoryPhonoActivity : AppCompatActivity() {
                 }
             }
             else {
-                Toast.makeText(this, "incorrect",Toast.LENGTH_LONG).show()
-                //TODO : TIMER RED COLOUR
-                //ButtonAsyncTask().doInBackground(buttonlist[selected[0]])
-                //selected.clear()
+                Toast.makeText(this, "incorrect", Toast.LENGTH_LONG).show()
+
+                this@MemoryPhonoActivity.buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryError))
+                this@MemoryPhonoActivity.buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryError))
+
+                Thread(Runnable {
+                    this@MemoryPhonoActivity.runOnUiThread(java.lang.Runnable {
+                        Toast.makeText(this, "in THREAD",Toast.LENGTH_LONG).show()
+                        Thread.sleep(750)
+                        this@MemoryPhonoActivity.buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryDefault))
+                        this@MemoryPhonoActivity.buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryDefault))
+
+                        this@MemoryPhonoActivity.selected.clear()
+                    })
+                }).start()
             }
+
         }
     }
+
 
     fun manageItem() {
         val builder = AlertDialog.Builder(this)
@@ -136,18 +144,4 @@ class MemoryPhonoActivity : AppCompatActivity() {
         } else super.onKeyDown(keyCode, event)
     }
 
-    class ButtonAsyncTask : AsyncTask<Button, Int, Int>() {
-        override fun doInBackground(vararg p0: Button): Int {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            p0[0].setBackgroundColor(0xba160c)
-            p0[1].setBackgroundColor(0xba160c)
-            Thread.sleep(1000)
-            p0[0].setBackgroundColor(0xc0c0bd)
-            p0[1].setBackgroundColor(0xc0c0bd)
-        }
-
-        override fun onProgressUpdate(vararg values: Int?) {
-            super.onProgressUpdate(*values)
-        }
-    }
 }
