@@ -35,15 +35,17 @@
             android:id="@+id/phono_button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:layout_margin="5dp"/>
+            android:textSize="25dp"
+            android:layout_margin="5dp"
+            android:textAllCaps="false"/>
 
         <Button
             android:id="@+id/phono_button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:layout_margin="5dp"/>
+            android:textSize="25dp"
+            android:layout_margin="5dp"
+            android:textAllCaps="false"/>
 
     </LinearLayout>
 </LinearLayout>

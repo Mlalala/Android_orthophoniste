@@ -9,5 +9,4 @@
     <color name="memoryValid">#C6CA53</color>
     <color name="memoryDefault">#c0c0bd</color>
     <color name="memoryError">#ff1919</color>
-
 </resources>

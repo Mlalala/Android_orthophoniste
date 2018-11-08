@@ -85,6 +85,7 @@ class AudioToWordPhonoActivity : AppCompatActivity(){
 
     fun manageItem(title : String,databaseAccess : DatabaseAccess) {
         val builder = AlertDialog.Builder(this)
+
         val inflater = this.layoutInflater
         val dialogView = inflater.inflate(R.layout.alert_phonology_layout, null)
 
@@ -94,6 +95,7 @@ class AudioToWordPhonoActivity : AppCompatActivity(){
         // Add the buttons
         if (title == "CORRECT !"){
             if (index_in_serie < length_serie - 1){
+                builder.setCancelable(false)
                 builder.setPositiveButton("Suivant") { dialog, id ->
                     index_in_serie += 1
                     //init proposals, answer and audio

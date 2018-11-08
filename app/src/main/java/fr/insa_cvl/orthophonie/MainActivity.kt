@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                     menuList.add(MenuItem(main_menu_title[i], main_menu_logo[i]))
                 }
 
-                val menuAdapter = MenuListAdapter(this, R.layout.menu_list_layout, menuList)
+                val menuAdapter = MenuListAdapter(this, R.layout.activity_main_menu_list_layout, menuList)
 
                 var list = findViewById(R.id.menu_list) as ListView
 
