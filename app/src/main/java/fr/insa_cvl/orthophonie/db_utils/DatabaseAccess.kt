@@ -82,6 +82,18 @@ private constructor(context: Context) {
 
         // MemorySyllabesVisu
 
+    fun get_Menu_MemorySyllabesVisu(): ArrayList<String>{
+        var list = ArrayList<String>()
+        val cursor = database!!.rawQuery("SELECT serie,name FROM MemorySyllabesVisu",null)
+        cursor.moveToFirst()
+        while (!cursor.isAfterLast()) {
+            list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
+            cursor.moveToNext()
+        }
+        cursor.close()
+        return list
+    }
+
     fun get_MemorySyllabesVisu(num_serie : Int): ArrayList<String>{
         val cursor = database!!.rawQuery("SELECT elements FROM MemorySyllabesVisu WHERE serie = " + num_serie.toString(), null)
         cursor.moveToFirst()

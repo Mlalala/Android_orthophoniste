@@ -23,7 +23,7 @@ class VisualMenuActivity: AppCompatActivity() {
         )
 
         val activity_list = arrayOf(
-                MainActivity::class.java,
+                MemoryPhonoMenuActivity::class.java,
                 MainActivity::class.java
         )
 

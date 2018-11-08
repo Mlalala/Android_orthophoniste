@@ -12,7 +12,6 @@ import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuAc
 
 class MemoryMenuActivity : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.simple_list_layout)

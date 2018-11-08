@@ -1,5 +1,7 @@
 ### Modules de l'application ###
 
+3/10
+
 Phonologie :
 	- MemoryPhono	Simon ok
 	- AudioToWordPhono	Simon ok 
@@ -16,5 +18,5 @@ Mémoire et attention :
 	- AudioToOrderMemo	Maxime
 
 Visuel :
-	- MemorySyllablesVisu	Simon
+	- MemorySyllablesVisu	Simon ok
 	- SearchSyllableVisu	Simon
