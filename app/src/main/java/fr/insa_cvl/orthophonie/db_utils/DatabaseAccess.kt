@@ -33,6 +33,17 @@ private constructor(context: Context) {
         return cursor.getInt(0)
     }
 
+    fun articulation_letter(lettre : String): String{
+        val cursor = database!!.rawQuery("SELECT  Lettre From Articulation\n" +
+                "WHERE Lettre = " + lettre, null)
+
+        return lettre
+    }
+
+    init {
+        this.openHelper = DatabaseOpenHelper(context)
+    }
+
     fun get_MemoryPhono(num_serie : Int): ArrayList<String>{
         val cursor = database!!.rawQuery("SELECT elements FROM MemoryPhono WHERE serie = " + num_serie.toString(), null)
         cursor.moveToFirst()
@@ -54,9 +65,6 @@ private constructor(context: Context) {
         }
     }
 
-    init {
-        this.openHelper = DatabaseOpenHelper(context)
-    }
 
     companion object {
         private var instance: DatabaseAccess? = null

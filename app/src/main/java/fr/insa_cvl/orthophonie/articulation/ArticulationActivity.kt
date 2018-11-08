@@ -47,6 +47,7 @@ class ArticulationActivity : AppCompatActivity(){
 
         listview.setOnItemClickListener { parent, view, position, id ->
             var intent = Intent(this, activity_list[position])
+            intent.putExtra("EXTRA_POSITION",position)
             startActivity(intent)
             finish()
         }
