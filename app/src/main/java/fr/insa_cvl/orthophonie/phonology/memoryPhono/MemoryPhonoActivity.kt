@@ -1,9 +1,12 @@
 package fr.insa_cvl.orthophonie.phonology.memoryPhono
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
+import android.os.AsyncTask
 import android.os.Bundle
+import android.support.v4.content.res.ResourcesCompat.getColor
 import android.support.v7.app.AppCompatActivity
 import android.view.Gravity
 import android.view.KeyEvent
@@ -13,6 +16,7 @@ import android.widget.TableRow
 import android.widget.Toast
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
+import kotlinx.android.synthetic.main.memory_phono_layout.*
 
 
 class MemoryPhonoActivity : AppCompatActivity() {
@@ -42,12 +46,12 @@ class MemoryPhonoActivity : AppCompatActivity() {
         val row_param = TableLayout.LayoutParams(
                 TableLayout.LayoutParams.MATCH_PARENT,
                 TableLayout.LayoutParams.MATCH_PARENT,
-                1.0f
-        )
+                1.0f        )
 
         val button_param = TableRow.LayoutParams(
                 TableRow.LayoutParams.MATCH_PARENT,
-                TableRow.LayoutParams.MATCH_PARENT
+                TableRow.LayoutParams.MATCH_PARENT,
+                1.0f
         )
         button_param.setMargins(5,5,5,5)
 
@@ -56,7 +60,6 @@ class MemoryPhonoActivity : AppCompatActivity() {
             var row = TableRow(this)
             row.gravity = Gravity.CENTER
             row.layoutParams = row_param
-            table.addView(row)
 
             for (j in 0..1){
                 var button = Button(this)
@@ -73,6 +76,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
                     click_process()
                 }
             }
+            table.addView(row)
         }
     }
 
@@ -99,11 +103,8 @@ class MemoryPhonoActivity : AppCompatActivity() {
             else {
                 Toast.makeText(this, "incorrect",Toast.LENGTH_LONG).show()
                 //TODO : TIMER RED COLOUR
-                //buttonlist[selected[0]].setBackgroundColor(getColor(R.color.alertcolour))
-                //buttonlist[selected[1]].setBackgroundColor(getColor(R.color.alertcolour))
-                buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryPhonoDefault))
-                buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryPhonoDefault))
-                selected.clear()
+                //ButtonAsyncTask().doInBackground(buttonlist[selected[0]])
+                //selected.clear()
             }
         }
     }
@@ -133,5 +134,20 @@ class MemoryPhonoActivity : AppCompatActivity() {
             finish()
             true
         } else super.onKeyDown(keyCode, event)
+    }
+
+    class ButtonAsyncTask : AsyncTask<Button, Int, Int>() {
+        override fun doInBackground(vararg p0: Button): Int {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            p0[0].setBackgroundColor(0xba160c)
+            p0[1].setBackgroundColor(0xba160c)
+            Thread.sleep(1000)
+            p0[0].setBackgroundColor(0xc0c0bd)
+            p0[1].setBackgroundColor(0xc0c0bd)
+        }
+
+        override fun onProgressUpdate(vararg values: Int?) {
+            super.onProgressUpdate(*values)
+        }
     }
 }
