@@ -12,6 +12,27 @@ private constructor(context: Context) {
     private val openHelper: SQLiteOpenHelper
     private var database: SQLiteDatabase? = null
 
+    init {
+        this.openHelper = DatabaseOpenHelper(context)
+    }
+
+
+    //// PHONOLOGIE ////
+
+        // AudioToWordPhono
+
+    fun get_Menu_AudioToWordPhono(): ArrayList<String>{
+        var list = ArrayList<String>()
+        val cursor = database!!.rawQuery("SELECT serie,name FROM AudioToWordMenuPhono",null)
+        cursor.moveToFirst()
+        while (!cursor.isAfterLast()) {
+            list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
+            cursor.moveToNext()
+        }
+        cursor.close()
+        return list
+    }
+
     fun get_AudioToWordPhono(num_serie : Int, num : Int): ArrayList<String>{
         val list = ArrayList<String>()
         val cursor = database!!.rawQuery("SELECT proposals,answer FROM AudioToWordPhono WHERE No_serie = " + num_serie.toString()+ " AND No = " + num.toString(), null)
@@ -33,15 +54,18 @@ private constructor(context: Context) {
         return cursor.getInt(0)
     }
 
-    fun articulation_letter(lettre : String): String{
-        val cursor = database!!.rawQuery("SELECT  Lettre From Articulation\n" +
-                "WHERE Lettre = " + lettre, null)
+        //MemoryPhono
 
-        return lettre
-    }
-
-    init {
-        this.openHelper = DatabaseOpenHelper(context)
+    fun get_Menu_MemoryPhono(): ArrayList<String>{
+        var list = ArrayList<String>()
+        val cursor = database!!.rawQuery("SELECT serie,name FROM MemoryPhono",null)
+        cursor.moveToFirst()
+        while (!cursor.isAfterLast()) {
+            list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
+            cursor.moveToNext()
+        }
+        cursor.close()
+        return list
     }
 
     fun get_MemoryPhono(num_serie : Int): ArrayList<String>{
@@ -53,6 +77,31 @@ private constructor(context: Context) {
 
         return list
     }
+
+    //// VISUAL ////
+
+        // MemorySyllabesVisu
+
+    fun get_MemorySyllabesVisu(num_serie : Int): ArrayList<String>{
+        val cursor = database!!.rawQuery("SELECT elements FROM MemorySyllabesVisu WHERE serie = " + num_serie.toString(), null)
+        cursor.moveToFirst()
+        val list = ArrayList((cursor.getString(0)).split(","))
+
+        cursor.close()
+
+        return list
+    }
+
+    //// ARTICULATION ////
+
+    fun articulation_letter(lettre : String): String{
+        val cursor = database!!.rawQuery("SELECT  Lettre From Articulation\n" +
+                "WHERE Lettre = " + lettre, null)
+
+        return lettre
+    }
+
+
 
 
     fun open() {

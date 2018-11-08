@@ -9,7 +9,7 @@ import android.view.MenuInflater
 import fr.insa_cvl.orthophonie.articulation.DescriptionArtiActivity
 import fr.insa_cvl.orthophonie.memory.MemoryMenuActivity
 import fr.insa_cvl.orthophonie.phonology.PhonologyMenuActivity
-import fr.insa_cvl.orthophonie.visual.VisualActivity
+import fr.insa_cvl.orthophonie.visual.VisualMenuActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     private val activity_list = arrayOf(
             DescriptionArtiActivity::class.java,
             PhonologyMenuActivity::class.java,
-            VisualActivity::class.java,
+            VisualMenuActivity::class.java,
             MemoryMenuActivity::class.java
     )
 

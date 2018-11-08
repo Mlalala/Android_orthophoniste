@@ -8,14 +8,11 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import fr.insa_cvl.orthophonie.MainActivity
 import fr.insa_cvl.orthophonie.R
+import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
 
 
 class MemoryPhonoMenuActivity : AppCompatActivity() {
 
-    private val list = arrayListOf<String>(
-            "Série 1 - b/d/g/k",
-            "Série 2 - b/p"
-    )
 
     private var adapter_simple : ArrayAdapter<String>? = null
 
@@ -23,6 +20,11 @@ class MemoryPhonoMenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.simple_list_layout)
+
+        var databaseAccess = DatabaseAccess.getInstance(this)
+        databaseAccess.open()
+        var list = databaseAccess.get_Menu_MemoryPhono()
+        databaseAccess.close()
 
         adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,list)
         var listview = findViewById(R.id.list_menu) as ListView
