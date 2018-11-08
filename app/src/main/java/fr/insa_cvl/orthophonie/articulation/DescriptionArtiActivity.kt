@@ -46,8 +46,8 @@ class DescriptionArtiActivity : AppCompatActivity(){
 
 
         listview.setOnItemClickListener { parent, view, position, id ->
-            var intent = Intent(this, activity_list[position])
-            intent.putExtra("EXTRA_POSITION",position)
+            var intent = Intent(this, DescriptionArtiLevel::class.java)
+            //intent.putExtra("EXTRA_POSITION",position)
             startActivity(intent)
             finish()
         }
