@@ -1,7 +1,8 @@
 package fr.insa_cvl.orthophonie.phonology.memoryPhono
 
-import android.app.PendingIntent.getActivity
+import android.app.AlertDialog
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Gravity
@@ -14,12 +15,12 @@ import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
 
 
-
 class MemoryPhonoActivity : AppCompatActivity() {
 
     private var selected = ArrayList<Int>()
     private var buttonlist = ArrayList<Button>()
     private var nb_correct = 0
+    private  var serie_size = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +31,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
         var list_elements = databaseAccess.get_MemoryPhono(index_serie+1)
+        serie_size = list_elements.size
         list_elements.addAll(list_elements)
         list_elements.shuffle()
 
@@ -85,13 +87,20 @@ class MemoryPhonoActivity : AppCompatActivity() {
                 Toast.makeText(this, "correct",Toast.LENGTH_LONG).show()
                 buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryPhonoValid))
                 buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryPhonoValid))
+                buttonlist[selected[0]].setOnClickListener(null)
+                buttonlist[selected[1]].setOnClickListener(null)
                 selected.clear()
+
+                nb_correct += 1
+                if (nb_correct == serie_size){
+                    manageItem()
+                }
             }
             else {
                 Toast.makeText(this, "incorrect",Toast.LENGTH_LONG).show()
-                buttonlist[selected[0]].setBackgroundColor(getColor(R.color.alertcolour))
-                buttonlist[selected[1]].setBackgroundColor(getColor(R.color.alertcolour))
-                Thread.sleep(100)
+                //TODO : TIMER RED COLOUR
+                //buttonlist[selected[0]].setBackgroundColor(getColor(R.color.alertcolour))
+                //buttonlist[selected[1]].setBackgroundColor(getColor(R.color.alertcolour))
                 buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryPhonoDefault))
                 buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryPhonoDefault))
                 selected.clear()
@@ -99,6 +108,23 @@ class MemoryPhonoActivity : AppCompatActivity() {
         }
     }
 
+    fun manageItem() {
+        val builder = AlertDialog.Builder(this)
+        val inflater = this.layoutInflater
+        val dialogView = inflater.inflate(R.layout.alert_phonology_layout, null)
+
+        builder.setTitle("BRAVO !").setView(dialogView)
+
+        // Add the button
+        builder.setPositiveButton("Revenir au menu") { dialog, id ->
+            val intent = Intent(this, MemoryPhonoMenuActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Create the AlertDialog
+        val dialog = builder.create()
+        dialog.show()
+    }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
