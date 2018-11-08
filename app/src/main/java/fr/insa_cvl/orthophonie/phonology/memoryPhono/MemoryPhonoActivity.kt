@@ -59,6 +59,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
 
             for (j in 0..1){
                 var button = Button(this)
+                button.textSize = 0f
                 button.text = list_elements[j+i*2]
                 button.layoutParams = button_param
                 button.setBackgroundColor(getColor(R.color.memoryDefault))
@@ -83,12 +84,14 @@ class MemoryPhonoActivity : AppCompatActivity() {
         else {
             buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memorySelected))
             //Thread.sleep(500)
-            if (selected[0] != selected[0] && buttonlist[selected[0]].text == buttonlist[selected[1]].text){
+            if (selected[0] != selected[1] && buttonlist[selected[0]].text == buttonlist[selected[1]].text){
                 Toast.makeText(this, "correct",Toast.LENGTH_LONG).show()
                 buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryValid))
                 buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryValid))
                 buttonlist[selected[0]].setOnClickListener(null)
                 buttonlist[selected[1]].setOnClickListener(null)
+                buttonlist[selected[0]].textSize = 20f
+                buttonlist[selected[1]].textSize = 20f
                 selected.clear()
 
                 nb_correct += 1

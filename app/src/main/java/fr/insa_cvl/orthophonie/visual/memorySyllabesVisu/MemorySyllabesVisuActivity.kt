@@ -55,6 +55,8 @@ class MemorySyllabesVisuActivity : AppCompatActivity() {
 
             for (j in 0..1){
                 var button = Button(this)
+                button.setAllCaps(false)
+                button.textSize = 20f
                 button.text = list_elements[j+i*2]
                 button.layoutParams = button_param
                 button.setBackgroundColor(getColor(R.color.memoryDefault))
@@ -79,7 +81,7 @@ class MemorySyllabesVisuActivity : AppCompatActivity() {
         else {
             buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memorySelected))
             //Thread.sleep(500)
-            if (selected[0] != selected[0] && buttonlist[selected[0]].text == buttonlist[selected[1]].text){
+            if (selected[0] != selected[1] && buttonlist[selected[0]].text == buttonlist[selected[1]].text){
                 Toast.makeText(this, "correct", Toast.LENGTH_LONG).show()
                 buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryValid))
                 buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryValid))
@@ -134,7 +136,7 @@ class MemorySyllabesVisuActivity : AppCompatActivity() {
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this, MemoryPhonoMenuActivity::class.java)
+            val intent = Intent(this, MemorySyllabesVisuMenuActivity::class.java)
             startActivity(intent)
             finish()
             true

@@ -10,6 +10,7 @@ import fr.insa_cvl.orthophonie.MainActivity
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity
 import fr.insa_cvl.orthophonie.phonology.memoryPhono.MemoryPhonoMenuActivity
+import fr.insa_cvl.orthophonie.visual.memorySyllabesVisu.MemorySyllabesVisuMenuActivity
 
 class VisualMenuActivity: AppCompatActivity() {
 
@@ -23,7 +24,7 @@ class VisualMenuActivity: AppCompatActivity() {
         )
 
         val activity_list = arrayOf(
-                MemoryPhonoMenuActivity::class.java,
+                MemorySyllabesVisuMenuActivity::class.java,
                 MainActivity::class.java
         )
 

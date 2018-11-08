@@ -5,7 +5,7 @@
     <color name="colorAccent">#3893e8</color>
     <color name="alertcolour">#ba160c</color>
 
-    <color name="memorySelected">#00E4F6</color>
+    <color name="memorySelected">#81D8D4</color>
     <color name="memoryValid">#C6CA53</color>
     <color name="memoryDefault">#c0c0bd</color>
     <color name="memoryError">#ba160c</color>

@@ -24,8 +24,8 @@ class MainActivity : AppCompatActivity() {
     private val main_menu_logo = arrayOf(
             R.drawable.arti,
             R.drawable.phono,
-            R.drawable.logovisu,
-            R.drawable.logovisu
+            R.drawable.visu,
+            R.drawable.memory
     )
 
     private val activity_list = arrayOf(

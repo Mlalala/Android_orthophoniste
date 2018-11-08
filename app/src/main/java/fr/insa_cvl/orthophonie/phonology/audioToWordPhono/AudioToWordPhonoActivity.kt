@@ -41,7 +41,7 @@ class AudioToWordPhonoActivity : AppCompatActivity(){
         display_phono(proposal!!, answer, databaseAccess)
 
         //Play audio one time
-        MediaPlayer.create(this, getResources().getIdentifier("audio"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie")).start()
+        MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie")).start()
 
     }
 
@@ -70,7 +70,7 @@ class AudioToWordPhonoActivity : AppCompatActivity(){
 
         audio_view.setOnClickListener {
             //Toast.makeText(this, "Play", Toast.LENGTH_LONG).show()
-            MediaPlayer.create(this, getResources().getIdentifier("audio" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "raw", "fr.insa_cvl.orthophonie")).start()
+            MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "raw", "fr.insa_cvl.orthophonie")).start()
         }
     }
 
@@ -99,7 +99,7 @@ class AudioToWordPhonoActivity : AppCompatActivity(){
                     //init proposals, answer and audio
                     init_serie_data(databaseAccess)
                     //Play audio one time
-                    MediaPlayer.create(this, getResources().getIdentifier("audio"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie")).start()
+                    MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie")).start()
                     //Change all the strings and audio of the current serie item
                     display_phono(proposal!!, answer, databaseAccess)
                 }
