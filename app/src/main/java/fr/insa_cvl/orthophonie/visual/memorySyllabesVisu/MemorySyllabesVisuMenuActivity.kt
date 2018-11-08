@@ -1,4 +1,6 @@
 package fr.insa_cvl.orthophonie.visual.memorySyllabesVisu
 
-class MemorySyllabesVisuMenuActivity {
+import android.support.v7.app.AppCompatActivity
+
+class MemorySyllabesVisuMenuActivity : AppCompatActivity() {
 }
