@@ -13,14 +13,19 @@ import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
 class Articulationlevel: AppCompatActivity() {
 
 
+    private var lettre : Int = 0
+
     private val level_list = arrayListOf<String>(
             "Initiale",
             "Médiane",
             "Final"
     )
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.articulation_layout)
+        lettre = intent.getIntExtra("EXTRA_POSITION",0)
 
         var adapter_simple : ArrayAdapter<String>? = null
 
