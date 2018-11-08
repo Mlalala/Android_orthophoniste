@@ -19,6 +19,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
 
     private var selected = ArrayList<Int>()
     private var buttonlist = ArrayList<Button>()
+    private var nb_correct = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,38 +37,68 @@ class MemoryPhonoActivity : AppCompatActivity() {
 
         // TODO : match screen
 
-        val row_param = TableRow.LayoutParams(
-                10,
-                10,
+        val row_param = TableLayout.LayoutParams(
+                TableLayout.LayoutParams.MATCH_PARENT,
+                TableLayout.LayoutParams.MATCH_PARENT,
                 1.0f
         )
 
         val button_param = TableRow.LayoutParams(
-                1,
-                1
+                TableRow.LayoutParams.MATCH_PARENT,
+                TableRow.LayoutParams.MATCH_PARENT
         )
+        button_param.setMargins(5,5,5,5)
 
         val table = findViewById<TableLayout>(R.id.memoryphonotable)
         for (i in 0..list_elements.size/2-1){
             var row = TableRow(this)
             row.gravity = Gravity.CENTER
             row.layoutParams = row_param
+            table.addView(row)
 
             for (j in 0..1){
                 var button = Button(this)
-                button.text = list_elements[i+j*(list_elements.size/2)]
-                //button.layoutParams = button_param
+                button.text = list_elements[j+i*2]
+                button.layoutParams = button_param
+                button.setBackgroundColor(getColor(R.color.memoryPhonoDefault))
                 row.addView(button)
+                buttonlist.add(button)
 
                 button.setOnClickListener(){
                     Toast.makeText(this, arrayListOf(i.toString(),j.toString()).toString(),Toast.LENGTH_LONG).show()
                     // TODO : play audio
-                    button.setBackgroundColor(getColor(R.color.memoryPhonoSelected))
+                    selected.add(j+i*2)
+                    click_process()
                 }
             }
-            table.addView(row)
         }
     }
+
+    fun click_process(){
+        if (selected.size == 1){
+            buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryPhonoSelected))
+        }
+        else {
+            buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryPhonoSelected))
+            //Thread.sleep(500)
+            if (buttonlist[selected[0]].text == buttonlist[selected[1]].text){
+                Toast.makeText(this, "correct",Toast.LENGTH_LONG).show()
+                buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryPhonoValid))
+                buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryPhonoValid))
+                selected.clear()
+            }
+            else {
+                Toast.makeText(this, "incorrect",Toast.LENGTH_LONG).show()
+                buttonlist[selected[0]].setBackgroundColor(getColor(R.color.alertcolour))
+                buttonlist[selected[1]].setBackgroundColor(getColor(R.color.alertcolour))
+                Thread.sleep(100)
+                buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryPhonoDefault))
+                buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryPhonoDefault))
+                selected.clear()
+            }
+        }
+    }
+
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {

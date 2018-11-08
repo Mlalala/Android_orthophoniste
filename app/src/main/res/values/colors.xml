@@ -7,5 +7,6 @@
 
     <color name="memoryPhonoSelected">#00E4F6</color>
     <color name="memoryPhonoValid">#C6CA53</color>
+    <color name="memoryPhonoDefault">#c0c0bd</color>
 
 </resources>
