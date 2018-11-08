@@ -40,6 +40,9 @@
         </activity>
 
         <activity android:label="niveau articulation" android:name=".articulation.Articulationlevel"></activity>
+        <activity android:label="niveau initial articulation" android:name=".articulation.initial_level"></activity>
+        <activity android:label="niveau median articulation" android:name=".articulation.mediane_level"></activity>
+        <activity android:label="niveau final articulation" android:name=".articulation.final_level"></activity>
 
         <!-- Visuel -->
         <activity android:label="@string/title_visu" android:name=".visual.VisualActivity">
