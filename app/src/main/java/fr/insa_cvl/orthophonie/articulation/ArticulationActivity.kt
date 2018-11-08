@@ -14,16 +14,16 @@ import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuAc
 class ArticulationActivity : AppCompatActivity(){
 
     private val articulation_list = arrayListOf<String>(
-            "LE B",
-            "LE CH",
-            "LE D",
-            "LE F",
-            "LE G",
-            "Le J",
-            "LE K",
-            "LE L",
-            "LES BL FL GL KL PL",
-            "LE M"
+            "B",
+            "CH",
+            "D",
+            "F",
+            "G",
+            "J",
+            "K",
+            "L",
+            "BL FL GL KL PL",
+            "M"
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class ArticulationActivity : AppCompatActivity(){
 
 
         val activity_list = arrayOf(
-                AudioToWordPhonoMenuActivity::class.java
+               Articulationlevel::class.java
         )
 
         val menu_title = arrayOf(

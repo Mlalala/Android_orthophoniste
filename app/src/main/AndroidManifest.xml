@@ -39,6 +39,8 @@
         <activity android:label="@string/title_arti" android:name=".articulation.ArticulationActivity">
         </activity>
 
+        <activity android:label="niveau articulation" android:name=".articulation.Articulationlevel"></activity>
+
         <!-- Visuel -->
         <activity android:label="@string/title_visu" android:name=".visual.VisualActivity">
         </activity>
