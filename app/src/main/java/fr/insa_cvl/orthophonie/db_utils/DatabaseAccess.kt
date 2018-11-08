@@ -33,6 +33,13 @@ private constructor(context: Context) {
         return cursor.getInt(0)
     }
 
+    fun articulation_letter(lettre : String): String{
+        val cursor = database!!.rawQuery("SELECT  Lettre From Articulation\n" +
+                "WHERE Lettre = " + lettre, null)
+
+        return lettre
+    }
+
     init {
         this.openHelper = DatabaseOpenHelper(context)
     }
