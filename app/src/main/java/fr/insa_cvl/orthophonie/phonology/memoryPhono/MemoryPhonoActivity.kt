@@ -2,6 +2,7 @@ package fr.insa_cvl.orthophonie.phonology.memoryPhono
 
 import android.app.AlertDialog
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Gravity
@@ -9,7 +10,6 @@ import android.view.KeyEvent
 import android.widget.Button
 import android.widget.TableLayout
 import android.widget.TableRow
-import android.widget.Toast
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
 
@@ -20,6 +20,8 @@ class MemoryPhonoActivity : AppCompatActivity() {
     private var buttonlist = ArrayList<Button>()
     private var nb_correct = 0
     private  var serie_size = 0
+
+    private val size_text = 18f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +36,6 @@ class MemoryPhonoActivity : AppCompatActivity() {
         serie_size = list_elements.size
         list_elements.addAll(list_elements)
         list_elements.shuffle()
-
-        Toast.makeText(this, list_elements.toString(),Toast.LENGTH_LONG).show()
 
         // TODO : match screen
 
@@ -60,6 +60,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
             for (j in 0..1){
                 var button = Button(this)
                 button.textSize = 0f
+                button.setAllCaps(false)
                 button.text = list_elements[j+i*2]
                 button.layoutParams = button_param
                 button.setBackgroundColor(getColor(R.color.memoryDefault))
@@ -67,8 +68,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
                 buttonlist.add(button)
 
                 button.setOnClickListener(){
-                    Toast.makeText(this, arrayListOf(i.toString(),j.toString()).toString(),Toast.LENGTH_LONG).show()
-                    // TODO : play audio
+                    MediaPlayer.create(this, getResources().getIdentifier("memoryphono" + button.text, "raw", "fr.insa_cvl.orthophonie")).start()
                     selected.add(j+i*2)
                     click_process()
                 }
@@ -83,15 +83,13 @@ class MemoryPhonoActivity : AppCompatActivity() {
         }
         else {
             buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memorySelected))
-            //Thread.sleep(500)
             if (selected[0] != selected[1] && buttonlist[selected[0]].text == buttonlist[selected[1]].text){
-                Toast.makeText(this, "correct",Toast.LENGTH_LONG).show()
                 buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryValid))
                 buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryValid))
                 buttonlist[selected[0]].setOnClickListener(null)
                 buttonlist[selected[1]].setOnClickListener(null)
-                buttonlist[selected[0]].textSize = 20f
-                buttonlist[selected[1]].textSize = 20f
+                buttonlist[selected[0]].textSize = size_text
+                buttonlist[selected[1]].textSize = size_text
                 selected.clear()
 
                 nb_correct += 1
@@ -100,14 +98,11 @@ class MemoryPhonoActivity : AppCompatActivity() {
                 }
             }
             else {
-                Toast.makeText(this, "incorrect", Toast.LENGTH_LONG).show()
-
                 this@MemoryPhonoActivity.buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryError))
                 this@MemoryPhonoActivity.buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryError))
 
                 Thread(Runnable {
                     this@MemoryPhonoActivity.runOnUiThread(java.lang.Runnable {
-                        Toast.makeText(this, "in THREAD",Toast.LENGTH_LONG).show()
                         Thread.sleep(750)
                         this@MemoryPhonoActivity.buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryDefault))
                         this@MemoryPhonoActivity.buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryDefault))
@@ -123,6 +118,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
 
     fun manageItem() {
         val builder = AlertDialog.Builder(this)
+        builder.setCancelable(false)
         val inflater = this.layoutInflater
         val dialogView = inflater.inflate(R.layout.alert_phonology_layout, null)
 
