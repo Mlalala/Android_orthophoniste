@@ -32,10 +32,6 @@ class MemorySyllabesVisuActivity : AppCompatActivity() {
         list_elements.addAll(list_elements)
         list_elements.shuffle()
 
-        //Toast.makeText(this, list_elements.toString(), Toast.LENGTH_LONG).show()
-
-        // TODO : match screen
-
         val row_param = TableLayout.LayoutParams(
                 TableLayout.LayoutParams.MATCH_PARENT,
                 TableLayout.LayoutParams.MATCH_PARENT,
@@ -65,8 +61,6 @@ class MemorySyllabesVisuActivity : AppCompatActivity() {
                 buttonlist.add(button)
 
                 button.setOnClickListener(){
-                    //Toast.makeText(this, arrayListOf(i.toString(),j.toString()).toString(), Toast.LENGTH_LONG).show()
-                    // TODO : play audio
                     selected.add(j+i*2)
                     click_process()
                 }
@@ -85,7 +79,6 @@ class MemorySyllabesVisuActivity : AppCompatActivity() {
             buttonlist[selected[1]].textSize = size_text
 
             if (selected[0] != selected[1] && buttonlist[selected[0]].text == buttonlist[selected[1]].text){
-                //Toast.makeText(this, "correct", Toast.LENGTH_LONG).show()
                 buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryValid))
                 buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryValid))
                 buttonlist[selected[0]].setOnClickListener(null)
@@ -98,14 +91,11 @@ class MemorySyllabesVisuActivity : AppCompatActivity() {
                 }
             }
             else {
-                //Toast.makeText(this, "incorrect", Toast.LENGTH_LONG).show()
-
                 this@MemorySyllabesVisuActivity.buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryError))
                 this@MemorySyllabesVisuActivity.buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryError))
 
                 Thread(Runnable {
                     this@MemorySyllabesVisuActivity.runOnUiThread(java.lang.Runnable {
-                        //Toast.makeText(this, "in THREAD", Toast.LENGTH_LONG).show()
                         Thread.sleep(750)
                         this@MemorySyllabesVisuActivity.buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryDefault))
                         this@MemorySyllabesVisuActivity.buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryDefault))
@@ -114,10 +104,7 @@ class MemorySyllabesVisuActivity : AppCompatActivity() {
                         this@MemorySyllabesVisuActivity.selected.clear()
                     })
                 }).start()
-
-
             }
-
         }
     }
 
