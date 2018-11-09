@@ -10,10 +10,10 @@
 
     <!-- Phonology titles -->
     <string name="title_MemoryPhono">Trouver les paires de son (syllabes)</string>
-    <string name="title_AudioToWordPhono">Du mot au son</string>
+    <string name="title_AudioToWordPhono">Du son au mot</string>
     <string name="title_PictureToPhonemePhono">De l\'image au phoneme</string>
     <string name="title_WordToRhymePhono"></string>
-    <string name="title_AudioToSyllablePositionPhono">Du son au mot</string>
+    <string name="title_AudioToSyllablePositionPhono">Trouver position phoneme</string>
 
     <!-- Memory titles -->
     <string name="SymbolsMemo">Ecouter puis remetre les mots dans l\'ordre</string>

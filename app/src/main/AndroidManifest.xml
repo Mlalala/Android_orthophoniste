@@ -33,6 +33,11 @@
         <activity android:label="@string/title_MemoryPhono" android:name=".phonology.memoryPhono.MemoryPhonoMenuActivity">
         </activity>
 
+        <activity android:label="@string/title_PictureToPhonemePhono" android:name=".phonology.pictureToPhonemePhono.PictureToPhonemePhonoActivity">
+        </activity>
+        <activity android:label="@string/title_PictureToPhonemePhono" android:name=".phonology.pictureToPhonemePhono.PictureToPhonemePhonoMenuActivity">
+        </activity>
+
 
 
         <!-- Articulation -->

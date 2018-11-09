@@ -19,6 +19,44 @@ private constructor(context: Context) {
 
     //// PHONOLOGIE ////
 
+        // PictureToPhonemePhono
+
+    fun get_Menu_PictureToPhonemePhono(): ArrayList<String>{
+        var list = ArrayList<String>()
+        val cursor = database!!.rawQuery("SELECT serie,name FROM PictureToPhonemeMenuPhono",null)
+        cursor.moveToFirst()
+        while (!cursor.isAfterLast()) {
+            list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
+            cursor.moveToNext()
+        }
+        cursor.close()
+        return list
+    }
+
+    fun get_proposals_PictureToPhonemePhono(num_serie : Int): List<String>{
+        val cursor = database!!.rawQuery("SELECT proposals FROM PictureToPhonemeMenuPhono WHERE serie = " + num_serie.toString(),null)
+        cursor.moveToFirst()
+        var list = cursor.getString(0).split(",")
+        cursor.close()
+        return list
+    }
+
+    fun get_answer_PictureToPhonemePhono(num_serie : Int, No : Int): Int{
+        val cursor = database!!.rawQuery("SELECT answer FROM PictureToPhonemePhono WHERE serie = " + num_serie.toString() + " AND No = " + No.toString() ,null)
+        cursor.moveToFirst()
+        var answer = cursor.getInt(0)
+        cursor.close()
+        return answer
+    }
+
+    fun count_PictureToPhonemePhono(num_serie : Int):Int{
+        val cursor = database!!.rawQuery("SELECT COUNT(No)\n" +
+                "FROM PictureToPhonemePhono\n" +
+                "WHERE serie = " + num_serie.toString(),null)
+        cursor.moveToFirst()
+        return cursor.getInt(0)
+    }
+
         // AudioToWordPhono
 
     fun get_Menu_AudioToWordPhono(): ArrayList<String>{
@@ -112,8 +150,6 @@ private constructor(context: Context) {
 
         return lettre
     }
-
-
 
 
     fun open() {

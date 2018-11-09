@@ -6,9 +6,9 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import fr.insa_cvl.orthophonie.MainActivity
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
+import fr.insa_cvl.orthophonie.visual.VisualMenuActivity
 
 class MemorySyllabesVisuMenuActivity : AppCompatActivity() {
     private var adapter_simple : ArrayAdapter<String>? = null
@@ -39,7 +39,7 @@ class MemorySyllabesVisuMenuActivity : AppCompatActivity() {
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, VisualMenuActivity::class.java)
             startActivity(intent)
             finish()
             true

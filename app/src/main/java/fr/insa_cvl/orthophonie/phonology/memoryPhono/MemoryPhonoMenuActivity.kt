@@ -9,6 +9,7 @@ import android.widget.ListView
 import fr.insa_cvl.orthophonie.MainActivity
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
+import fr.insa_cvl.orthophonie.phonology.PhonologyMenuActivity
 
 
 class MemoryPhonoMenuActivity : AppCompatActivity() {
@@ -44,7 +45,7 @@ class MemoryPhonoMenuActivity : AppCompatActivity() {
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, PhonologyMenuActivity::class.java)
             startActivity(intent)
             finish()
             true
