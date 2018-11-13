@@ -12,7 +12,6 @@ import android.widget.TextView
 import android.widget.Toast
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
-import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity
 
 class PictureToPhonemePhonoActivity : AppCompatActivity(){
 
@@ -29,6 +28,8 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
     private  var picturePlayer : ImageView? = null
     private var button1 : Button? = null
     private var button2 : Button? = null
+
+    private var media : MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,10 +60,14 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
         button1!!.text = proposals!!.get(0)
         button2!!.text = proposals!!.get(1)
 
-        MediaPlayer.create(this, getResources().getIdentifier("picturetophonemephono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie")).start()
+        media?.reset()
+        media = MediaPlayer.create(this, getResources().getIdentifier("picturetophonemephono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie"))
+        media!!.start()
 
         picturePlayer!!.setOnClickListener{
+            media?.reset()
             MediaPlayer.create(this, getResources().getIdentifier("picturetophonemephono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie")).start()
+            media!!.start()
         }
 
         button1!!.setOnClickListener {
@@ -105,7 +110,6 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
                     index_in_serie += 1
                     answer = databaseAccess.get_answer_PictureToPhonemePhono(index_serie+1, index_in_serie+1)
                     display(databaseAccess)
-
                 }
             }
             else {
@@ -117,7 +121,6 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
                 }
             }
         }
-
         // Create the AlertDialog
         val dialog = builder.create()
         dialog.show()

@@ -5,7 +5,7 @@
 Phonologie :
 	- MemoryPhono	Simon ok
 	- AudioToWordPhono	Simon ok 
-	- PictureToPhonemePhono	Simon
+	- PictureToPhonemePhono	Simon ok
 	- WordToRhymePhono	Maxime
 	- AudioToSyllablePositionPhono	Maxime
 

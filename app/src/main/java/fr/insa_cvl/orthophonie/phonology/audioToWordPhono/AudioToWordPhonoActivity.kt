@@ -19,6 +19,8 @@ class AudioToWordPhonoActivity : AppCompatActivity(){
     private var proposal : List<String>? = null
     private var answer : Int = 0
 
+    private var media : MediaPlayer? = null
+
     private var length_serie : Int = 0
 
 
@@ -41,8 +43,9 @@ class AudioToWordPhonoActivity : AppCompatActivity(){
         display_phono(proposal!!, answer, databaseAccess)
 
         //Play audio one time
-        MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie")).start()
-
+        media?.reset()
+        media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie"))
+        media!!.start()
     }
 
     fun init_serie_data(databaseAccess : DatabaseAccess){
@@ -70,7 +73,9 @@ class AudioToWordPhonoActivity : AppCompatActivity(){
 
         audio_view.setOnClickListener {
             //Toast.makeText(this, "Play", Toast.LENGTH_LONG).show()
-            MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "raw", "fr.insa_cvl.orthophonie")).start()
+            media?.reset()
+            media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "raw", "fr.insa_cvl.orthophonie"))
+            media!!.start()
         }
     }
 
@@ -101,7 +106,9 @@ class AudioToWordPhonoActivity : AppCompatActivity(){
                     //init proposals, answer and audio
                     init_serie_data(databaseAccess)
                     //Play audio one time
-                    MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie")).start()
+                    media?.reset()
+                    media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie"))
+                    media!!.start()
                     //Change all the strings and audio of the current serie item
                     display_phono(proposal!!, answer, databaseAccess)
                 }

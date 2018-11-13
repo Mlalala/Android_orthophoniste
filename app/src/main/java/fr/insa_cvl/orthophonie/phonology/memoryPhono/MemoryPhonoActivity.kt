@@ -21,6 +21,8 @@ class MemoryPhonoActivity : AppCompatActivity() {
     private var nb_correct = 0
     private  var serie_size = 0
 
+    private var media : MediaPlayer? = null
+
     private val size_text = 18f
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,11 +70,9 @@ class MemoryPhonoActivity : AppCompatActivity() {
                 buttonlist.add(button)
 
                 button.setOnClickListener(){
-                    Thread(Runnable {
-                        this@MemoryPhonoActivity.runOnUiThread(java.lang.Runnable {
-                            MediaPlayer.create(this, getResources().getIdentifier("memoryphono" + button.text.toString().toLowerCase(), "raw", "fr.insa_cvl.orthophonie")).start()
-                        })
-                    }).start()
+                    media?.reset()
+                    media = MediaPlayer.create(this, getResources().getIdentifier("memoryphono" + button.text.toString().toLowerCase(), "raw", "fr.insa_cvl.orthophonie"))
+                    media!!.start()
                     selected.add(j+i*2)
                     click_process()
                 }
