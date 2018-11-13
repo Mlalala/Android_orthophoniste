@@ -68,7 +68,11 @@ class MemoryPhonoActivity : AppCompatActivity() {
                 buttonlist.add(button)
 
                 button.setOnClickListener(){
-                    MediaPlayer.create(this, getResources().getIdentifier("memoryphono" + button.text, "raw", "fr.insa_cvl.orthophonie")).start()
+                    Thread(Runnable {
+                        this@MemoryPhonoActivity.runOnUiThread(java.lang.Runnable {
+                            MediaPlayer.create(this, getResources().getIdentifier("memoryphono" + button.text.toString().toLowerCase(), "raw", "fr.insa_cvl.orthophonie")).start()
+                        })
+                    }).start()
                     selected.add(j+i*2)
                     click_process()
                 }
