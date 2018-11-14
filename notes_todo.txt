@@ -19,4 +19,4 @@ Mémoire et attention :
 
 Visuel :
 	- MemorySyllablesVisu	Simon ok
-	- SearchSyllableVisu	Simon
+	- SearchSyllableVisu	Simon ok

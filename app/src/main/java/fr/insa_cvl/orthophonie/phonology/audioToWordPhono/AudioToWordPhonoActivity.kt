@@ -92,7 +92,7 @@ class AudioToWordPhonoActivity : AppCompatActivity(){
         val builder = AlertDialog.Builder(this)
 
         val inflater = this.layoutInflater
-        val dialogView = inflater.inflate(R.layout.alert_phonology_layout, null)
+        val dialogView = inflater.inflate(R.layout.alert_layout, null)
 
         builder.setTitle(title).setView(dialogView)
 
@@ -114,6 +114,7 @@ class AudioToWordPhonoActivity : AppCompatActivity(){
                 }
             }
             else {
+                builder.setCancelable(false)
                 builder.setPositiveButton("Revenir au menu") { dialog, id ->
                     val intent = Intent(this, AudioToWordPhonoMenuActivity::class.java)
                     databaseAccess.close()

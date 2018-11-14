@@ -20,7 +20,7 @@ class MemorySyllabesVisuActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.memory_game_layout)
+        setContentView(R.layout.table_layout)
 
         val index_serie = intent.getIntExtra("EXTRA_POSITION",0)
 
@@ -113,7 +113,7 @@ class MemorySyllabesVisuActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setCancelable(false)
         val inflater = this.layoutInflater
-        val dialogView = inflater.inflate(R.layout.alert_phonology_layout, null)
+        val dialogView = inflater.inflate(R.layout.alert_layout, null)
 
         builder.setTitle("BRAVO !").setView(dialogView)
 

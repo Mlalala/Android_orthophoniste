@@ -20,48 +20,38 @@
         </activity>
 
         <!-- Phonology -->
-        <activity android:label="@string/title_phono" android:name=".phonology.PhonologyMenuActivity">
-        </activity>
+        <activity android:label="@string/title_phono" android:name=".phonology.PhonologyMenuActivity"></activity>
 
-        <activity android:label="@string/title_AudioToWordPhono" android:name=".phonology.audioToWordPhono.AudioToWordPhonoActivity">
-        </activity>
-        <activity android:label="@string/title_AudioToWordPhono" android:name=".phonology.audioToWordPhono.AudioToWordPhonoMenuActivity">
-        </activity>
+        <activity android:label="@string/title_AudioToWordPhono" android:name=".phonology.audioToWordPhono.AudioToWordPhonoActivity"></activity>
+        <activity android:label="@string/title_AudioToWordPhono" android:name=".phonology.audioToWordPhono.AudioToWordPhonoMenuActivity"></activity>
 
-        <activity android:label="@string/title_MemoryPhono" android:name=".phonology.memoryPhono.MemoryPhonoActivity">
-        </activity>
-        <activity android:label="@string/title_MemoryPhono" android:name=".phonology.memoryPhono.MemoryPhonoMenuActivity">
-        </activity>
+        <activity android:label="@string/title_MemoryPhono" android:name=".phonology.memoryPhono.MemoryPhonoActivity"></activity>
+        <activity android:label="@string/title_MemoryPhono" android:name=".phonology.memoryPhono.MemoryPhonoMenuActivity"></activity>
 
-        <activity android:label="@string/title_PictureToPhonemePhono" android:name=".phonology.pictureToPhonemePhono.PictureToPhonemePhonoActivity">
-        </activity>
-        <activity android:label="@string/title_PictureToPhonemePhono" android:name=".phonology.pictureToPhonemePhono.PictureToPhonemePhonoMenuActivity">
-        </activity>
+        <activity android:label="@string/title_PictureToPhonemePhono" android:name=".phonology.pictureToPhonemePhono.PictureToPhonemePhonoActivity"></activity>
+        <activity android:label="@string/title_PictureToPhonemePhono" android:name=".phonology.pictureToPhonemePhono.PictureToPhonemePhonoMenuActivity"></activity>
 
 
 
         <!-- Articulation -->
-        <activity android:label="@string/title_arti" android:name=".articulation.DescriptionArtiActivity">
-        </activity>
+        <activity android:label="@string/title_arti" android:name=".articulation.DescriptionArtiActivity"></activity>
 
         <activity android:label="niveau articulation" android:name=".articulation.DescriptionArtiLevel"></activity>
         <activity android:label="niveau initial articulation" android:name=".articulation.DescriptionArtiInitiallevel"></activity>
         <activity android:label="niveau median articulation" android:name=".articulation.DescriptionArtiMedianelevel"></activity>
         <activity android:label="niveau final articulation" android:name=".articulation.DescriptionArtiFinallevel"></activity>
 
-        <!-- Visuel -->
-        <activity android:label="@string/title_visu" android:name=".visual.VisualMenuActivity">
-        </activity>
+        <!-- Visual -->
+        <activity android:label="@string/title_visu" android:name=".visual.VisualMenuActivity"></activity>
 
-        <activity android:label="@string/MemorySyllablesVisu" android:name=".visual.memorySyllabesVisu.MemorySyllabesVisuActivity">
-        </activity>
-        <activity android:label="@string/MemorySyllablesVisu" android:name=".visual.memorySyllabesVisu.MemorySyllabesVisuMenuActivity">
-        </activity>
+        <activity android:label="@string/MemorySyllablesVisu" android:name=".visual.memorySyllabesVisu.MemorySyllabesVisuActivity"></activity>
+        <activity android:label="@string/MemorySyllablesVisu" android:name=".visual.memorySyllabesVisu.MemorySyllabesVisuMenuActivity"></activity>
 
+        <activity android:label="@string/SearchSyllableVisu" android:name=".visual.searchSyllableVisu.SearchSyllableVisuActivity"></activity>
+        <activity android:label="@string/SearchSyllableVisu" android:name=".visual.searchSyllableVisu.SearchSyllableVisuMenuActivity"></activity>
 
         <!-- Memory -->
-        <activity android:label="@string/title_memo" android:name=".memory.MemoryMenuActivity">
-        </activity>
+        <activity android:label="@string/title_memo" android:name=".memory.MemoryMenuActivity"></activity>
 
 
     </application>

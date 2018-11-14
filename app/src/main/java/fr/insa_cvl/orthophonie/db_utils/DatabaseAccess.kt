@@ -142,6 +142,40 @@ private constructor(context: Context) {
         return list
     }
 
+        // SearchSyllableVisu
+
+    fun get_Menu_SearchSyllableVisu(): ArrayList<String>{
+        var list = ArrayList<String>()
+        val cursor = database!!.rawQuery("SELECT serie,name FROM SearchSyllableVisu",null)
+        cursor.moveToFirst()
+        while (!cursor.isAfterLast()) {
+            list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
+            cursor.moveToNext()
+        }
+        cursor.close()
+        return list
+    }
+
+    fun get_SearchSyllableVisu(num_serie : Int): ArrayList<String>{
+        val cursor = database!!.rawQuery("SELECT syllables FROM SearchSyllableVisu WHERE serie = " + num_serie.toString(), null)
+        cursor.moveToFirst()
+        val list = ArrayList((cursor.getString(0)).split(","))
+
+        cursor.close()
+
+        return list
+    }
+
+    fun get_Answers_SearchSyllableVisu(num_serie : Int): ArrayList<String>{
+        val cursor = database!!.rawQuery("SELECT answers FROM SearchSyllableVisu WHERE serie = " + num_serie.toString(), null)
+        cursor.moveToFirst()
+        val list = ArrayList((cursor.getString(0)).split(","))
+
+        cursor.close()
+
+        return list
+    }
+
     //// ARTICULATION ////
 
     fun articulation_letter(lettre : String): String{

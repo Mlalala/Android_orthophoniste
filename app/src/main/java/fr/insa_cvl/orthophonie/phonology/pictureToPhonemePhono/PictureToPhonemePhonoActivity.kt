@@ -9,7 +9,6 @@ import android.view.KeyEvent
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
 
@@ -97,10 +96,9 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
         val builder = AlertDialog.Builder(this)
 
         val inflater = this.layoutInflater
-        val dialogView = inflater.inflate(R.layout.alert_phonology_layout, null)
+        val dialogView = inflater.inflate(R.layout.alert_layout, null)
 
         builder.setTitle(title).setView(dialogView)
-
 
         // Add the buttons
         if (title == "CORRECT !"){
@@ -113,6 +111,7 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
                 }
             }
             else {
+                builder.setCancelable(false)
                 builder.setPositiveButton("Revenir au menu") { dialog, id ->
                     val intent = Intent(this, PictureToPhonemePhonoMenuActivity::class.java)
                     databaseAccess.close()
