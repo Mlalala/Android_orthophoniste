@@ -8,11 +8,12 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
-import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoActivity
 
-class DescriptionArtiLevel: AppCompatActivity() {
+class DescriptionArtiSerie: AppCompatActivity() {
 
-    private var adapter_simple : ArrayAdapter<String>? = null
+    private var adapter_simple: ArrayAdapter<String>? = null
+    private var lettre_b: String="B"
+    private var serie_1: String="1"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,23 +21,21 @@ class DescriptionArtiLevel: AppCompatActivity() {
 
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        var articulation_level = databaseAccess.get_Articulation_level()
+        var articulation_level = databaseAccess.get_Articulation_mot(lettre_b,serie_1)
 
 
-        adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,articulation_level)
+        adapter_simple = ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, articulation_level)
         var listview = findViewById(R.id.list_menu) as ListView
         listview.adapter = adapter_simple
 
 
         listview.setOnItemClickListener { parent, view, position, id ->
             //Toast.makeText(this, "Position Clicked:"+" "+position, Toast.LENGTH_LONG).show()
-            var intent = Intent(this, DescriptionArtiSerie::class.java)
-            intent.putExtra("EXTRA_POSITION",position)
+            var intent = Intent(this, DescriptionArtiLevel::class.java)
+            intent.putExtra("EXTRA_POSITION", position)
             startActivity(intent)
             finish()
         }
-
-
 
 
     }
@@ -50,15 +49,5 @@ class DescriptionArtiLevel: AppCompatActivity() {
         } else super.onKeyDown(keyCode, event)
 
 
-
-
-
-
     }
-
-
-
-
-
-
 }

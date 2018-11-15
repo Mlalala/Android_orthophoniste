@@ -209,6 +209,21 @@ private constructor(context: Context) {
         return list
     }
 
+    fun get_Articulation_mot(lettre : String, serie : String):ArrayList<String>{
+        var list = ArrayList<String>()
+        val cursor = database!!.rawQuery("SELECT name FROM DescriptionArtiObjet WHERE lettre = " + "'" + lettre + "'" + "AND serie= "+ serie, null)
+        cursor.moveToFirst()
+        while (!cursor.isAfterLast()) {
+            list.add(" " + cursor.getString(0))
+            cursor.moveToNext()
+        }
+
+        cursor.close()
+
+        return list
+
+    }
+
 
     fun open() {
         this.database = openHelper.writableDatabase
