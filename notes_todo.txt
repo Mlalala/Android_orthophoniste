@@ -1,6 +1,6 @@
 ### Modules de l'application ###
 
-3/10
+5/10
 
 Phonologie :
 	- MemoryPhono	Simon ok

@@ -42,7 +42,8 @@
             android:layout_height="wrap_content"
             android:textSize="25dp"
             android:layout_margin="5dp"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            android:background="@color/memoryDefault"/>
 
         <Button
             android:id="@+id/PictureToPhoneme_button2"
@@ -50,7 +51,8 @@
             android:layout_height="wrap_content"
             android:textSize="25dp"
             android:layout_margin="5dp"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            android:background="@color/memoryDefault"/>
 
     </LinearLayout>
 </LinearLayout>

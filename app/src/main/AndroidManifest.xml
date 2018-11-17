@@ -44,11 +44,11 @@
         <!-- Visual -->
         <activity android:label="@string/title_visu" android:name=".visual.VisualMenuActivity"></activity>
 
-        <activity android:label="@string/MemorySyllablesVisu" android:name=".visual.memorySyllabesVisu.MemorySyllabesVisuActivity"></activity>
-        <activity android:label="@string/MemorySyllablesVisu" android:name=".visual.memorySyllabesVisu.MemorySyllabesVisuMenuActivity"></activity>
+        <activity android:label="@string/title_MemorySyllablesVisu" android:name=".visual.memorySyllabesVisu.MemorySyllabesVisuActivity"></activity>
+        <activity android:label="@string/title_MemorySyllablesVisu" android:name=".visual.memorySyllabesVisu.MemorySyllabesVisuMenuActivity"></activity>
 
-        <activity android:label="@string/SearchSyllableVisu" android:name=".visual.searchSyllableVisu.SearchSyllableVisuActivity"></activity>
-        <activity android:label="@string/SearchSyllableVisu" android:name=".visual.searchSyllableVisu.SearchSyllableVisuMenuActivity"></activity>
+        <activity android:label="@string/title_SearchSyllableVisu" android:name=".visual.searchSyllableVisu.SearchSyllableVisuActivity"></activity>
+        <activity android:label="@string/title_SearchSyllableVisu" android:name=".visual.searchSyllableVisu.SearchSyllableVisuMenuActivity"></activity>
 
         <!-- Memory -->
         <activity android:label="@string/title_memo" android:name=".memory.MemoryMenuActivity"></activity>
