@@ -7,45 +7,35 @@ import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import fr.insa_cvl.orthophonie.R
-
+import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
+import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoActivity
 
 class DescriptionArtiLevel: AppCompatActivity() {
 
-
-    private var lettre : Int = 0
-
-    private val level_list = arrayListOf<String>(
-            "Initiale",
-            "Médiane",
-            "Final"
-    )
-
+    private var adapter_simple : ArrayAdapter<String>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.articulation_layout)
-        //lettre = intent.getIntExtra("EXTRA_POSITION",0)
+        setContentView(R.layout.simple_list_layout)
 
-        val choice_list = arrayOf(
-                DescriptionArtiInitiallevel::class.java,
-                DescriptionArtiMedianelevel::class.java,
-                DescriptionArtiFinallevel::class.java
-        )
+        var databaseAccess = DatabaseAccess.getInstance(this)
+        databaseAccess.open()
+        var articulation_level = databaseAccess.get_Articulation_level()
 
-        var adapter_simple : ArrayAdapter<String>? = null
 
-        adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,level_list)
-        var listview = findViewById(R.id.articulation_menu) as ListView
+        adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,articulation_level)
+        var listview = findViewById(R.id.list_menu) as ListView
         listview.adapter = adapter_simple
 
 
-
         listview.setOnItemClickListener { parent, view, position, id ->
-            var intent = Intent(this, choice_list[position])
+            //Toast.makeText(this, "Position Clicked:"+" "+position, Toast.LENGTH_LONG).show()
+            var intent = Intent(this, DescriptionArtiSerie::class.java)
             intent.putExtra("EXTRA_POSITION",position)
             startActivity(intent)
             finish()
-            }
+        }
+
 
 
 
