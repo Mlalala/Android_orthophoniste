@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#87a8ee</color>
-    <color name="colorPrimaryDark">#6c86be</color>
-    <color name="colorAccent">#3893e8</color>
-    <color name="alertcolour">#ba160c</color>
+    <color name="colorPrimary">#ff8c42</color>
+    <color name="colorPrimaryDark">#ff8c42</color>
 
-    <color name="memorySelected">#81D8D4</color>
-    <color name="memoryValid">#C6CA53</color>
-    <color name="memoryDefault">#c0c0bd</color>
-    <color name="memoryError">#ff1919</color>
+    <color name="colorAccent">#f96866</color>
 
-    <color name="backgroud">#f4f6fd</color>
+    <color name="memorySelected">#77c2ea</color>
+    <color name="memoryValid">#c8efa0</color>
+    <color name="memoryDefault">#acaeaf</color>
+    <color name="memoryError">#f96866</color>
+
+    <color name="backgroud">#ffffff</color>
 
 </resources>
