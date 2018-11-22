@@ -124,6 +124,7 @@ class MemorySyllabesVisuActivity : AppCompatActivity() {
         builder.setPositiveButton("Revenir au menu") { dialog, id ->
             val intent = Intent(this, MemorySyllabesVisuMenuActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         // Create the AlertDialog

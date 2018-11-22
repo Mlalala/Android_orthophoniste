@@ -42,8 +42,6 @@ class MemoryPhonoActivity : AppCompatActivity() {
         list_elements.addAll(list_elements)
         list_elements.shuffle()
 
-        // TODO : match screen
-
         val row_param = TableLayout.LayoutParams(
                 TableLayout.LayoutParams.MATCH_PARENT,
                 TableLayout.LayoutParams.MATCH_PARENT,
@@ -113,7 +111,6 @@ class MemoryPhonoActivity : AppCompatActivity() {
                         Thread.sleep(750)
                         this@MemoryPhonoActivity.buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryDefault))
                         this@MemoryPhonoActivity.buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryDefault))
-
                         this@MemoryPhonoActivity.selected.clear()
                     })
                 }).start()
@@ -131,13 +128,12 @@ class MemoryPhonoActivity : AppCompatActivity() {
 
         builder.setTitle("BRAVO !").setView(dialogView)
 
-        // Add the button
         builder.setPositiveButton("Revenir au menu") { dialog, id ->
             val intent = Intent(this, MemoryPhonoMenuActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
-        // Create the AlertDialog
         val dialog = builder.create()
         dialog.show()
     }
