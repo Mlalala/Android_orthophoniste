@@ -37,14 +37,17 @@
         <activity android:label="@string/title_PictureToPhonemePhono" android:name=".phonology.pictureToPhonemePhono.PictureToPhonemePhonoActivity" android:screenOrientation="portrait"></activity>
         <activity android:label="@string/title_PictureToPhonemePhono" android:name=".phonology.pictureToPhonemePhono.PictureToPhonemePhonoMenuActivity" android:screenOrientation="portrait"></activity>
 
+        <activity android:label="@string/title_AudioToRhyme" android:name=".phonology.audioToRhymePhono.AudioToRhymeMenuActivity" android:screenOrientation="portrait"></activity>
+        <activity android:label="@string/title_AudioToRhyme" android:name=".phonology.audioToRhymePhono.AudioToRhymeActivity" android:screenOrientation="portrait"></activity>
+
 
 
         <!-- Articulation -->
         <activity android:label="@string/title_arti" android:name=".articulation.DescriptionArtiActivity" android:screenOrientation="portrait"></activity>
 
-        <activity android:label="niveau articulation" android:name=".articulation.DescriptionArtiLevel" android:screenOrientation="portrait"></activity>
+        <activity android:label="@string/title_ArticulationLevel" android:name=".articulation.DescriptionArtiLevel" android:screenOrientation="portrait"></activity>
 
-        <activity android:label="série articulation" android:name=".articulation.DescriptionArtiSerie" android:screenOrientation="portrait"></activity>
+        <activity android:label="@string/title_ArticulationSerie" android:name=".articulation.DescriptionArtiSerie" android:screenOrientation="portrait"></activity>
 
         <!-- Visual -->
         <activity android:label="@string/title_visu" android:name=".visual.VisualMenuActivity" android:screenOrientation="portrait"></activity>

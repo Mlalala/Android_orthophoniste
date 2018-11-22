@@ -12,6 +12,7 @@ import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity
 import fr.insa_cvl.orthophonie.phonology.memoryPhono.MemoryPhonoMenuActivity
 import fr.insa_cvl.orthophonie.phonology.pictureToPhonemePhono.PictureToPhonemePhonoMenuActivity
+import fr.insa_cvl.orthophonie.phonology.audioToRhymePhono.AudioToRhymeMenuActivity
 
 class PhonologyMenuActivity : AppCompatActivity() {
 
@@ -24,13 +25,15 @@ class PhonologyMenuActivity : AppCompatActivity() {
         val menu_title = arrayOf(
                 getString(R.string.title_AudioToWordPhono),
                 getString(R.string.title_MemoryPhono),
-                getString(R.string.title_PictureToPhonemePhono)
+                getString(R.string.title_PictureToPhonemePhono),
+                getString(R.string.title_AudioToRhyme)
         )
 
         val activity_list = arrayOf(
                 AudioToWordPhonoMenuActivity::class.java,
                 MemoryPhonoMenuActivity::class.java,
-                PictureToPhonemePhonoMenuActivity::class.java
+                PictureToPhonemePhonoMenuActivity::class.java,
+                AudioToRhymeMenuActivity::class.java
         )
 
         var adapter_simple : ArrayAdapter<String>? = null
