@@ -160,8 +160,8 @@ class MemoryPhonoActivity : AppCompatActivity() {
 
         builder.setTitle(title).setView(dialogView)
         builder.setMessage(text)
-        builder.setPositiveButton("Suggestion") { dialog, id ->
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "lamontagnettestudio@gmail.com"))
+        builder.setPositiveButton(getString(R.string.suggestion)) { dialog, id ->
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + getString(R.string.email)))
             intent.putExtra(Intent.EXTRA_SUBJECT, "Suggestion pour l'activitée " + getString(R.string.title_MemoryPhono) +" de l'Application Android Orthophonie")
             startActivity(intent)
         }

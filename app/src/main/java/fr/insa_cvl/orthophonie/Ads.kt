@@ -11,7 +11,7 @@ class Ads {
     var mAdView : AdView
 
     constructor(ac : Activity) {
-        MobileAds.initialize(ac, "ca-app-pub-1209988960443824~4847019926")
+        MobileAds.initialize(ac, ac.getString(R.string.ad_app_id))
 
         mAdView = ac.findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
