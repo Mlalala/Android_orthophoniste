@@ -6,7 +6,7 @@ Phonologie :
 	- MemoryPhono	Simon ok
 	- AudioToWordPhono	Simon ok 
 	- PictureToPhonemePhono	Simon ok
-	- AudioToRhymePhono	Maxime
+	- AudioToRhymePhono	Maxime ok (manque fichier audio)
 	- AudioToSyllablePositionPhono	Maxime
 
 Articulation :
