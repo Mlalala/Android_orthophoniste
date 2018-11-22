@@ -129,6 +129,24 @@ private constructor(context: Context) {
             return list
         }
 
+    fun count_AudioToRhyme(num_serie : Int):Int{
+        val cursor = database!!.rawQuery("SELECT num FROM AudioToRhyme WHERE serie = " + num_serie.toString(),null)
+        cursor.moveToFirst()
+        return cursor.getInt(0)
+    }
+
+    fun get_AudioToRhyme(num_serie : Int, num : Int): ArrayList<String>{
+        val list = ArrayList<String>()
+        val cursor = database!!.rawQuery("SELECT proposals,answer FROM AudioToRhyme WHERE serie = " + num_serie.toString()+ " AND num = " + num.toString(), null)
+        cursor.moveToFirst()
+
+        list.add(cursor.getString(0))
+        list.add(cursor.getString(1))
+
+        cursor.close()
+
+        return list
+    }
 
     //// VISUAL ////
 
