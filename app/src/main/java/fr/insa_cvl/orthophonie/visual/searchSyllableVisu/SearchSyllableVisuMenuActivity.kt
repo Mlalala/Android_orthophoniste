@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import fr.insa_cvl.orthophonie.Ads
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
 import fr.insa_cvl.orthophonie.visual.VisualMenuActivity
@@ -17,6 +18,8 @@ class SearchSyllableVisuMenuActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.simple_list_layout)
+
+        Ads(this)
 
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()

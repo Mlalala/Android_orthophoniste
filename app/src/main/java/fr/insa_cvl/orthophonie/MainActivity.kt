@@ -16,6 +16,11 @@ import fr.insa_cvl.orthophonie.memory.MemoryMenuActivity
 import fr.insa_cvl.orthophonie.phonology.PhonologyMenuActivity
 import fr.insa_cvl.orthophonie.phonology.pictureToPhonemePhono.PictureToPhonemePhonoMenuActivity
 import fr.insa_cvl.orthophonie.visual.VisualMenuActivity
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -41,31 +46,41 @@ class MainActivity : AppCompatActivity() {
             MemoryMenuActivity::class.java
     )
 
+    //lateinit var mAdView : AdView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
-                super.onCreate(savedInstanceState)
-                setContentView(R.layout.activity_main)
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-                val menuList = ArrayList<MenuItem>()
+        //MobileAds.initialize(this, "ca-app-pub-1209988960443824~4847019926")
 
-                for (i in 0..main_menu_logo.lastIndex) {
-                    menuList.add(MenuItem(main_menu_title[i], main_menu_logo[i]))
-                }
+        //mAdView = findViewById(R.id.adView)
+        //val adRequest = AdRequest.Builder().build()
+        //mAdView.loadAd(adRequest)
 
-                val menuAdapter = MenuListAdapter(this, R.layout.activity_main_menu_list_layout, menuList)
+        Ads(this)
 
-                var list = findViewById(R.id.menu_list) as ListView
+        val menuList = ArrayList<MenuItem>()
 
-                list.adapter = menuAdapter
+        for (i in 0..main_menu_logo.lastIndex) {
+            menuList.add(MenuItem(main_menu_title[i], main_menu_logo[i]))
+        }
+
+        val menuAdapter = MenuListAdapter(this, R.layout.activity_main_menu_list_layout, menuList)
+
+        var list = findViewById(R.id.menu_list) as ListView
+
+        list.adapter = menuAdapter
 
 
 
-                list.setOnItemClickListener { parent, view, position, id ->
-                    //Toast.makeText(this, "Position Clicked:"+" "+position,Toast.LENGTH_LONG).show()
-                    val intent = Intent(this,activity_list[position])
-                    startActivity(intent)
-                    finish()
-                }
+        list.setOnItemClickListener { parent, view, position, id ->
+            //Toast.makeText(this, "Position Clicked:"+" "+position,Toast.LENGTH_LONG).show()
+            val intent = Intent(this,activity_list[position])
+            startActivity(intent)
+            finish()
+        }
 
     }
 

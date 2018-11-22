@@ -14,4 +14,6 @@
         android:layout_marginBottom="50dp">
     </ListView>
 
+    <include layout="@layout/ads_layout"/>
+
 </LinearLayout>
