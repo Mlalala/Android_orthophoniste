@@ -14,6 +14,7 @@
     <string name="title_PictureToPhonemePhono">De l\'image au phoneme</string>
     <string name="title_WordToRhymePhono"></string>
     <string name="title_AudioToSyllablePositionPhono">Trouver position phoneme</string>
+    <string name="title_AudioToRhyme">Ecouter puis trouver le mot qui rime</string>
 
     <!-- Memory titles -->
     <string name="title_SymbolsMemo">Ecouter puis remetre les mots dans l\'ordre</string>
@@ -22,6 +23,8 @@
     <!-- Articulation titles -->
     <string name="title_DescriptionArti">Liste des phonemes avec audio (aide visuelle ?)</string>
     <string name="title_AudioRecordListenArti">Teste ton articulation</string>
+    <string name="title_ArticulationLevel">Niveau articulation</string>
+    <string name="title_ArticulationSerie">Série articulation</string>
 
     <!-- Visual titles -->
     <string name="title_MemorySyllablesVisu">Trouver les paires de syllabes</string>
