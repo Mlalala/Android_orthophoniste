@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.Toast
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
 import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoActivity
@@ -34,8 +35,10 @@ class DescriptionArtiLevel: AppCompatActivity() {
 
         listview.setOnItemClickListener { parent, view, position, id ->
             //Toast.makeText(this, "Position Clicked:"+" "+position, Toast.LENGTH_LONG).show()
+            var lettre_level: IntArray= intArrayOf(position,index_letter)
             var intent = Intent(this, DescriptionArtiSerie::class.java)
-            intent.putExtra("EXTRA_POSITION",position)
+            intent.putExtra("IntArray",lettre_level)
+            //Toast.makeText(this, "test"+lettre_level, Toast.LENGTH_LONG).show()
             startActivity(intent)
             finish()
         }

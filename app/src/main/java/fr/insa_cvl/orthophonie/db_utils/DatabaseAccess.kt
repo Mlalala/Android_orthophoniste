@@ -202,10 +202,10 @@ private constructor(context: Context) {
         return list
     }
 
-    fun get_Articulation_mot(lettre : String, serie : String):ArrayList<String>{
+    fun get_Articulation_mot(num : Int, serie : Int):ArrayList<String>{
         var list = ArrayList<String>()
-        //val cursor = database!!.rawQuery("SELECT name FROM DescriptionArtiObjet WHERE lettre = " + "'" + lettre + "'" + "AND serie= "+ serie, null)
-        val cursor = database!!.rawQuery("SELECT name FROM DescriptionArtiObjet LEFT JOIN DescriptionArtiSeries ON WHERE lettre = " + "'" + lettre + "'" + "AND serie= "+ serie, null)
+        val cursor = database!!.rawQuery("SELECT name FROM DescriptionArtiObjet WHERE num = " + "'" + num.toString() + "'" + "AND serie= "+ serie.toString(), null)
+        //val cursor = database!!.rawQuery("SELECT name FROM DescriptionArtiObjet LEFT JOIN DescriptionArtiSeries ON WHERE lettre = " + "'" + lettre + "'" + "AND serie= "+ serie, null)
         cursor.moveToFirst()
         while (!cursor.isAfterLast()) {
             list.add(" " + cursor.getString(0))
