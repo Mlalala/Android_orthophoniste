@@ -40,6 +40,7 @@
         <activity android:label="@string/title_AudioToRhyme" android:name=".phonology.audioToRhymePhono.AudioToRhymeMenuActivity" android:screenOrientation="portrait"></activity>
         <activity android:label="@string/title_AudioToRhyme" android:name=".phonology.audioToRhymePhono.AudioToRhymeActivity" android:screenOrientation="portrait"></activity>
 
+        <activity android:label="@string/title_AudioToSyllablePositionPhono" android:name=".phonology.audioToSyllablePositionPhono.AudioToSyllablePositionPhonoMenuActivity" android:screenOrientation="portrait"></activity>
 
 
         <!-- Articulation -->

@@ -147,7 +147,7 @@ class AudioToRhymeActivity: AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: android.view.MenuItem?): Boolean {
         when (item!!.itemId){
-            R.id.action_help  -> manageMenu(getString(R.string.help),getString(R.string.help_AudioToWordPhono))
+            R.id.action_help  -> manageMenu(getString(R.string.help),getString(R.string.help_AudioToRhyme))
         }
         return super.onOptionsItemSelected(item)
     }
