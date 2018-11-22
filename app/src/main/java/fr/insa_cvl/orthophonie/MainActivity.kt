@@ -61,11 +61,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        Thread(Runnable {
-            this@MainActivity.runOnUiThread(java.lang.Runnable {
-                Ads(this)
-            })
-        }).start()
+
+        Ads(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
