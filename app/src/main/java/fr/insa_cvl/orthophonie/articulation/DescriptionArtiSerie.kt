@@ -14,10 +14,12 @@ class DescriptionArtiSerie: AppCompatActivity() {
     private var adapter_simple: ArrayAdapter<String>? = null
     private var lettre_b: String="B"
     private var serie_1: String="1"
-
+    private var index_letter: Int = 0
+    //join de deux tables recuperer position precedente pour recuperer lettre table lettre
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.simple_list_layout)
+        index_letter = intent.getIntExtra("EXTRA_POSITION",0)
 
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()

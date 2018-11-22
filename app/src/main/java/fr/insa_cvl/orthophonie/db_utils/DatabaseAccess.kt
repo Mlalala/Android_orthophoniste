@@ -178,19 +178,12 @@ private constructor(context: Context) {
 
     //// ARTICULATION ////
 
-    fun articulation_letter(lettre : String): String{
-        val cursor = database!!.rawQuery("SELECT  Lettre From Articulation\n" +
-                "WHERE Lettre = " + lettre, null)
-
-        return lettre
-    }
-
-    fun get_Articulation_level():ArrayList<String>{
+    fun get_Articulation_level(index_lettre: Int):ArrayList<String>{
         var list = ArrayList<String>()
-        val cursor = database!!.rawQuery("SELECT serie,name FROM DescriptionArtiSeries",null)
+        val cursor = database!!.rawQuery("SELECT lettre,name FROM DescriptionArtiSeries WHERE num = "  +  index_lettre.toString(),null)
         cursor.moveToFirst()
         while (!cursor.isAfterLast()) {
-            list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
+            list.add(" " + cursor.getString(0) + " - " + cursor.getString(1))
             cursor.moveToNext()
         }
         cursor.close()
@@ -211,7 +204,8 @@ private constructor(context: Context) {
 
     fun get_Articulation_mot(lettre : String, serie : String):ArrayList<String>{
         var list = ArrayList<String>()
-        val cursor = database!!.rawQuery("SELECT name FROM DescriptionArtiObjet WHERE lettre = " + "'" + lettre + "'" + "AND serie= "+ serie, null)
+        //val cursor = database!!.rawQuery("SELECT name FROM DescriptionArtiObjet WHERE lettre = " + "'" + lettre + "'" + "AND serie= "+ serie, null)
+        val cursor = database!!.rawQuery("SELECT name FROM DescriptionArtiObjet LEFT JOIN DescriptionArtiSeries ON WHERE lettre = " + "'" + lettre + "'" + "AND serie= "+ serie, null)
         cursor.moveToFirst()
         while (!cursor.isAfterLast()) {
             list.add(" " + cursor.getString(0))

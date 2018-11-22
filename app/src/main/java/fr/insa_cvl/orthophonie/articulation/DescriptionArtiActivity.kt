@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.Toast
 import fr.insa_cvl.orthophonie.MainActivity
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
@@ -13,18 +14,6 @@ import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
 
 class DescriptionArtiActivity : AppCompatActivity(){
 
-    private val articulation_list = arrayListOf<String>(
-            "B",
-            "CH",
-            "D",
-            "F",
-            "G",
-            "J",
-            "K",
-            "L",
-            "BL FL GL KL PL",
-            "M"
-    )
     private var adapter_simple : ArrayAdapter<String>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -42,7 +31,7 @@ class DescriptionArtiActivity : AppCompatActivity(){
 
 
         listview.setOnItemClickListener { parent, view, position, id ->
-                //Toast.makeText(this, "Position Clicked:"+" "+position, Toast.LENGTH_LONG).show()
+            //Toast.makeText(this, "Position Clicked:"+" "+position, Toast.LENGTH_LONG).show()
             var intent = Intent(this, DescriptionArtiLevel::class.java)
             intent.putExtra("EXTRA_POSITION",position)
             startActivity(intent)

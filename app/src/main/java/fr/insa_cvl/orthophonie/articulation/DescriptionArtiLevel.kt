@@ -13,14 +13,18 @@ import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoActivi
 class DescriptionArtiLevel: AppCompatActivity() {
 
     private var adapter_simple : ArrayAdapter<String>? = null
+    private var lettre_b: String="B"
+    private var index_letter: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.simple_list_layout)
 
+        index_letter = intent.getIntExtra("EXTRA_POSITION",0)
+
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        var articulation_level = databaseAccess.get_Articulation_level()
+        var articulation_level = databaseAccess.get_Articulation_level(index_letter +1)
 
 
         adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,articulation_level)
