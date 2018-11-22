@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.Toast
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
 
@@ -14,14 +15,17 @@ class DescriptionArtiSerie: AppCompatActivity() {
     private var adapter_simple: ArrayAdapter<String>? = null
     private var lettre_b: String="B"
     private var serie_1: String="1"
-
+    private var index_letter_level: IntArray = intArrayOf(0)
+    //join de deux tables recuperer position precedente pour recuperer lettre table lettre
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.simple_list_layout)
+        index_letter_level = intent.getIntArrayExtra("IntArray")
+        //Toast.makeText(this, "Position Clicked:"+" "+ index_letter_level, Toast.LENGTH_LONG).show()
 
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        var articulation_level = databaseAccess.get_Articulation_mot(lettre_b,serie_1)
+        var articulation_level = databaseAccess.get_Articulation_mot(index_letter_level[1] + 1,index_letter_level[0] + 1)
 
 
         adapter_simple = ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, articulation_level)

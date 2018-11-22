@@ -6,11 +6,11 @@ Phonologie :
 	- MemoryPhono	Simon ok
 	- AudioToWordPhono	Simon ok 
 	- PictureToPhonemePhono	Simon ok
-	- WordToRhymePhono	Maxime
+	- AudioToRhymePhono	Maxime
 	- AudioToSyllablePositionPhono	Maxime
 
 Articulation :
-	- DescriptionArti	Maxime
+	- DescriptionArti	Maxime stand by
 	- AudioRecordListenArti	del (include in DescriptionArti) 
 
 Mémoire et attention :
