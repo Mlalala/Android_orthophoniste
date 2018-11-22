@@ -3,7 +3,7 @@
     <color name="colorPrimary">#ff8c42</color>
     <color name="colorPrimaryDark">#ff8c42</color>
 
-    <color name="colorAccent">#f96866</color>
+    <color name="colorAccent">#ff8c42</color>
 
     <color name="memorySelected">#77c2ea</color>
     <color name="memoryValid">#c8efa0</color>
@@ -11,5 +11,4 @@
     <color name="memoryError">#f96866</color>
 
     <color name="backgroud">#ffffff</color>
-
 </resources>

@@ -43,4 +43,7 @@
     <string name="help_MemorySyllablesVisu">Aide MemorySyllablesVisu</string>
     <string name="help_SearchSyllableVisu">Aide SearchSyllableVisu</string>
 
+    <!-- Buttons -->
+    <string name="suggestion">Suggestion</string>
+    <string name="contact">Contactez-nous</string>
 </resources>

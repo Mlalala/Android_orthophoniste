@@ -141,6 +141,7 @@ class SearchSyllableVisuActivity : AppCompatActivity(){
         builder.setPositiveButton("Revenir au menu") { dialog, id ->
             val intent = Intent(this, SearchSyllableVisuMenuActivity::class.java)
             startActivity(intent)
+            finish()
         }
         val dialog = builder.create()
         dialog.show()
