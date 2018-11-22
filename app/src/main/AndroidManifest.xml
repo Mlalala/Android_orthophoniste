@@ -6,12 +6,13 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:screenOrientation="portrait">
 
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -20,39 +21,39 @@
         </activity>
 
         <!-- Phonology -->
-        <activity android:label="@string/title_phono" android:name=".phonology.PhonologyMenuActivity"></activity>
+        <activity android:label="@string/title_phono" android:name=".phonology.PhonologyMenuActivity" android:screenOrientation="portrait"></activity>
 
-        <activity android:label="@string/title_AudioToWordPhono" android:name=".phonology.audioToWordPhono.AudioToWordPhonoActivity"></activity>
-        <activity android:label="@string/title_AudioToWordPhono" android:name=".phonology.audioToWordPhono.AudioToWordPhonoMenuActivity"></activity>
+        <activity android:label="@string/title_AudioToWordPhono" android:name=".phonology.audioToWordPhono.AudioToWordPhonoActivity" android:screenOrientation="portrait"></activity>
+        <activity android:label="@string/title_AudioToWordPhono" android:name=".phonology.audioToWordPhono.AudioToWordPhonoMenuActivity" android:screenOrientation="portrait"></activity>
 
-        <activity android:label="@string/title_MemoryPhono" android:name=".phonology.memoryPhono.MemoryPhonoActivity"></activity>
-        <activity android:label="@string/title_MemoryPhono" android:name=".phonology.memoryPhono.MemoryPhonoMenuActivity"></activity>
+        <activity android:label="@string/title_MemoryPhono" android:name=".phonology.memoryPhono.MemoryPhonoActivity" android:screenOrientation="portrait"></activity>
+        <activity android:label="@string/title_MemoryPhono" android:name=".phonology.memoryPhono.MemoryPhonoMenuActivity" android:screenOrientation="portrait"></activity>
 
-        <activity android:label="@string/title_PictureToPhonemePhono" android:name=".phonology.pictureToPhonemePhono.PictureToPhonemePhonoActivity"></activity>
-        <activity android:label="@string/title_PictureToPhonemePhono" android:name=".phonology.pictureToPhonemePhono.PictureToPhonemePhonoMenuActivity"></activity>
+        <activity android:label="@string/title_PictureToPhonemePhono" android:name=".phonology.pictureToPhonemePhono.PictureToPhonemePhonoActivity" android:screenOrientation="portrait"></activity>
+        <activity android:label="@string/title_PictureToPhonemePhono" android:name=".phonology.pictureToPhonemePhono.PictureToPhonemePhonoMenuActivity" android:screenOrientation="portrait"></activity>
 
 
 
         <!-- Articulation -->
-        <activity android:label="@string/title_arti" android:name=".articulation.DescriptionArtiActivity"></activity>
+        <activity android:label="@string/title_arti" android:name=".articulation.DescriptionArtiActivity" android:screenOrientation="portrait"></activity>
 
-        <activity android:label="niveau articulation" android:name=".articulation.DescriptionArtiLevel"></activity>
-        <activity android:label="niveau initial articulation" android:name=".articulation.DescriptionArtiInitiallevel"></activity>
-        <activity android:label="niveau median articulation" android:name=".articulation.DescriptionArtiMedianelevel"></activity>
-        <activity android:label="niveau final articulation" android:name=".articulation.DescriptionArtiFinallevel"></activity>
-        <activity android:label="série articulation" android:name=".articulation.DescriptionArtiSerie"></activity>
+        <activity android:label="niveau articulation" android:name=".articulation.DescriptionArtiLevel" android:screenOrientation="portrait"></activity>
+        <activity android:label="niveau initial articulation" android:name=".articulation.DescriptionArtiInitiallevel" android:screenOrientation="portrait"></activity>
+        <activity android:label="niveau median articulation" android:name=".articulation.DescriptionArtiMedianelevel" android:screenOrientation="portrait"></activity>
+        <activity android:label="niveau final articulation" android:name=".articulation.DescriptionArtiFinallevel" android:screenOrientation="portrait"></activity>
+        <activity android:label="série articulation" android:name=".articulation.DescriptionArtiSerie" android:screenOrientation="portrait"></activity>
 
         <!-- Visual -->
-        <activity android:label="@string/title_visu" android:name=".visual.VisualMenuActivity"></activity>
+        <activity android:label="@string/title_visu" android:name=".visual.VisualMenuActivity" android:screenOrientation="portrait"></activity>
 
-        <activity android:label="@string/MemorySyllablesVisu" android:name=".visual.memorySyllabesVisu.MemorySyllabesVisuActivity"></activity>
-        <activity android:label="@string/MemorySyllablesVisu" android:name=".visual.memorySyllabesVisu.MemorySyllabesVisuMenuActivity"></activity>
+        <activity android:label="@string/title_MemorySyllablesVisu" android:name=".visual.memorySyllabesVisu.MemorySyllabesVisuActivity" android:screenOrientation="portrait"></activity>
+        <activity android:label="@string/title_MemorySyllablesVisu" android:name=".visual.memorySyllabesVisu.MemorySyllabesVisuMenuActivity" android:screenOrientation="portrait"></activity>
 
-        <activity android:label="@string/SearchSyllableVisu" android:name=".visual.searchSyllableVisu.SearchSyllableVisuActivity"></activity>
-        <activity android:label="@string/SearchSyllableVisu" android:name=".visual.searchSyllableVisu.SearchSyllableVisuMenuActivity"></activity>
+        <activity android:label="@string/title_SearchSyllableVisu" android:name=".visual.searchSyllableVisu.SearchSyllableVisuActivity" android:screenOrientation="portrait"></activity>
+        <activity android:label="@string/title_SearchSyllableVisu" android:name=".visual.searchSyllableVisu.SearchSyllableVisuMenuActivity" android:screenOrientation="portrait"></activity>
 
         <!-- Memory -->
-        <activity android:label="@string/title_memo" android:name=".memory.MemoryMenuActivity"></activity>
+        <activity android:label="@string/title_memo" android:name=".memory.MemoryMenuActivity" android:screenOrientation="portrait"></activity>
 
 
     </application>

@@ -22,8 +22,8 @@ class VisualMenuActivity: AppCompatActivity() {
         setContentView(R.layout.simple_list_layout)
 
         val menu_title = arrayOf(
-                getString(R.string.MemorySyllablesVisu),
-                getString(R.string.SearchSyllableVisu)
+                getString(R.string.title_MemorySyllablesVisu),
+                getString(R.string.title_SearchSyllableVisu)
         )
 
         val activity_list = arrayOf(

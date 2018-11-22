@@ -3,12 +3,18 @@ package fr.insa_cvl.orthophonie.phonology.pictureToPhonemePhono
 import android.app.AlertDialog
 import android.content.Intent
 import android.media.MediaPlayer
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.view.KeyEvent
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
 
@@ -132,5 +138,38 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
             finish()
             true
         } else super.onKeyDown(keyCode, event)
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.help,menu)
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: android.view.MenuItem?): Boolean {
+        when (item!!.itemId){
+            R.id.action_help  -> manageMenu(getString(R.string.help),getString(R.string.help_PictureToPhonemePhono))
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    fun manageMenu(title : String, text : String) {
+        val builder = AlertDialog.Builder(this)
+
+        val inflater = this.layoutInflater
+        val dialogView = inflater.inflate(R.layout.alert_text_layout, null)
+
+        builder.setTitle(title).setView(dialogView)
+        builder.setMessage(text)
+        builder.setPositiveButton("Suggestion") { dialog, id ->
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "lamontagnettestudio@gmail.com"))
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Suggestion pour l'activitée " + getString(R.string.title_PictureToPhonemePhono) +" de l'Application Android Orthophonie")
+            startActivity(intent)
+        }
+
+        val dialog = builder.create()
+        dialog.show()
     }
 }

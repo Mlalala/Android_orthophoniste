@@ -2,10 +2,13 @@ package fr.insa_cvl.orthophonie.visual.searchSyllableVisu
 
 import android.app.AlertDialog
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Gravity
 import android.view.KeyEvent
+import android.view.Menu
+import android.view.MenuInflater
 import android.widget.Button
 import android.widget.TableLayout
 import android.widget.TableRow
@@ -21,7 +24,6 @@ class SearchSyllableVisuActivity : AppCompatActivity(){
     private var true_nb_correct = 0.0
 
     private var index_serie = 0
-    private var serie_size = 32
     private var in_serie_size = 0
 
     private val size_text = 18f
@@ -47,11 +49,12 @@ class SearchSyllableVisuActivity : AppCompatActivity(){
         list_syllables.shuffle()
         answers.shuffle()
 
+
         val builder = AlertDialog.Builder(this)
-        builder.setCancelable(true)
         val inflater = this.layoutInflater
-        val dialogView = inflater.inflate(R.layout.alert_layout, null)
-        builder.setTitle("Trouvez les \"" + answers[0] + "\"").setView(dialogView)
+        val dialogView = inflater.inflate(R.layout.alert_text_layout, null)
+        builder.setTitle("Objectif").setView(dialogView)
+        builder.setMessage("\nTrouvez les \"" + answers[0] + "\"")
         val dialog = builder.create()
         dialog.show()
 
@@ -128,14 +131,49 @@ class SearchSyllableVisuActivity : AppCompatActivity(){
         val inflater = this.layoutInflater
         val dialogView = inflater.inflate(R.layout.alert_layout, null)
 
+        var score = 100.0 * (nb_correct - nb_error)/(true_nb_correct)
+
         val df = DecimalFormat("#")
         df.roundingMode = RoundingMode.CEILING
-        builder.setTitle("BRAVO ! Votre score est :  " + df.format(100.0 * nb_correct/(true_nb_correct + nb_error)) + "%").setView(dialogView)
+
+        builder.setTitle("Votre score est :   " + df.format(score) + "%").setView(dialogView)
 
         builder.setPositiveButton("Revenir au menu") { dialog, id ->
             val intent = Intent(this, SearchSyllableVisuMenuActivity::class.java)
             startActivity(intent)
         }
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.help,menu)
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: android.view.MenuItem?): Boolean {
+        when (item!!.itemId){
+            R.id.action_help  -> manageMenu(getString(R.string.help),getString(R.string.help_SearchSyllableVisu))
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    fun manageMenu(title : String, text : String) {
+        val builder = AlertDialog.Builder(this)
+
+        val inflater = this.layoutInflater
+        val dialogView = inflater.inflate(R.layout.alert_text_layout, null)
+
+        builder.setTitle(title).setView(dialogView)
+        builder.setMessage(text)
+        builder.setPositiveButton("Suggestion") { dialog, id ->
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "lamontagnettestudio@gmail.com"))
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Suggestion pour l'activitée " + getString(R.string.title_SearchSyllableVisu) +" de l'Application Android Orthophonie")
+            startActivity(intent)
+        }
+
         val dialog = builder.create()
         dialog.show()
     }

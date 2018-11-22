@@ -1,14 +1,20 @@
 package fr.insa_cvl.orthophonie
 
+import android.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
 import android.content.Intent
+import android.net.Uri
 import android.view.Menu
 import android.view.MenuInflater
+import android.widget.TextView
+import android.widget.Toast
 import fr.insa_cvl.orthophonie.articulation.DescriptionArtiActivity
+import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
 import fr.insa_cvl.orthophonie.memory.MemoryMenuActivity
 import fr.insa_cvl.orthophonie.phonology.PhonologyMenuActivity
+import fr.insa_cvl.orthophonie.phonology.pictureToPhonemePhono.PictureToPhonemePhonoMenuActivity
 import fr.insa_cvl.orthophonie.visual.VisualMenuActivity
 
 
@@ -66,7 +72,35 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.menu_main,menu)
+
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: android.view.MenuItem?): Boolean {
+        when (item!!.itemId){
+            R.id.action_settings -> Toast.makeText(this, "Settings",Toast.LENGTH_LONG).show()
+            R.id.action_aboutus  -> manageMenu(getString(R.string.aboutus),getString(R.string.aboutus_content))
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    fun manageMenu(title : String, text : String) {
+        val builder = AlertDialog.Builder(this)
+
+        val inflater = this.layoutInflater
+        val dialogView = inflater.inflate(R.layout.alert_text_layout, null)
+
+        builder.setTitle(title).setView(dialogView)
+        builder.setMessage(text)
+        builder.setPositiveButton("Contactez-nous") { dialog, id ->
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "lamontagnettestudio@gmail.com"))
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Application Android Orthophonie")
+            startActivity(intent)
+        }
+
+        val dialog = builder.create()
+        dialog.show()
     }
 }
 

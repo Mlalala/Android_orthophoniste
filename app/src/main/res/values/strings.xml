@@ -16,19 +16,31 @@
     <string name="title_AudioToSyllablePositionPhono">Trouver position phoneme</string>
 
     <!-- Memory titles -->
-    <string name="SymbolsMemo">Ecouter puis remetre les mots dans l\'ordre</string>
+    <string name="title_SymbolsMemo">Ecouter puis remetre les mots dans l\'ordre</string>
     <string name="title_AudioToOrderMemo">Regarder puis remetre les symboles dans l\'ordre</string>
 
     <!-- Articulation titles -->
-    <string name="DescriptionArti">Liste des phonemes avec audio (aide visuelle ?)</string>
-    <string name="AudioRecordListenArti">Teste ton articulation</string>
+    <string name="title_DescriptionArti">Liste des phonemes avec audio (aide visuelle ?)</string>
+    <string name="title_AudioRecordListenArti">Teste ton articulation</string>
 
     <!-- Visual titles -->
-    <string name="MemorySyllablesVisu">Trouver les paires de syllabes</string>
-    <string name="SearchSyllableVisu">Confusion visuelles des syllabes</string>
+    <string name="title_MemorySyllablesVisu">Trouver les paires de syllabes</string>
+    <string name="title_SearchSyllableVisu">Confusion visuelles des syllabes</string>
 
 
+    <!-- Menu titles -->
     <string name="settings">Paramètre</string>
     <string name="aboutus">A propos de nous</string>
+    <string name="help">Aide</string>
+
+    <!-- About Us Content -->
+    <string name="aboutus_content">"\nNous sommes deux étudiants de l'INSA Centre Val de Loire. Cette application à été conçue dans le cadre d'un projet étudiant. Merci de reporter les bugs rencontrés"</string>
+
+    <!-- Help Content -->
+    <string name="help_MemoryPhono">Aide MemoryPhono</string>
+    <string name="help_AudioToWordPhono">Aide AudioToWordPhono</string>
+    <string name="help_PictureToPhonemePhono">Aide PictureToPhonemePhono</string>
+    <string name="help_MemorySyllablesVisu">Aide MemorySyllablesVisu</string>
+    <string name="help_SearchSyllableVisu">Aide SearchSyllableVisu</string>
 
 </resources>
