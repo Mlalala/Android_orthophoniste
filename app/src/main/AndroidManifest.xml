@@ -10,6 +10,11 @@
         android:theme="@style/AppTheme"
         android:screenOrientation="portrait">
 
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-1209988960443824~4847019926"/>
+
+
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
@@ -38,9 +43,7 @@
         <activity android:label="@string/title_arti" android:name=".articulation.DescriptionArtiActivity" android:screenOrientation="portrait"></activity>
 
         <activity android:label="niveau articulation" android:name=".articulation.DescriptionArtiLevel" android:screenOrientation="portrait"></activity>
-        <activity android:label="niveau initial articulation" android:name=".articulation.DescriptionArtiInitiallevel" android:screenOrientation="portrait"></activity>
-        <activity android:label="niveau median articulation" android:name=".articulation.DescriptionArtiMedianelevel" android:screenOrientation="portrait"></activity>
-        <activity android:label="niveau final articulation" android:name=".articulation.DescriptionArtiFinallevel" android:screenOrientation="portrait"></activity>
+
         <activity android:label="série articulation" android:name=".articulation.DescriptionArtiSerie" android:screenOrientation="portrait"></activity>
 
         <!-- Visual -->
@@ -55,7 +58,6 @@
         <!-- Memory -->
         <activity android:label="@string/title_memo" android:name=".memory.MemoryMenuActivity" android:screenOrientation="portrait"></activity>
 
-
     </application>
 
     <supports-screens
@@ -63,5 +65,9 @@
         android:normalScreens="true"
         android:largeScreens="true"
         android:xlargeScreens="false"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
 </manifest>

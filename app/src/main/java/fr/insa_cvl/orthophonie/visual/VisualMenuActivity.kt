@@ -7,6 +7,7 @@ import android.view.KeyEvent
 import android.view.SearchEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import fr.insa_cvl.orthophonie.Ads
 import fr.insa_cvl.orthophonie.MainActivity
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity
@@ -20,6 +21,8 @@ class VisualMenuActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.simple_list_layout)
+
+        Ads(this)
 
         val menu_title = arrayOf(
                 getString(R.string.title_MemorySyllablesVisu),

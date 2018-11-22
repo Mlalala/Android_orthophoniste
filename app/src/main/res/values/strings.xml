@@ -46,4 +46,9 @@
     <!-- Buttons -->
     <string name="suggestion">Suggestion</string>
     <string name="contact">Contactez-nous</string>
+
+    <!-- Ads -->
+    <string name="ad_app_id">ca-app-pub-1209988960443824~4847019926</string>
+    <string name="banner_id">Contactez-nous</string>
+
 </resources>
