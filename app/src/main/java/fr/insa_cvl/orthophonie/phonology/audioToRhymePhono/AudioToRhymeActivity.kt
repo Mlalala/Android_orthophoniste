@@ -173,7 +173,7 @@ class AudioToRhymeActivity: AppCompatActivity() {
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this, AudioToWordPhonoMenuActivity::class.java)
+            val intent = Intent(this, AudioToRhymeMenuActivity::class.java)
             startActivity(intent)
             finish()
             true
