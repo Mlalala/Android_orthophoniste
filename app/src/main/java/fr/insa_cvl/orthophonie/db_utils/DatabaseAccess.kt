@@ -116,6 +116,20 @@ private constructor(context: Context) {
         return list
     }
 
+        //audio to rhyme
+    fun get_menu_AudioToRhyme():ArrayList<String>{
+            var list = ArrayList<String>()
+            val cursor = database!!.rawQuery("SELECT serie,name FROM AudioToRhymeMenu",null)
+            cursor.moveToFirst()
+            while (!cursor.isAfterLast()) {
+                list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
+                cursor.moveToNext()
+            }
+            cursor.close()
+            return list
+        }
+
+
     //// VISUAL ////
 
         // MemorySyllabesVisu

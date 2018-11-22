@@ -31,7 +31,9 @@
 
         <activity android:label="@string/title_PictureToPhonemePhono" android:name=".phonology.pictureToPhonemePhono.PictureToPhonemePhonoActivity" android:screenOrientation="portrait"></activity>
         <activity android:label="@string/title_PictureToPhonemePhono" android:name=".phonology.pictureToPhonemePhono.PictureToPhonemePhonoMenuActivity" android:screenOrientation="portrait"></activity>
+
         <activity android:label="@string/title_AudioToRhyme" android:name=".phonology.audioToRhymePhono.AudioToRhymeMenuActivity" android:screenOrientation="portrait"></activity>
+        <activity android:label="@string/title_AudioToRhyme" android:name=".phonology.audioToRhymePhono.AudioToRhymeActivity" android:screenOrientation="portrait"></activity>
 
 
 

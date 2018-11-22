@@ -21,7 +21,7 @@ class AudioToRhymeMenuActivity: AppCompatActivity() {
 
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        var phonology_list = databaseAccess.get_Menu_AudioToWordPhono()
+        var phonology_list = databaseAccess.get_menu_AudioToRhyme()
 
 
         adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,phonology_list)
@@ -31,7 +31,7 @@ class AudioToRhymeMenuActivity: AppCompatActivity() {
 
         listview.setOnItemClickListener { parent, view, position, id ->
             Toast.makeText(this, "Position Clicked:"+" "+position, Toast.LENGTH_LONG).show()
-            var intent = Intent(this, AudioToWordPhonoActivity::class.java)
+            var intent = Intent(this, AudioToRhymeActivity::class.java)
             intent.putExtra("EXTRA_POSITION",position)
             startActivity(intent)
             finish()

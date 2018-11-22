@@ -22,7 +22,8 @@ class PhonologyMenuActivity : AppCompatActivity() {
         val menu_title = arrayOf(
                 getString(R.string.title_AudioToWordPhono),
                 getString(R.string.title_MemoryPhono),
-                getString(R.string.title_PictureToPhonemePhono)
+                getString(R.string.title_PictureToPhonemePhono),
+                getString(R.string.title_AudioToRhyme)
         )
 
         val activity_list = arrayOf(
