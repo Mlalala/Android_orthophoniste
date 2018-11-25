@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
 
         val inflater = this.layoutInflater
-        val dialogView = inflater.inflate(R.layout.alert_text_layout, null)
+        val dialogView = inflater.inflate(R.layout.alert_text_picture_layout, null)
 
         builder.setTitle(title).setView(dialogView)
         builder.setMessage(text)
