@@ -8,18 +8,11 @@ import android.content.Intent
 import android.net.Uri
 import android.view.Menu
 import android.view.MenuInflater
-import android.widget.TextView
 import android.widget.Toast
 import fr.insa_cvl.orthophonie.articulation.DescriptionArtiActivity
-import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
 import fr.insa_cvl.orthophonie.memory.MemoryMenuActivity
 import fr.insa_cvl.orthophonie.phonology.PhonologyMenuActivity
-import fr.insa_cvl.orthophonie.phonology.pictureToPhonemePhono.PictureToPhonemePhonoMenuActivity
 import fr.insa_cvl.orthophonie.visual.VisualMenuActivity
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-
 
 
 
@@ -46,20 +39,10 @@ class MainActivity : AppCompatActivity() {
             MemoryMenuActivity::class.java
     )
 
-    //lateinit var mAdView : AdView
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        //MobileAds.initialize(this, "ca-app-pub-1209988960443824~4847019926")
-
-        //mAdView = findViewById(R.id.adView)
-        //val adRequest = AdRequest.Builder().build()
-        //mAdView.loadAd(adRequest)
-
-        Ads(this)
 
         val menuList = ArrayList<MenuItem>()
 
@@ -73,15 +56,13 @@ class MainActivity : AppCompatActivity() {
 
         list.adapter = menuAdapter
 
-
-
         list.setOnItemClickListener { parent, view, position, id ->
-            //Toast.makeText(this, "Position Clicked:"+" "+position,Toast.LENGTH_LONG).show()
             val intent = Intent(this,activity_list[position])
             startActivity(intent)
             finish()
         }
 
+        Ads(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -109,7 +90,7 @@ class MainActivity : AppCompatActivity() {
         builder.setTitle(title).setView(dialogView)
         builder.setMessage(text)
         builder.setPositiveButton("Contactez-nous") { dialog, id ->
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "lamontagnettestudio@gmail.com"))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + getString(R.string.email)))
             intent.putExtra(Intent.EXTRA_SUBJECT, "Application Android Orthophonie")
             startActivity(intent)
         }

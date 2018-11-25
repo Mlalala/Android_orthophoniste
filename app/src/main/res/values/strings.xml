@@ -50,9 +50,10 @@
     <!-- Buttons -->
     <string name="suggestion">Suggestion</string>
     <string name="contact">Contactez-nous</string>
+    <string name="email">catarineto.studio@gmail.com</string>
 
     <!-- Ads -->
-    <string name="ad_app_id">ca-app-pub-1209988960443824~4847019926</string>
-    <string name="banner_id">Contactez-nous</string>
+    <string name="ad_app_id">ca-app-pub-4476637068936049~2352185699</string>
+    <string name="banner_id">ca-app-pub-4476637068936049/1590478807</string>
 
 </resources>
