@@ -7,7 +7,7 @@ Phonologie :
 	- AudioToWordPhono	Simon ok 
 	- PictureToPhonemePhono	Simon ok
 	- AudioToRhymePhono	Maxime ok (manque fichier audio)
-	- AudioToSyllablePositionPhono	Maxime
+	- AudioToSyllablePositionPhono	Maxime ok (manque fichier audio)
 
 Articulation :
 	- DescriptionArti	Maxime stand by
