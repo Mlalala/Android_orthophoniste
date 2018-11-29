@@ -4,11 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import fr.insa_cvl.orthophonie.Ads
-import fr.insa_cvl.orthophonie.MainActivity
-import fr.insa_cvl.orthophonie.R
+import fr.insa_cvl.orthophonie.*
 import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity
 import fr.insa_cvl.orthophonie.phonology.memoryPhono.MemoryPhonoMenuActivity
 import fr.insa_cvl.orthophonie.phonology.pictureToPhonemePhono.PictureToPhonemePhonoMenuActivity
@@ -31,23 +30,44 @@ class PhonologyMenuActivity : AppCompatActivity() {
                 getString(R.string.title_AudioToSyllablePositionPhono)
         )
 
+        val menu_des = arrayOf(
+                getString(R.string.des_AudioToWordPhono),
+                getString(R.string.des_MemoryPhono),
+                getString(R.string.des_PictureToPhonemePhono),
+                getString(R.string.des_AudioToRhyme),
+                getString(R.string.des_AudioToSyllablePositionPhono)
+        )
+
         val activity_list = arrayOf(
                 AudioToWordPhonoMenuActivity::class.java,
                 MemoryPhonoMenuActivity::class.java,
                 PictureToPhonemePhonoMenuActivity::class.java,
                 AudioToRhymeMenuActivity::class.java,
                 AudioToSyllablePositionPhonoMenuActivity::class.java
-
         )
 
-        var adapter_simple : ArrayAdapter<String>? = null
+        val menu_picture = arrayOf(
+                "phono1",
+                "sample",
+                "sample",
+                "sample",
+                "sample"
+        )
 
-        adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,menu_title)
-        var listview = findViewById(R.id.list_menu) as ListView
-        listview.adapter = adapter_simple
+        val menuList = ArrayList<ModuleMenuItem>()
+
+        for (i in 0..menu_picture.lastIndex) {
+            menuList.add(ModuleMenuItem(menu_title[i], menu_des[i], menu_picture[i],activity_list[i]))
+        }
+
+        val menuAdapter = ModuleMenuListAdapter(this, R.layout.module_menu_list_layout, menuList)
+
+        var list = findViewById(R.id.list_menu) as ListView
+
+        list.adapter = menuAdapter
 
 
-        listview.setOnItemClickListener { parent, view, position, id ->
+        list.onItemClickListener = AdapterView.OnItemClickListener{ adapter, v, position, id ->
             var intent = Intent(this, activity_list[position])
             startActivity(intent)
             finish()

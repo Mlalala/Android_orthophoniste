@@ -20,3 +20,7 @@ Mémoire et attention :
 Visuel :
 	- MemorySyllablesVisu	Simon ok
 	- SearchSyllableVisu	Simon ok
+
+
+//gif website
+https://ezgif.com/video-to-gif

@@ -1,20 +1,25 @@
 package fr.insa_cvl.orthophonie.visual
 
 import android.content.Intent
+import android.media.Image
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.view.SearchEvent
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.ListView
-import fr.insa_cvl.orthophonie.Ads
-import fr.insa_cvl.orthophonie.MainActivity
-import fr.insa_cvl.orthophonie.R
+import fr.insa_cvl.orthophonie.*
 import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity
 import fr.insa_cvl.orthophonie.phonology.memoryPhono.MemoryPhonoMenuActivity
 import fr.insa_cvl.orthophonie.visual.memorySyllabesVisu.MemorySyllabesVisuMenuActivity
 import fr.insa_cvl.orthophonie.visual.searchSyllableVisu.SearchSyllableVisuActivity
 import fr.insa_cvl.orthophonie.visual.searchSyllableVisu.SearchSyllableVisuMenuActivity
+import android.widget.Toast
+
+
 
 class VisualMenuActivity: AppCompatActivity() {
 
@@ -29,23 +34,40 @@ class VisualMenuActivity: AppCompatActivity() {
                 getString(R.string.title_SearchSyllableVisu)
         )
 
+        val menu_des = arrayOf(
+                getString(R.string.des_MemorySyllablesVisu),
+                getString(R.string.des_MemorySyllablesVisu)
+        )
+
+        val menu_picture = arrayOf(
+                "desvisu1",
+                "desvisu2"
+        )
+
         val activity_list = arrayOf(
                 MemorySyllabesVisuMenuActivity::class.java,
                 SearchSyllableVisuMenuActivity::class.java
         )
 
-        var adapter_simple : ArrayAdapter<String>? = null
+        val menuList = ArrayList<ModuleMenuItem>()
 
-        adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,menu_title)
-        var listview = findViewById(R.id.list_menu) as ListView
-        listview.adapter = adapter_simple
+        for (i in 0..menu_picture.lastIndex) {
+            menuList.add(ModuleMenuItem(menu_title[i], menu_des[i], menu_picture[i],activity_list[i]))
+        }
+
+        val menuAdapter = ModuleMenuListAdapter(this, R.layout.module_menu_list_layout, menuList)
+
+        var list = findViewById(R.id.list_menu) as ListView
+
+        list.adapter = menuAdapter
 
 
-        listview.setOnItemClickListener { parent, view, position, id ->
+       list.onItemClickListener = AdapterView.OnItemClickListener{ adapter, v, position, id ->
             var intent = Intent(this, activity_list[position])
             startActivity(intent)
             finish()
         }
+
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {

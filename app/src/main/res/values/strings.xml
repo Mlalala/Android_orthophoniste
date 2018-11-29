@@ -10,11 +10,15 @@
 
     <!-- Phonology titles -->
     <string name="title_MemoryPhono">Trouver les paires de son (syllabes)</string>
+    <string name="des_MemoryPhono">\nzef,ujygtfbdsqrhsdf</string>
     <string name="title_AudioToWordPhono">Du son au mot</string>
+    <string name="des_AudioToWordPhono">\nzrtesyrdhkb</string>
     <string name="title_PictureToPhonemePhono">De l\'image au phoneme</string>
-    <string name="title_WordToRhymePhono"></string>
+    <string name="des_PictureToPhonemePhono">\nretbetztbezvr</string>
     <string name="title_AudioToSyllablePositionPhono">Trouver position phoneme</string>
+    <string name="des_AudioToSyllablePositionPhono">\nzthteryngfdono</string>
     <string name="title_AudioToRhyme">Ecouter puis trouver le mot qui rime</string>
+    <string name="des_AudioToRhyme">\nopiuhvgjkhbk</string>
 
     <!-- Memory titles -->
     <string name="title_SymbolsMemo">Ecouter puis remetre les mots dans l\'ordre</string>
@@ -28,7 +32,9 @@
 
     <!-- Visual titles -->
     <string name="title_MemorySyllablesVisu">Trouver les paires de syllabes</string>
+    <string name="des_MemorySyllablesVisu">\nzegrhtzfbdsfgraeg</string>
     <string name="title_SearchSyllableVisu">Confusion visuelles des syllabes</string>
+    <string name="des_SearchSyllableVisu">\nqerbedfvhjkjhaaaaaa</string>
 
 
     <!-- Menu titles -->
