@@ -9,6 +9,8 @@ import android.net.Uri
 import android.view.Menu
 import android.view.MenuInflater
 import android.widget.Toast
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 import fr.catarinetostudio.orthophonie.articulation.DescriptionArtiActivity
 import fr.catarinetostudio.orthophonie.memory.MemoryMenuActivity
 import fr.catarinetostudio.orthophonie.phonology.PhonologyMenuActivity
@@ -61,7 +63,14 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
-        Ads(this)
+        var mAdView : AdView
+        mAdView = this.findViewById(R.id.adViewTop)
+        val adRequestTop = AdRequest.Builder().build()
+        mAdView.loadAd(adRequestTop)
+
+        mAdView = this.findViewById(R.id.adViewBottom)
+        val adRequestBottom = AdRequest.Builder().build()
+        mAdView.loadAd(adRequestBottom)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -6,17 +6,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <!--
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adViewTop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="@string/banner_id">
-    </com.google.android.gms.ads.AdView>
-    -->
-
     <ListView
         android:id="@+id/menu_list"
         android:layout_width="match_parent"
@@ -24,6 +13,16 @@
         android:layout_weight="1"
         android:layout_marginBottom="50dp">
     </ListView>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adViewTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        android:layout_weight="0"
+        ads:adUnitId="@string/banner_id">
+    </com.google.android.gms.ads.AdView>
 
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
