@@ -17,8 +17,9 @@
     <string name="title_AudioToRhyme">Ecouter puis trouver le mot qui rime</string>
 
     <!-- Memory titles -->
-    <string name="title_SymbolsMemo">Ecouter puis remetre les mots dans l\'ordre</string>
-    <string name="title_AudioToOrderMemo">Regarder puis remetre les symboles dans l\'ordre</string>
+    <string name="title_SymbolsMemo">Regarder puis remetre les symboles dans l\'ordre </string>
+    <string name="title_AudioToOrderMemo">Ecouter puis remetre les mots dans l\'ordre</string>
+
 
     <!-- Articulation titles -->
     <string name="title_DescriptionArti">Liste des phonemes avec audio (aide visuelle ?)</string>

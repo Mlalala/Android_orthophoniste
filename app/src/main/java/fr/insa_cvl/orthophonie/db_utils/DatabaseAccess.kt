@@ -286,6 +286,22 @@ private constructor(context: Context) {
 
     }
 
+    /////Memory and focus///
+
+    //Audio to order Memo
+
+    fun get_menu_AudioToOrderMemo():ArrayList<String>{
+        var list = ArrayList<String>()
+        val cursor = database!!.rawQuery("SELECT serie,name FROM AudioToOrderMemoMenu",null)
+        cursor.moveToFirst()
+        while (!cursor.isAfterLast()) {
+            list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
+            cursor.moveToNext()
+        }
+        cursor.close()
+        return list
+    }
+
 
     fun open() {
         this.database = openHelper.writableDatabase
