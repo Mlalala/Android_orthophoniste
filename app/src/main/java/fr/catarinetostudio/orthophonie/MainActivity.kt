@@ -76,7 +76,6 @@ class MainActivity : AppCompatActivity() {
         when (item!!.itemId){
             R.id.action_settings -> Toast.makeText(this, "Settings",Toast.LENGTH_LONG).show()
             R.id.action_aboutus  -> manageMenu(getString(R.string.aboutus),getString(R.string.aboutus_content))
-
         }
         return super.onOptionsItemSelected(item)
     }

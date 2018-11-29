@@ -6,10 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.AdapterView
 import android.widget.ListView
-import fr.catarinetostudio.orthophonie.MainActivity
-import fr.catarinetostudio.orthophonie.ModuleMenuItem
-import fr.catarinetostudio.orthophonie.ModuleMenuListAdapter
-import fr.catarinetostudio.orthophonie.R
+import fr.catarinetostudio.orthophonie.*
 import fr.catarinetostudio.orthophonie.memory.AudioToOrderMemo.AudioToOrderMemoMenuActivity
 
 class MemoryMenuActivity : AppCompatActivity() {
@@ -57,6 +54,8 @@ class MemoryMenuActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        Ads(this)
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {

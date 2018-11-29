@@ -45,7 +45,7 @@
     <string name="help">Aide</string>
 
     <!-- About Us Content -->
-    <string name="aboutus_content">"\nCette application a été conçue et réalisée dans le cadre d'un projet étudiant. Merci de reporter les bugs rencontrés."</string>
+    <string name="aboutus_content">"\nCette application a été conçue et réalisée dans le cadre d'un projet étudiant.\n\nNous avons préféré mettre plus de publicités dans les menus plutôt que dans les activités. Ceci est notre unique source de financement.\n\nMerci de reporter les bugs rencontrés."</string>
     <string name="studio">Catarineto Studio</string>
 
     <!-- Help Content -->
