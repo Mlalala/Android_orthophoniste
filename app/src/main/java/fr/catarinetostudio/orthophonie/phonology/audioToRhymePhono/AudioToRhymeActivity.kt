@@ -33,28 +33,21 @@ class AudioToRhymeActivity: AppCompatActivity() {
 
         index_serie = intent.getIntExtra("EXTRA_POSITION",0)
 
-        //Serie lengh
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
         var sql_query = databaseAccess.count_AudioToRhyme(index_serie+1)
         length_serie = sql_query
-        //databaseAccess.close()
 
-        //init proposals, answer and audio
         init_serie_data(databaseAccess)
-        //Change all the strings and audio of the current serie item
         display_phono(proposal!!, answer, databaseAccess)
 
-        //Play audio one time
         media?.reset()
-        media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie"))
+        media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarinetostudio.orthophonie"))
         media!!.start()
     }
 
     fun init_serie_data(databaseAccess : DatabaseAccess){
-        //databaseAccess.open()
         var sql_query = databaseAccess.get_AudioToRhyme(index_serie+1,index_in_serie+1)
-        //databaseAccess.close()
 
         proposal = sql_query[0].toString().split("-")
         answer = sql_query[1].toInt()
@@ -79,9 +72,8 @@ class AudioToRhymeActivity: AppCompatActivity() {
         val audio_view = findViewById<ImageView>(R.id.imagePlay)
 
         audio_view.setOnClickListener {
-            //Toast.makeText(this, "Play", Toast.LENGTH_LONG).show()
             media?.reset()
-            media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "raw", "fr.insa_cvl.orthophonie"))
+            media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "raw", "fr.catarinetostudio.orthophonie"))
             media!!.start()
         }
     }
@@ -103,20 +95,15 @@ class AudioToRhymeActivity: AppCompatActivity() {
 
         builder.setTitle(title).setView(dialogView)
 
-
-        // Add the buttons
         if (title == "CORRECT !"){
             if (index_in_serie < length_serie){
                 builder.setCancelable(false)
                 builder.setPositiveButton("Suivant") { dialog, id ->
                     index_in_serie += 1
-                    //init proposals, answer and audio
                     init_serie_data(databaseAccess)
-                    //Play audio one time
                     media?.reset()
-                    media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie"))
+                    media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarinetostudio.orthophonie"))
                     media!!.start()
-                    //Change all the strings and audio of the current serie item
                     display_phono(proposal!!, answer, databaseAccess)
                 }
             }
@@ -131,7 +118,6 @@ class AudioToRhymeActivity: AppCompatActivity() {
             }
         }
 
-        // Create the AlertDialog
         val dialog = builder.create()
         dialog.show()
     }
@@ -163,7 +149,6 @@ class AudioToRhymeActivity: AppCompatActivity() {
             intent.putExtra(Intent.EXTRA_SUBJECT, "Suggestion pour l'activitée " + getString(R.string.title_AudioToRhyme) +" de l'Application Android Orthophonie")
             startActivity(intent)
         }
-
         val dialog = builder.create()
         dialog.show()
     }

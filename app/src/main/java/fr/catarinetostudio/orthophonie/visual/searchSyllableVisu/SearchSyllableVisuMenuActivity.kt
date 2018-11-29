@@ -32,14 +32,12 @@ class SearchSyllableVisuMenuActivity : AppCompatActivity(){
 
 
         listview.setOnItemClickListener { parent, view, position, id ->
-            //Toast.makeText(this, "Position Clicked:"+" "+position, Toast.LENGTH_LONG).show()
             var intent = Intent(this, SearchSyllableVisuActivity::class.java)
             intent.putExtra("EXTRA_POSITION",position)
             startActivity(intent)
             finish()
         }
     }
-
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {

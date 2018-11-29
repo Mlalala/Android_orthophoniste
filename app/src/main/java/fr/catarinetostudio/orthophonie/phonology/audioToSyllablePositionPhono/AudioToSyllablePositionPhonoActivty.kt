@@ -48,7 +48,7 @@ class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
 
         //Play audio one time
         media?.reset()
-        media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie"))
+        media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarinetostudio.orthophonie"))
         media!!.start()
     }
 
@@ -86,7 +86,7 @@ class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
         audio_view.setOnClickListener {
             //Toast.makeText(this, "Play", Toast.LENGTH_LONG).show()
             media?.reset()
-            media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "raw", "fr.insa_cvl.orthophonie"))
+            media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "raw", "fr.catarinetostudio.orthophonie"))
             media!!.start()
         }
     }
@@ -119,7 +119,7 @@ class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
                     init_serie_data(databaseAccess)
                     //Play audio one time
                     media?.reset()
-                    media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie"))
+                    media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarinetostudio.orthophonie"))
                     media!!.start()
                     //Change all the strings and audio of the current serie item
                     display_phono(proposal!!, answer, databaseAccess)

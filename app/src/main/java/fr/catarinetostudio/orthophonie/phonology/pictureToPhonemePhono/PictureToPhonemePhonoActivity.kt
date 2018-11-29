@@ -58,41 +58,36 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
 
     fun display(databaseAccess : DatabaseAccess){
         title!!.text = "Série " + (index_serie + 1).toString() + " - " + (index_in_serie + 1).toString()
-        picture!!.setImageResource(getResources().getIdentifier("picturetophonemephono" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "drawable", "fr.insa_cvl.orthophonie"))
+        picture!!.setImageResource(getResources().getIdentifier("picturetophonemephono" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "drawable", "fr.catarinetostudio.orthophonie"))
         button1!!.text = proposals!!.get(0)
         button2!!.text = proposals!!.get(1)
 
         media?.reset()
-        media = MediaPlayer.create(this, getResources().getIdentifier("picturetophonemephono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie"))
+        media = MediaPlayer.create(this, getResources().getIdentifier("picturetophonemephono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarinetostudio.orthophonie"))
         media!!.start()
 
         picturePlayer!!.setOnClickListener{
             media?.reset()
-            MediaPlayer.create(this, getResources().getIdentifier("picturetophonemephono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.insa_cvl.orthophonie")).start()
+            MediaPlayer.create(this, getResources().getIdentifier("picturetophonemephono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarinetostudio.orthophonie")).start()
             media!!.start()
         }
 
         button1!!.setOnClickListener {
             if (answer == 0){
-                //Toast.makeText(this,"Correct", Toast.LENGTH_LONG).show()
                 manageItem("CORRECT !",databaseAccess)
             }
             else{
-                //Toast.makeText(this,"Incorrect", Toast.LENGTH_LONG).show()
                 manageItem("FAUX !",databaseAccess)
             }
         }
         button2!!.setOnClickListener {
             if (answer == 1){
-                //Toast.makeText(this,"Correct", Toast.LENGTH_LONG).show()
                 manageItem("CORRECT !",databaseAccess)
             }
             else{
-                //Toast.makeText(this,"Incorrect", Toast.LENGTH_LONG).show()
                 manageItem("FAUX !",databaseAccess)
             }
         }
-
     }
 
     fun manageItem(title : String,databaseAccess : DatabaseAccess) {
@@ -103,7 +98,6 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
 
         builder.setTitle(title).setView(dialogView)
 
-        // Add the buttons
         if (title == "CORRECT !"){
             if (index_in_serie < length_serie - 1){
                 builder.setCancelable(false)
@@ -123,7 +117,6 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
                 }
             }
         }
-        // Create the AlertDialog
         val dialog = builder.create()
         dialog.show()
     }
@@ -136,7 +129,6 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
             true
         } else super.onKeyDown(keyCode, event)
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater: MenuInflater = menuInflater

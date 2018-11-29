@@ -72,7 +72,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
 
                 button.setOnClickListener(){
                     media?.reset()
-                    media = MediaPlayer.create(this, getResources().getIdentifier("memoryphono" + button.text.toString().toLowerCase(), "raw", "fr.insa_cvl.orthophonie"))
+                    media = MediaPlayer.create(this, getResources().getIdentifier("memoryphono" + button.text.toString().toLowerCase(), "raw", "fr.catarinetostudio.orthophonie"))
                     media!!.start()
                     selected.add(j+i*2)
                     click_process()

@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!--
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adViewTop"
@@ -13,6 +14,7 @@
         ads:adSize="SMART_BANNER"
         ads:adUnitId="@string/banner_id">
     </com.google.android.gms.ads.AdView>
+    -->
 
     <ListView
         android:id="@+id/list_menu"

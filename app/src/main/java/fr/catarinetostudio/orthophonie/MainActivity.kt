@@ -15,7 +15,6 @@ import fr.catarinetostudio.orthophonie.phonology.PhonologyMenuActivity
 import fr.catarinetostudio.orthophonie.visual.VisualMenuActivity
 
 
-
 class MainActivity : AppCompatActivity() {
 
     private val main_menu_title = arrayOf(
