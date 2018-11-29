@@ -9,6 +9,7 @@ import android.widget.ListView
 import fr.insa_cvl.orthophonie.MainActivity
 import fr.insa_cvl.orthophonie.R
 import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity
+import fr.insa_cvl.orthophonie.memory.AudioToOrderMemo.AudioToOrderMemoMenuActivity
 
 class MemoryMenuActivity : AppCompatActivity() {
 
@@ -17,12 +18,14 @@ class MemoryMenuActivity : AppCompatActivity() {
         setContentView(R.layout.simple_list_layout)
 
         val menu_title = arrayOf<String>(
-                getString(R.string.title_AudioToOrderMemo)
+                getString(R.string.title_AudioToOrderMemo),
+                getString(R.string.title_SymbolsMemo)
         )
 
         val activity_list = arrayOf(
+                AudioToOrderMemoMenuActivity::class.java,
                 MainActivity::class.java
-        )
+                )
 
         var adapter_simple : ArrayAdapter<String>? = null
 

@@ -286,6 +286,41 @@ private constructor(context: Context) {
 
     }
 
+    /////Memory and focus///
+
+    //Audio to order Memo
+
+    fun get_menu_AudioToOrderMemo():ArrayList<String>{
+        var list = ArrayList<String>()
+        val cursor = database!!.rawQuery("SELECT serie,name FROM AudioToOrderMemoMenu",null)
+        cursor.moveToFirst()
+        while (!cursor.isAfterLast()) {
+            list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
+            cursor.moveToNext()
+        }
+        cursor.close()
+        return list
+    }
+
+    fun count_AudioToOrderMemo(num_serie : Int):Int{
+        val cursor = database!!.rawQuery("SELECT num FROM AudioToOrderMemo WHERE serie = " + num_serie.toString(),null)
+        cursor.moveToFirst()
+        return cursor.getInt(0)
+    }
+
+    fun get_AudioToOrderMemo(num_serie : Int, num : Int): ArrayList<String>{
+        val list = ArrayList<String>()
+        val cursor = database!!.rawQuery("SELECT proposals,answers FROM AudioToOrderMemo WHERE serie = " + num_serie.toString()+ " AND num = " + num.toString(), null)
+        cursor.moveToFirst()
+
+        list.add(cursor.getString(0))
+        list.add(cursor.getString(1))
+
+        cursor.close()
+
+        return list
+    }
+
 
     fun open() {
         this.database = openHelper.writableDatabase

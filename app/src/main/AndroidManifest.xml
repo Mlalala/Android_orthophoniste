@@ -64,6 +64,9 @@
         <!-- Memory -->
         <activity android:label="@string/title_memo" android:name=".memory.MemoryMenuActivity" android:screenOrientation="portrait"></activity>
 
+        <activity android:label="@string/title_AudioToOrderMemo" android:name=".memory.AudioToOrderMemo.AudioToOrderMemoMenuActivity" android:screenOrientation="portrait"></activity>
+        <activity android:label="@string/title_AudioToOrderMemo" android:name=".memory.AudioToOrderMemo.AudioToOrderMemoActivity" android:screenOrientation="portrait"></activity>
+
     </application>
 
     <supports-screens
