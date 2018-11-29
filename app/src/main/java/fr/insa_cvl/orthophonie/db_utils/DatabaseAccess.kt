@@ -302,6 +302,25 @@ private constructor(context: Context) {
         return list
     }
 
+    fun count_AudioToOrderMemo(num_serie : Int):Int{
+        val cursor = database!!.rawQuery("SELECT num FROM AudioToOrderMemo WHERE serie = " + num_serie.toString(),null)
+        cursor.moveToFirst()
+        return cursor.getInt(0)
+    }
+
+    fun get_AudioToOrderMemo(num_serie : Int, num : Int): ArrayList<String>{
+        val list = ArrayList<String>()
+        val cursor = database!!.rawQuery("SELECT proposals,answers FROM AudioToOrderMemo WHERE serie = " + num_serie.toString()+ " AND num = " + num.toString(), null)
+        cursor.moveToFirst()
+
+        list.add(cursor.getString(0))
+        list.add(cursor.getString(1))
+
+        cursor.close()
+
+        return list
+    }
+
 
     fun open() {
         this.database = openHelper.writableDatabase
