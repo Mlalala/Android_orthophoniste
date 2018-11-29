@@ -1,4 +1,4 @@
-package fr.insa_cvl.orthophonie.phonology.audioToRhymePhono
+package fr.catarinetostudio.orthophonie.phonology.audioToRhymePhono
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,10 +7,9 @@ import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
-import fr.insa_cvl.orthophonie.R
-import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
-import fr.insa_cvl.orthophonie.phonology.PhonologyMenuActivity
-import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoActivity
+import fr.catarinetostudio.orthophonie.R
+import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.phonology.PhonologyMenuActivity
 
 class AudioToRhymeMenuActivity: AppCompatActivity() {
     private var adapter_simple : ArrayAdapter<String>? = null

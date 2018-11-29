@@ -1,4 +1,4 @@
-package fr.insa_cvl.orthophonie.articulation
+package fr.catarinetostudio.orthophonie.articulation
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,9 +6,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.Toast
-import fr.insa_cvl.orthophonie.R
-import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.R
+import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
 
 class DescriptionArtiSerie: AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package fr.insa_cvl.orthophonie.phonology.audioToSyllablePositionPhono
+package fr.catarinetostudio.orthophonie.phonology.audioToSyllablePositionPhono
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -12,9 +12,8 @@ import android.view.MenuInflater
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import fr.insa_cvl.orthophonie.R
-import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
-import fr.insa_cvl.orthophonie.phonology.audioToRhymePhono.AudioToRhymeMenuActivity
+import fr.catarinetostudio.orthophonie.R
+import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
 
 class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
 

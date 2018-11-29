@@ -1,18 +1,16 @@
-package fr.insa_cvl.orthophonie.memory
+package fr.catarinetostudio.orthophonie.memory
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.ListView
-import fr.insa_cvl.orthophonie.MainActivity
-import fr.insa_cvl.orthophonie.ModuleMenuItem
-import fr.insa_cvl.orthophonie.ModuleMenuListAdapter
-import fr.insa_cvl.orthophonie.R
-import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity
-import fr.insa_cvl.orthophonie.memory.AudioToOrderMemo.AudioToOrderMemoMenuActivity
+import fr.catarinetostudio.orthophonie.MainActivity
+import fr.catarinetostudio.orthophonie.ModuleMenuItem
+import fr.catarinetostudio.orthophonie.ModuleMenuListAdapter
+import fr.catarinetostudio.orthophonie.R
+import fr.catarinetostudio.orthophonie.memory.AudioToOrderMemo.AudioToOrderMemoMenuActivity
 
 class MemoryMenuActivity : AppCompatActivity() {
 
@@ -44,7 +42,7 @@ class MemoryMenuActivity : AppCompatActivity() {
         val menuList = ArrayList<ModuleMenuItem>()
 
         for (i in 0..menu_picture.lastIndex) {
-            menuList.add(ModuleMenuItem(menu_title[i], menu_des[i], menu_picture[i],activity_list[i]))
+            menuList.add(ModuleMenuItem(menu_title[i], menu_des[i], menu_picture[i], activity_list[i]))
         }
 
         val menuAdapter = ModuleMenuListAdapter(this, R.layout.module_menu_list_layout, menuList)

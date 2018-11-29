@@ -1,4 +1,4 @@
-package fr.insa_cvl.orthophonie.visual.memorySyllabesVisu
+package fr.catarinetostudio.orthophonie.visual.memorySyllabesVisu
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -10,8 +10,8 @@ import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuInflater
 import android.widget.*
-import fr.insa_cvl.orthophonie.R
-import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.R
+import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
 
 class MemorySyllabesVisuActivity : AppCompatActivity() {
     private var selected = ArrayList<Int>()

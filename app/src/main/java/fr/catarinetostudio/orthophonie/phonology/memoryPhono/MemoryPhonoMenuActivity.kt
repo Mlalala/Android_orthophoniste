@@ -1,4 +1,4 @@
-package fr.insa_cvl.orthophonie.phonology.memoryPhono
+package fr.catarinetostudio.orthophonie.phonology.memoryPhono
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,11 +6,10 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import fr.insa_cvl.orthophonie.Ads
-import fr.insa_cvl.orthophonie.MainActivity
-import fr.insa_cvl.orthophonie.R
-import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
-import fr.insa_cvl.orthophonie.phonology.PhonologyMenuActivity
+import fr.catarinetostudio.orthophonie.Ads
+import fr.catarinetostudio.orthophonie.R
+import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.phonology.PhonologyMenuActivity
 
 
 class MemoryPhonoMenuActivity : AppCompatActivity() {

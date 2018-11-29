@@ -1,4 +1,4 @@
-package fr.insa_cvl.orthophonie.visual.memorySyllabesVisu
+package fr.catarinetostudio.orthophonie.visual.memorySyllabesVisu
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,10 +6,10 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import fr.insa_cvl.orthophonie.Ads
-import fr.insa_cvl.orthophonie.R
-import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
-import fr.insa_cvl.orthophonie.visual.VisualMenuActivity
+import fr.catarinetostudio.orthophonie.Ads
+import fr.catarinetostudio.orthophonie.R
+import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.visual.VisualMenuActivity
 
 class MemorySyllabesVisuMenuActivity : AppCompatActivity() {
     private var adapter_simple : ArrayAdapter<String>? = null

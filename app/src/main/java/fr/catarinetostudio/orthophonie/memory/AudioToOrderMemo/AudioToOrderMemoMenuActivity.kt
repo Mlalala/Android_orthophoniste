@@ -1,4 +1,4 @@
-package fr.insa_cvl.orthophonie.memory.AudioToOrderMemo
+package fr.catarinetostudio.orthophonie.memory.AudioToOrderMemo
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,10 +7,9 @@ import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
-import fr.insa_cvl.orthophonie.R
-import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
-import fr.insa_cvl.orthophonie.memory.AudioToOrderMemo.AudioToOrderMemoActivity
-import fr.insa_cvl.orthophonie.memory.MemoryMenuActivity
+import fr.catarinetostudio.orthophonie.R
+import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.memory.MemoryMenuActivity
 
 class AudioToOrderMemoMenuActivity : AppCompatActivity() {
     private var adapter_simple : ArrayAdapter<String>? = null

@@ -1,4 +1,4 @@
-package fr.insa_cvl.orthophonie.phonology.memoryPhono
+package fr.catarinetostudio.orthophonie.phonology.memoryPhono
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -13,8 +13,8 @@ import android.view.MenuInflater
 import android.widget.Button
 import android.widget.TableLayout
 import android.widget.TableRow
-import fr.insa_cvl.orthophonie.R
-import fr.insa_cvl.orthophonie.db_utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.R
+import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
 
 
 class MemoryPhonoActivity : AppCompatActivity() {
