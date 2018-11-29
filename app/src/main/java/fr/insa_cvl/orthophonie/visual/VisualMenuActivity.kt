@@ -1,25 +1,14 @@
 package fr.insa_cvl.orthophonie.visual
 
 import android.content.Intent
-import android.media.Image
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
-import android.view.SearchEvent
-import android.view.View
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.ImageView
 import android.widget.ListView
 import fr.insa_cvl.orthophonie.*
-import fr.insa_cvl.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity
-import fr.insa_cvl.orthophonie.phonology.memoryPhono.MemoryPhonoMenuActivity
 import fr.insa_cvl.orthophonie.visual.memorySyllabesVisu.MemorySyllabesVisuMenuActivity
-import fr.insa_cvl.orthophonie.visual.searchSyllableVisu.SearchSyllableVisuActivity
 import fr.insa_cvl.orthophonie.visual.searchSyllableVisu.SearchSyllableVisuMenuActivity
-import android.widget.Toast
-
-
 
 class VisualMenuActivity: AppCompatActivity() {
 
@@ -67,7 +56,6 @@ class VisualMenuActivity: AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {

@@ -4,16 +4,12 @@ import android.app.Activity
 import android.content.Context
 import android.content.res.Resources
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import android.widget.Toast
 import android.content.Intent
-import android.graphics.Color
-import android.support.v4.content.ContextCompat.startActivity
 import android.widget.ImageView
 
 
@@ -46,7 +42,6 @@ class ModuleMenuListAdapter (context: Context, viewRes: Int, listMenu: ArrayList
             webView.loadUrl("file:///android_asset/"+itemList.pic+".gif")
             webView.getSettings().setLoadWithOverviewMode(true)
             webView.getSettings().setUseWideViewPort(true)
-
 
             title.text = itemList.titre
             des.text = itemList.des

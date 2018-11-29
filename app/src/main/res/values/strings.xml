@@ -22,8 +22,9 @@
 
     <!-- Memory titles -->
     <string name="title_SymbolsMemo">Regarder puis remetre les symboles dans l\'ordre </string>
+    <string name="des_SymbolsMemo">\naezretyrhtdgfqs</string>
     <string name="title_AudioToOrderMemo">Ecouter puis remetre les mots dans l\'ordre</string>
-
+    <string name="des_AudioToOrderMemo">\nazrgpihofubjniod</string>
 
     <!-- Articulation titles -->
     <string name="title_DescriptionArti">Liste des phonemes avec audio (aide visuelle ?)</string>
