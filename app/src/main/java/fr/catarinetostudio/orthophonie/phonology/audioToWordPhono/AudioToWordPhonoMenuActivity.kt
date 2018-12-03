@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.Toast
 import fr.catarinetostudio.orthophonie.Ads
 import fr.catarinetostudio.orthophonie.R
 import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
@@ -33,7 +32,6 @@ class AudioToWordPhonoMenuActivity : AppCompatActivity(){
 
 
         listview.setOnItemClickListener { parent, view, position, id ->
-            Toast.makeText(this, "Position Clicked:"+" "+position, Toast.LENGTH_LONG).show()
             var intent = Intent(this, AudioToWordPhonoActivity::class.java)
             intent.putExtra("EXTRA_POSITION",position)
             startActivity(intent)
