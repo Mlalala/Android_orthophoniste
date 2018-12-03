@@ -33,8 +33,8 @@ class VisualMenuActivity: AppCompatActivity() {
         )
 
         val menu_picture = arrayOf(
-                "desvisu1",
-                "desvisu2"
+                "MemorySyllablesVisu",
+                "SearchSyllableVisu"
         )
 
         val activity_list = arrayOf(

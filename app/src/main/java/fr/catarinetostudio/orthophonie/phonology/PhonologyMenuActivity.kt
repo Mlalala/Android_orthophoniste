@@ -50,9 +50,9 @@ class PhonologyMenuActivity : AppCompatActivity() {
         )
 
         val menu_picture = arrayOf(
-                "phono1",
-                "sample",
-                "sample",
+                "AudioToWordPhono",
+                "MemoryPhono",
+                "PictureToPhonemePhono",
                 "sample",
                 "sample"
         )

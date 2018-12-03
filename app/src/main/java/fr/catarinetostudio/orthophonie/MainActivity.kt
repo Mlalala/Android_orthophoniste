@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
             MemoryMenuActivity::class.java
     )
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -64,9 +63,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         var mAdView : AdView
+        /*
         mAdView = this.findViewById(R.id.adViewTop)
         val adRequestTop = AdRequest.Builder().build()
         mAdView.loadAd(adRequestTop)
+        */
 
         mAdView = this.findViewById(R.id.adViewBottom)
         val adRequestBottom = AdRequest.Builder().build()

@@ -14,6 +14,7 @@
         android:layout_marginBottom="50dp">
     </ListView>
 
+    <!--
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adViewTop"
@@ -23,6 +24,7 @@
         android:layout_weight="0"
         ads:adUnitId="@string/banner_id">
     </com.google.android.gms.ads.AdView>
+    -->
 
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"

@@ -14,8 +14,8 @@
 
     <ImageView
         android:id="@+id/PictureToPhonemeimage"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
         android:layout_gravity="center"
         android:src="@drawable/playaudio" />
 
