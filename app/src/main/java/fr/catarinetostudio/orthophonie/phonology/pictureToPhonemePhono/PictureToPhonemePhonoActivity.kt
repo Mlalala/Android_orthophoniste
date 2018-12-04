@@ -13,17 +13,17 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import fr.catarinetostudio.orthophonie.R
-import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
 
 class PictureToPhonemePhonoActivity : AppCompatActivity(){
 
-    private var index_serie : Int = 0
-    private var index_in_serie : Int = 0
+    private var indexSerie : Int = 0
+    private var indexInSerie : Int = 0
 
     private var proposals : List<String>? = null
     private var answer : Int = 0
 
-    private var length_serie : Int = 0
+    private var lengthSerie : Int = 0
 
     private var title : TextView? = null
     private var picture : ImageView? = null
@@ -37,15 +37,15 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.picture_to_phoneme_phono_layout)
 
-        index_serie = intent.getIntExtra("EXTRA_POSITION",0)
+        indexSerie = intent.getIntExtra("EXTRA_POSITION",0)
 
-        var databaseAccess = DatabaseAccess.getInstance(this)
+        val databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
 
-        length_serie = databaseAccess.count_PictureToPhonemePhono(index_serie+1)
-        proposals = databaseAccess.get_proposals_PictureToPhonemePhono(index_serie+1)
+        lengthSerie = databaseAccess.countPictureToPhonemePhono(indexSerie+1)
+        proposals = databaseAccess.getProposalsPictureToPhonemePhono(indexSerie+1)
 
-        answer = databaseAccess.get_answer_PictureToPhonemePhono(index_serie+1, index_in_serie+1)
+        answer = databaseAccess.getAnswerPictureToPhonemePhono(indexSerie+1, indexInSerie+1)
 
         title = findViewById(R.id.PictureToPhoneme_text_serie)
         picture = findViewById(R.id.PictureToPhonemeimage)
@@ -56,19 +56,19 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
         display(databaseAccess)
     }
 
-    fun display(databaseAccess : DatabaseAccess){
-        title!!.text = "Série " + (index_serie + 1).toString() + " - " + (index_in_serie + 1).toString()
-        picture!!.setImageResource(getResources().getIdentifier("picturetophonemephono" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "drawable", "fr.catarinetostudio.orthophonie"))
-        button1!!.text = proposals!!.get(0)
-        button2!!.text = proposals!!.get(1)
+    private fun display(databaseAccess : DatabaseAccess){
+        title!!.text = "Série " + (indexSerie + 1).toString() + " - " + (indexInSerie + 1).toString()
+        picture!!.setImageResource(resources.getIdentifier("picturetophonemephono" + (indexSerie + 1).toString() + (indexInSerie + 1).toString(), "drawable", "fr.catarinetostudio.orthophonie"))
+        button1!!.text = proposals!![0]
+        button2!!.text = proposals!![1]
 
         media?.reset()
-        media = MediaPlayer.create(this, getResources().getIdentifier("picturetophonemephono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarinetostudio.orthophonie"))
+        media = MediaPlayer.create(this, resources.getIdentifier("picturetophonemephono"+(indexSerie+1).toString() +(indexInSerie+1).toString(),"raw","fr.catarinetostudio.orthophonie"))
         media!!.start()
 
         picturePlayer!!.setOnClickListener{
             media?.reset()
-            MediaPlayer.create(this, getResources().getIdentifier("picturetophonemephono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarinetostudio.orthophonie")).start()
+            MediaPlayer.create(this, resources.getIdentifier("picturetophonemephono"+(indexSerie+1).toString() +(indexInSerie+1).toString(),"raw","fr.catarinetostudio.orthophonie")).start()
             media!!.start()
         }
 
@@ -90,7 +90,7 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
         }
     }
 
-    fun manageItem(title : String,databaseAccess : DatabaseAccess) {
+    private fun manageItem(title : String, databaseAccess : DatabaseAccess) {
         val builder = AlertDialog.Builder(this)
 
         val inflater = this.layoutInflater
@@ -99,17 +99,17 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
         builder.setTitle(title).setView(dialogView)
 
         if (title == "CORRECT !"){
-            if (index_in_serie < length_serie - 1){
+            if (indexInSerie < lengthSerie - 1){
                 builder.setCancelable(false)
-                builder.setPositiveButton("Suivant") { dialog, id ->
-                    index_in_serie += 1
-                    answer = databaseAccess.get_answer_PictureToPhonemePhono(index_serie+1, index_in_serie+1)
+                builder.setPositiveButton("Suivant") { _, _ ->
+                    indexInSerie += 1
+                    answer = databaseAccess.getAnswerPictureToPhonemePhono(indexSerie+1, indexInSerie+1)
                     display(databaseAccess)
                 }
             }
             else {
                 builder.setCancelable(false)
-                builder.setPositiveButton("Revenir au menu") { dialog, id ->
+                builder.setPositiveButton("Revenir au menu") { _, _ ->
                     val intent = Intent(this, PictureToPhonemePhonoMenuActivity::class.java)
                     databaseAccess.close()
                     startActivity(intent)
@@ -144,7 +144,7 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
         return super.onOptionsItemSelected(item)
     }
 
-    fun manageMenu(title : String, text : String) {
+    private fun manageMenu(title : String, text : String) {
         val builder = AlertDialog.Builder(this)
 
         val inflater = this.layoutInflater
@@ -152,7 +152,7 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
 
         builder.setTitle(title).setView(dialogView)
         builder.setMessage(text)
-        builder.setPositiveButton(getString(R.string.suggestion)) { dialog, id ->
+        builder.setPositiveButton(getString(R.string.suggestion)) { _, _ ->
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + getString(R.string.email)))
             intent.putExtra(Intent.EXTRA_SUBJECT, "Suggestion pour l'activitée " + getString(R.string.title_PictureToPhonemePhono) +" de l'Application Android Orthophonie")
             startActivity(intent)

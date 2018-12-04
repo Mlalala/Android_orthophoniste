@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import fr.catarinetostudio.orthophonie.MainActivity
 import fr.catarinetostudio.orthophonie.R
-import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
 
 
 class DescriptionArtiActivity : AppCompatActivity(){
@@ -21,7 +21,7 @@ class DescriptionArtiActivity : AppCompatActivity(){
 
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        var articulation_lettre = databaseAccess.get_Articulation_letter()
+        var articulation_lettre = databaseAccess.getArticulationLetter()
 
 
         adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,articulation_lettre)

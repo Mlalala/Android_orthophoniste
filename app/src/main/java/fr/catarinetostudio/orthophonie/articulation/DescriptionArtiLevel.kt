@@ -6,10 +6,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.Toast
 import fr.catarinetostudio.orthophonie.R
-import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
-import fr.catarinetostudio.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoActivity
+import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
 
 class DescriptionArtiLevel: AppCompatActivity() {
 
@@ -25,7 +23,7 @@ class DescriptionArtiLevel: AppCompatActivity() {
 
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        var articulation_level = databaseAccess.get_Articulation_level(index_letter +1)
+        var articulation_level = databaseAccess.getArticulationLevel(index_letter +1)
 
 
         adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,articulation_level)

@@ -1,8 +1,7 @@
-package fr.catarinetostudio.orthophonie
+package fr.catarinetostudio.orthophonie.utils
 
 import android.app.Activity
 import android.content.Context
-import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,15 +10,15 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.content.Intent
 import android.widget.ImageView
+import fr.catarinetostudio.orthophonie.R
 
 class ModuleMenuListAdapter (context: Context, viewRes: Int, listMenu: ArrayList<ModuleMenuItem>): ArrayAdapter<ModuleMenuItem>(context,viewRes,listMenu) {
 
-    private val res : Resources
-    private var listMenu : ArrayList<ModuleMenuItem> ?= null //safe cast?
+    //private val res : Resources = context.resources
+    private var listMenu : ArrayList<ModuleMenuItem> ?= null
     private  var viewRes : Int = 0
 
     init{
-        this.res = context.resources // ??
         this.listMenu = listMenu
         this.viewRes = viewRes
     }
@@ -35,19 +34,19 @@ class ModuleMenuListAdapter (context: Context, viewRes: Int, listMenu: ArrayList
 
         if (itemList != null) {
             val title = view!!.findViewById(R.id.module_title) as TextView
-            val des = view!!.findViewById(R.id.module_des) as TextView
-            val webView = view!!.findViewById(R.id.web_view) as WebView
+            val des = view.findViewById(R.id.module_des) as TextView
+            val webView = view.findViewById(R.id.web_view) as WebView
 
             webView.loadUrl("file:///android_asset/"+itemList.pic+".gif")
-            webView.getSettings().setLoadWithOverviewMode(true)
-            webView.getSettings().setUseWideViewPort(true)
+            webView.settings.loadWithOverviewMode = true
+            webView.settings.useWideViewPort = true
 
             title.text = itemList.titre
             des.text = itemList.des
 
-            val img = view!!.findViewById(R.id.clicimg) as ImageView
+            val img = view.findViewById(R.id.clicimg) as ImageView
             img.setOnClickListener {
-                var intent = Intent(context, itemList.act)
+                val intent = Intent(context, itemList.act)
                 (context as Activity).startActivity(intent)
                 (context as Activity).finish()
             }

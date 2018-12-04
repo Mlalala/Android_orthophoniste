@@ -1,22 +1,21 @@
-package fr.catarinetostudio.orthophonie
+package fr.catarinetostudio.orthophonie.utils
 
 import android.content.Context
-import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import fr.catarinetostudio.orthophonie.R
 
-class MenuListAdapter(context: Context, viewRes: Int, listMenu: ArrayList<MenuItem>): ArrayAdapter<MenuItem>(context,viewRes,listMenu) {
+class MainMenuListAdapter(context: Context, viewRes: Int, listMenu: ArrayList<MainMenuItem>): ArrayAdapter<MainMenuItem>(context,viewRes,listMenu) {
 
-    private val res : Resources
-    private var listMenu : ArrayList<MenuItem> ?= null //safe cast?
+   //private val res : Resources = context.resources
+    private var listMenu : ArrayList<MainMenuItem> ?= null
     private  var viewRes : Int = 0
 
     init{
-        this.res = context.resources // ??
         this.listMenu = listMenu
         this.viewRes = viewRes
     }
@@ -36,7 +35,6 @@ class MenuListAdapter(context: Context, viewRes: Int, listMenu: ArrayList<MenuIt
 
             title.setText(itemList.titre)
             logo.setImageResource(itemList.logo)
-
         }
         return view!!
 

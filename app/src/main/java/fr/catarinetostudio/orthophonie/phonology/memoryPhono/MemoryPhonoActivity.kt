@@ -14,105 +14,105 @@ import android.widget.Button
 import android.widget.TableLayout
 import android.widget.TableRow
 import fr.catarinetostudio.orthophonie.R
-import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
 
 
 class MemoryPhonoActivity : AppCompatActivity() {
 
     private var selected = ArrayList<Int>()
-    private var buttonlist = ArrayList<Button>()
-    private var nb_correct = 0
-    private  var serie_size = 0
+    private var buttonList = ArrayList<Button>()
+    private var nbCorrect = 0
+    private  var serieSize = 0
 
     private var media : MediaPlayer? = null
 
-    private val size_text = 18f
+    private val sizeText = 18f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.table_layout)
 
-        val index_serie = intent.getIntExtra("EXTRA_POSITION",0)
+        val indexSerie = intent.getIntExtra("EXTRA_POSITION",0)
 
-        var databaseAccess = DatabaseAccess.getInstance(this)
+        val databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        var list_elements = databaseAccess.get_MemoryPhono(index_serie+1)
+        val listElements = databaseAccess.getMemoryPhono(indexSerie+1)
         databaseAccess.close()
-        serie_size = list_elements.size
-        list_elements.addAll(list_elements)
-        list_elements.shuffle()
+        serieSize = listElements.size
+        listElements.addAll(listElements)
+        listElements.shuffle()
 
-        val row_param = TableLayout.LayoutParams(
+        val rowParam = TableLayout.LayoutParams(
                 TableLayout.LayoutParams.MATCH_PARENT,
                 TableLayout.LayoutParams.MATCH_PARENT,
                 1.0f        )
 
-        val button_param = TableRow.LayoutParams(
+        val buttonParam = TableRow.LayoutParams(
                 TableRow.LayoutParams.MATCH_PARENT,
                 TableRow.LayoutParams.MATCH_PARENT,
                 1.0f
         )
-        button_param.setMargins(10,10,10,10)
+        buttonParam.setMargins(10,10,10,10)
 
         val table = findViewById<TableLayout>(R.id.memoryphonotable)
-        for (i in 0..list_elements.size/2-1){
-            var row = TableRow(this)
+        for (i in 0 until listElements.size/2){
+            val row = TableRow(this)
             row.gravity = Gravity.CENTER
-            row.layoutParams = row_param
+            row.layoutParams = rowParam
 
             for (j in 0..1){
-                var button = Button(this)
+                val button = Button(this)
                 button.textSize = 0f
                 button.setAllCaps(false)
-                button.text = list_elements[j+i*2]
-                button.layoutParams = button_param
+                button.text = listElements[j+i*2]
+                button.layoutParams = buttonParam
                 button.setBackgroundColor(getColor(R.color.memoryDefault))
                 row.addView(button)
-                buttonlist.add(button)
+                buttonList.add(button)
 
-                button.setOnClickListener(){
+                button.setOnClickListener {
                     media?.reset()
-                    media = MediaPlayer.create(this, getResources().getIdentifier("memoryphono" + button.text.toString().toLowerCase(), "raw", "fr.catarinetostudio.orthophonie"))
+                    media = MediaPlayer.create(this, resources.getIdentifier("memoryphono" + button.text.toString().toLowerCase(), "raw", "fr.catarinetostudio.orthophonie"))
                     media!!.start()
                     selected.add(j+i*2)
-                    click_process()
+                    clickProcess()
                 }
             }
             table.addView(row)
         }
     }
 
-    fun click_process(){
+    private fun clickProcess(){
         if (selected.size == 1){
-            buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memorySelected))
+            buttonList[selected[0]].setBackgroundColor(getColor(R.color.memorySelected))
         }
         else {
-            buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memorySelected))
-            if (selected[0] != selected[1] && buttonlist[selected[0]].text == buttonlist[selected[1]].text){
-                buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryValid))
-                buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryValid))
-                buttonlist[selected[0]].setOnClickListener(null)
-                buttonlist[selected[1]].setOnClickListener(null)
-                buttonlist[selected[0]].textSize = size_text
-                buttonlist[selected[1]].textSize = size_text
+            buttonList[selected[1]].setBackgroundColor(getColor(R.color.memorySelected))
+            if (selected[0] != selected[1] && buttonList[selected[0]].text == buttonList[selected[1]].text){
+                buttonList[selected[0]].setBackgroundColor(getColor(R.color.memoryValid))
+                buttonList[selected[1]].setBackgroundColor(getColor(R.color.memoryValid))
+                buttonList[selected[0]].setOnClickListener(null)
+                buttonList[selected[1]].setOnClickListener(null)
+                buttonList[selected[0]].textSize = sizeText
+                buttonList[selected[1]].textSize = sizeText
                 selected.clear()
 
-                nb_correct += 1
-                if (nb_correct == serie_size){
+                nbCorrect += 1
+                if (nbCorrect == serieSize){
                     manageItem()
                 }
             }
             else {
-                this@MemoryPhonoActivity.buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryError))
-                this@MemoryPhonoActivity.buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryError))
+                this@MemoryPhonoActivity.buttonList[selected[0]].setBackgroundColor(getColor(R.color.memoryError))
+                this@MemoryPhonoActivity.buttonList[selected[1]].setBackgroundColor(getColor(R.color.memoryError))
 
                 Thread(Runnable {
-                    this@MemoryPhonoActivity.runOnUiThread(java.lang.Runnable {
+                    this@MemoryPhonoActivity.runOnUiThread {
                         Thread.sleep(750)
-                        this@MemoryPhonoActivity.buttonlist[selected[0]].setBackgroundColor(getColor(R.color.memoryDefault))
-                        this@MemoryPhonoActivity.buttonlist[selected[1]].setBackgroundColor(getColor(R.color.memoryDefault))
+                        this@MemoryPhonoActivity.buttonList[selected[0]].setBackgroundColor(getColor(R.color.memoryDefault))
+                        this@MemoryPhonoActivity.buttonList[selected[1]].setBackgroundColor(getColor(R.color.memoryDefault))
                         this@MemoryPhonoActivity.selected.clear()
-                    })
+                    }
                 }).start()
             }
 
@@ -120,7 +120,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
     }
 
 
-    fun manageItem() {
+    private fun manageItem() {
         val builder = AlertDialog.Builder(this)
         builder.setCancelable(false)
         val inflater = this.layoutInflater
@@ -128,7 +128,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
 
         builder.setTitle("BRAVO !").setView(dialogView)
 
-        builder.setPositiveButton("Revenir au menu") { dialog, id ->
+        builder.setPositiveButton("Revenir au menu") { _, _ ->
             val intent = Intent(this, MemoryPhonoMenuActivity::class.java)
             startActivity(intent)
             finish()
@@ -152,7 +152,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun manageMenu(title : String, text : String) {
+    private fun manageMenu(title : String, text : String) {
         val builder = AlertDialog.Builder(this)
 
         val inflater = this.layoutInflater
@@ -160,7 +160,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
 
         builder.setTitle(title).setView(dialogView)
         builder.setMessage(text)
-        builder.setPositiveButton(getString(R.string.suggestion)) { dialog, id ->
+        builder.setPositiveButton(getString(R.string.suggestion)) { _, _ ->
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + getString(R.string.email)))
             intent.putExtra(Intent.EXTRA_SUBJECT, "Suggestion pour l'activitée " + getString(R.string.title_MemoryPhono) +" de l'Application Android Orthophonie")
             startActivity(intent)
@@ -178,5 +178,4 @@ class MemoryPhonoActivity : AppCompatActivity() {
             true
         } else super.onKeyDown(keyCode, event)
     }
-
 }

@@ -14,26 +14,28 @@ import com.google.android.gms.ads.AdView
 import fr.catarinetostudio.orthophonie.articulation.DescriptionArtiActivity
 import fr.catarinetostudio.orthophonie.memory.MemoryMenuActivity
 import fr.catarinetostudio.orthophonie.phonology.PhonologyMenuActivity
+import fr.catarinetostudio.orthophonie.utils.MainMenuItem
+import fr.catarinetostudio.orthophonie.utils.MainMenuListAdapter
 import fr.catarinetostudio.orthophonie.visual.VisualMenuActivity
 
 
 class MainActivity : AppCompatActivity() {
 
-    private val main_menu_title = arrayOf(
+    private val mainmenutitle = arrayOf(
             R.string.title_arti,
             R.string.title_phono,
             R.string.title_visu,
             R.string.title_memo
     )
 
-    private val main_menu_logo = arrayOf(
+    private val mainmenulogo = arrayOf(
             R.drawable.arti,
             R.drawable.phono,
             R.drawable.visu,
             R.drawable.memory
     )
 
-    private val activity_list = arrayOf(
+    private val activitylist = arrayOf(
             DescriptionArtiActivity::class.java,
             PhonologyMenuActivity::class.java,
             VisualMenuActivity::class.java,
@@ -44,20 +46,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val menuList = ArrayList<MenuItem>()
+        val menuList = ArrayList<MainMenuItem>()
 
-        for (i in 0..main_menu_logo.lastIndex) {
-            menuList.add(MenuItem(main_menu_title[i], main_menu_logo[i]))
+        for (i in 0..mainmenulogo.lastIndex) {
+            menuList.add(MainMenuItem(mainmenutitle[i], mainmenulogo[i]))
         }
 
-        val menuAdapter = MenuListAdapter(this, R.layout.activity_main_menu_list_layout, menuList)
+        val menuAdapter = MainMenuListAdapter(this, R.layout.activity_main_menu_list_layout, menuList)
 
-        var list = findViewById(R.id.menu_list) as ListView
+        val list = findViewById<ListView>(R.id.menu_list)
 
         list.adapter = menuAdapter
 
-        list.setOnItemClickListener { parent, view, position, id ->
-            val intent = Intent(this,activity_list[position])
+        list.setOnItemClickListener { _, _, position, _ ->
+            val intent = Intent(this,activitylist[position])
             startActivity(intent)
             finish()
         }
@@ -89,7 +91,7 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun manageMenu(title : String, text : String) {
+    private fun manageMenu(title : String, text : String) {
         val builder = AlertDialog.Builder(this)
 
         val inflater = this.layoutInflater
@@ -97,7 +99,7 @@ class MainActivity : AppCompatActivity() {
 
         builder.setTitle(title).setView(dialogView)
         builder.setMessage(text)
-        builder.setPositiveButton("Contactez-nous") { dialog, id ->
+        builder.setPositiveButton("Contactez-nous") { _, _ ->
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + getString(R.string.email)))
             intent.putExtra(Intent.EXTRA_SUBJECT, "Application Android Orthophonie")
             startActivity(intent)

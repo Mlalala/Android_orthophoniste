@@ -1,4 +1,4 @@
-package fr.catarinetostudio.orthophonie.db_utils
+package fr.catarinetostudio.orthophonie.utils
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -21,11 +21,11 @@ private constructor(context: Context) {
 
         // PictureToPhonemePhono
 
-    fun get_Menu_PictureToPhonemePhono(): ArrayList<String>{
-        var list = ArrayList<String>()
+    fun getMenuPictureToPhonemePhono(): ArrayList<String>{
+        val list = ArrayList<String>()
         val cursor = database!!.rawQuery("SELECT serie,name FROM PictureToPhonemeMenuPhono",null)
         cursor.moveToFirst()
-        while (!cursor.isAfterLast()) {
+        while (!cursor.isAfterLast) {
             list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
             cursor.moveToNext()
         }
@@ -33,23 +33,23 @@ private constructor(context: Context) {
         return list
     }
 
-    fun get_proposals_PictureToPhonemePhono(num_serie : Int): List<String>{
+    fun getProposalsPictureToPhonemePhono(num_serie : Int): List<String>{
         val cursor = database!!.rawQuery("SELECT proposals FROM PictureToPhonemeMenuPhono WHERE serie = " + num_serie.toString(),null)
         cursor.moveToFirst()
-        var list = cursor.getString(0).split(",")
+        val list = cursor.getString(0).split(",")
         cursor.close()
         return list
     }
 
-    fun get_answer_PictureToPhonemePhono(num_serie : Int, No : Int): Int{
+    fun getAnswerPictureToPhonemePhono(num_serie : Int, No : Int): Int{
         val cursor = database!!.rawQuery("SELECT answer FROM PictureToPhonemePhono WHERE serie = " + num_serie.toString() + " AND No = " + No.toString() ,null)
         cursor.moveToFirst()
-        var answer = cursor.getInt(0)
+        val answer = cursor.getInt(0)
         cursor.close()
         return answer
     }
 
-    fun count_PictureToPhonemePhono(num_serie : Int):Int{
+    fun countPictureToPhonemePhono(num_serie : Int):Int{
         val cursor = database!!.rawQuery("SELECT COUNT(No)\n" +
                 "FROM PictureToPhonemePhono\n" +
                 "WHERE serie = " + num_serie.toString(),null)
@@ -59,11 +59,11 @@ private constructor(context: Context) {
 
         // AudioToWordPhono
 
-    fun get_Menu_AudioToWordPhono(): ArrayList<String>{
-        var list = ArrayList<String>()
+    fun getMenuAudioToWordPhono(): ArrayList<String>{
+        val list = ArrayList<String>()
         val cursor = database!!.rawQuery("SELECT serie,name FROM AudioToWordMenuPhono",null)
         cursor.moveToFirst()
-        while (!cursor.isAfterLast()) {
+        while (!cursor.isAfterLast) {
             list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
             cursor.moveToNext()
         }
@@ -71,7 +71,7 @@ private constructor(context: Context) {
         return list
     }
 
-    fun get_AudioToWordPhono(num_serie : Int, num : Int): ArrayList<String>{
+    fun getAudioToWordPhono(num_serie : Int, num : Int): ArrayList<String>{
         val list = ArrayList<String>()
         val cursor = database!!.rawQuery("SELECT proposals,answer FROM AudioToWordPhono WHERE No_serie = " + num_serie.toString()+ " AND No = " + num.toString(), null)
         cursor.moveToFirst()
@@ -84,7 +84,7 @@ private constructor(context: Context) {
         return list
     }
 
-    fun count_AudioToWordPhono(num_serie : Int):Int{
+    fun countAudioToWordPhono(num_serie : Int):Int{
         val cursor = database!!.rawQuery("SELECT COUNT(No)\n" +
                 "FROM AudioToWordPhono\n" +
                 "WHERE No_serie = " + num_serie.toString(),null)
@@ -94,8 +94,8 @@ private constructor(context: Context) {
 
         //MemoryPhono
 
-    fun get_Menu_MemoryPhono(): ArrayList<String>{
-        var list = ArrayList<String>()
+    fun getMenuMemoryPhono(): ArrayList<String>{
+        val list = ArrayList<String>()
         val cursor = database!!.rawQuery("SELECT serie,name FROM MemoryPhono",null)
         cursor.moveToFirst()
         while (!cursor.isAfterLast()) {
@@ -106,7 +106,7 @@ private constructor(context: Context) {
         return list
     }
 
-    fun get_MemoryPhono(num_serie : Int): ArrayList<String>{
+    fun getMemoryPhono(num_serie : Int): ArrayList<String>{
         val cursor = database!!.rawQuery("SELECT elements FROM MemoryPhono WHERE serie = " + num_serie.toString(), null)
         cursor.moveToFirst()
         val list = ArrayList((cursor.getString(0)).split(","))
@@ -117,11 +117,11 @@ private constructor(context: Context) {
     }
 
         //audio to rhyme
-    fun get_menu_AudioToRhyme():ArrayList<String>{
-            var list = ArrayList<String>()
+    fun getMenuAudioToRhyme():ArrayList<String>{
+            val list = ArrayList<String>()
             val cursor = database!!.rawQuery("SELECT serie,name FROM AudioToRhymeMenu",null)
             cursor.moveToFirst()
-            while (!cursor.isAfterLast()) {
+            while (!cursor.isAfterLast) {
                 list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
                 cursor.moveToNext()
             }
@@ -129,13 +129,13 @@ private constructor(context: Context) {
             return list
         }
 
-    fun count_AudioToRhyme(num_serie : Int):Int{
+    fun countAudioToRhyme(num_serie : Int):Int{
         val cursor = database!!.rawQuery("SELECT num FROM AudioToRhyme WHERE serie = " + num_serie.toString(),null)
         cursor.moveToFirst()
         return cursor.getInt(0)
     }
 
-    fun get_AudioToRhyme(num_serie : Int, num : Int): ArrayList<String>{
+    fun getAudioToRhyme(num_serie : Int, num : Int): ArrayList<String>{
         val list = ArrayList<String>()
         val cursor = database!!.rawQuery("SELECT proposals,answer FROM AudioToRhyme WHERE serie = " + num_serie.toString()+ " AND num = " + num.toString(), null)
         cursor.moveToFirst()
@@ -150,8 +150,8 @@ private constructor(context: Context) {
 
     // syllabe position
 
-    fun get_MenuAudioToSyllabePosition():ArrayList<String>{
-        var list = ArrayList<String>()
+    fun getMenuAudioToSyllabePosition():ArrayList<String>{
+        val list = ArrayList<String>()
         val cursor = database!!.rawQuery("SELECT serie,name FROM SyllabePositionMenu",null)
         cursor.moveToFirst()
         while (!cursor.isAfterLast()) {
@@ -162,13 +162,13 @@ private constructor(context: Context) {
         return list
     }
 
-    fun count_AudioToSyllabePosition(num_serie : Int):Int{
+    fun countAudioToSyllabePosition(num_serie : Int):Int{
         val cursor = database!!.rawQuery("SELECT num FROM SyllabePosition WHERE serie = " + num_serie.toString(),null)
         cursor.moveToFirst()
         return cursor.getInt(0)
     }
 
-    fun get_AudioToSyllabePosition(num_serie : Int, num : Int): ArrayList<String>{
+    fun getAudioToSyllabePosition(num_serie : Int, num : Int): ArrayList<String>{
         val list = ArrayList<String>()
         val cursor = database!!.rawQuery("SELECT proposals,answer,syllable FROM SyllabePosition WHERE serie = " + num_serie.toString()+ " AND num = " + num.toString(), null)
         cursor.moveToFirst()
@@ -188,8 +188,8 @@ private constructor(context: Context) {
 
         // MemorySyllabesVisu
 
-    fun get_Menu_MemorySyllabesVisu(): ArrayList<String>{
-        var list = ArrayList<String>()
+    fun getMenuMemorySyllabesVisu(): ArrayList<String>{
+        val list = ArrayList<String>()
         val cursor = database!!.rawQuery("SELECT serie,name FROM MemorySyllabesVisu",null)
         cursor.moveToFirst()
         while (!cursor.isAfterLast()) {
@@ -200,7 +200,7 @@ private constructor(context: Context) {
         return list
     }
 
-    fun get_MemorySyllabesVisu(num_serie : Int): ArrayList<String>{
+    fun getMemorySyllabesVisu(num_serie : Int): ArrayList<String>{
         val cursor = database!!.rawQuery("SELECT elements FROM MemorySyllabesVisu WHERE serie = " + num_serie.toString(), null)
         cursor.moveToFirst()
         val list = ArrayList((cursor.getString(0)).split(","))
@@ -212,11 +212,11 @@ private constructor(context: Context) {
 
         // SearchSyllableVisu
 
-    fun get_Menu_SearchSyllableVisu(): ArrayList<String>{
-        var list = ArrayList<String>()
+    fun getMenuSearchSyllableVisu(): ArrayList<String>{
+        val list = ArrayList<String>()
         val cursor = database!!.rawQuery("SELECT serie,name FROM SearchSyllableVisu",null)
         cursor.moveToFirst()
-        while (!cursor.isAfterLast()) {
+        while (!cursor.isAfterLast) {
             list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
             cursor.moveToNext()
         }
@@ -224,7 +224,7 @@ private constructor(context: Context) {
         return list
     }
 
-    fun get_SearchSyllableVisu(num_serie : Int): ArrayList<String>{
+    fun getSearchSyllableVisu(num_serie : Int): ArrayList<String>{
         val cursor = database!!.rawQuery("SELECT syllables FROM SearchSyllableVisu WHERE serie = " + num_serie.toString(), null)
         cursor.moveToFirst()
         val list = ArrayList((cursor.getString(0)).split(","))
@@ -234,7 +234,7 @@ private constructor(context: Context) {
         return list
     }
 
-    fun get_Answers_SearchSyllableVisu(num_serie : Int): ArrayList<String>{
+    fun getAnswersSearchSyllableVisu(num_serie : Int): ArrayList<String>{
         val cursor = database!!.rawQuery("SELECT answers FROM SearchSyllableVisu WHERE serie = " + num_serie.toString(), null)
         cursor.moveToFirst()
         val list = ArrayList((cursor.getString(0)).split(","))
@@ -246,8 +246,8 @@ private constructor(context: Context) {
 
     //// ARTICULATION ////
 
-    fun get_Articulation_level(index_lettre: Int):ArrayList<String>{
-        var list = ArrayList<String>()
+    fun getArticulationLevel(index_lettre: Int):ArrayList<String>{
+        val list = ArrayList<String>()
         val cursor = database!!.rawQuery("SELECT lettre,name FROM DescriptionArtiSeries WHERE num = "  +  index_lettre.toString(),null)
         cursor.moveToFirst()
         while (!cursor.isAfterLast()) {
@@ -258,11 +258,11 @@ private constructor(context: Context) {
         return list
     }
 
-    fun get_Articulation_letter():ArrayList<String>{
-        var list = ArrayList<String>()
+    fun getArticulationLetter():ArrayList<String>{
+        val list = ArrayList<String>()
         val cursor = database!!.rawQuery("SELECT letter FROM DescriptionArtiLettre",null)
         cursor.moveToFirst()
-        while (!cursor.isAfterLast()) {
+        while (!cursor.isAfterLast) {
             list.add(" " + cursor.getString(0))
             cursor.moveToNext()
         }
@@ -270,12 +270,12 @@ private constructor(context: Context) {
         return list
     }
 
-    fun get_Articulation_mot(num : Int, serie : Int):ArrayList<String>{
-        var list = ArrayList<String>()
+    fun getArticulationMot(num : Int, serie : Int):ArrayList<String>{
+        val list = ArrayList<String>()
         val cursor = database!!.rawQuery("SELECT name FROM DescriptionArtiObjet WHERE num = " + "'" + num.toString() + "'" + "AND serie= "+ serie.toString(), null)
         //val cursor = database!!.rawQuery("SELECT name FROM DescriptionArtiObjet LEFT JOIN DescriptionArtiSeries ON WHERE lettre = " + "'" + lettre + "'" + "AND serie= "+ serie, null)
         cursor.moveToFirst()
-        while (!cursor.isAfterLast()) {
+        while (!cursor.isAfterLast) {
             list.add(" " + cursor.getString(0))
             cursor.moveToNext()
         }
@@ -290,11 +290,11 @@ private constructor(context: Context) {
 
     //Audio to order Memo
 
-    fun get_menu_AudioToOrderMemo():ArrayList<String>{
-        var list = ArrayList<String>()
+    fun getMenuAudioToOrderMemo():ArrayList<String>{
+        val list = ArrayList<String>()
         val cursor = database!!.rawQuery("SELECT serie,name FROM AudioToOrderMemoMenu",null)
         cursor.moveToFirst()
-        while (!cursor.isAfterLast()) {
+        while (!cursor.isAfterLast) {
             list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
             cursor.moveToNext()
         }
@@ -302,13 +302,13 @@ private constructor(context: Context) {
         return list
     }
 
-    fun count_AudioToOrderMemo(num_serie : Int):Int{
+    fun countAudioToOrderMemo(num_serie : Int):Int{
         val cursor = database!!.rawQuery("SELECT num FROM AudioToOrderMemo WHERE serie = " + num_serie.toString(),null)
         cursor.moveToFirst()
         return cursor.getInt(0)
     }
 
-    fun get_AudioToOrderMemo(num_serie : Int, num : Int): ArrayList<String>{
+    fun getAudioToOrderMemo(num_serie : Int, num : Int): ArrayList<String>{
         val list = ArrayList<String>()
         val cursor = database!!.rawQuery("SELECT proposals,answers FROM AudioToOrderMemo WHERE serie = " + num_serie.toString()+ " AND num = " + num.toString(), null)
         cursor.moveToFirst()

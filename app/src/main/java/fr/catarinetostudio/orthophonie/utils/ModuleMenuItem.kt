@@ -1,4 +1,4 @@
-package fr.catarinetostudio.orthophonie
+package fr.catarinetostudio.orthophonie.utils
 
 import android.support.v7.app.AppCompatActivity
 

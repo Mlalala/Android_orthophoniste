@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
 import fr.catarinetostudio.orthophonie.R
-import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
 import fr.catarinetostudio.orthophonie.memory.MemoryMenuActivity
 
 class AudioToOrderMemoMenuActivity : AppCompatActivity() {
@@ -20,7 +20,7 @@ class AudioToOrderMemoMenuActivity : AppCompatActivity() {
 
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        var phonology_list = databaseAccess.get_menu_AudioToOrderMemo()
+        var phonology_list = databaseAccess.getMenuAudioToOrderMemo()
 
 
         adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,phonology_list)

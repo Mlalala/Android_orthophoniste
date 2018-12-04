@@ -13,7 +13,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import fr.catarinetostudio.orthophonie.R
-import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
 
 class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
 
@@ -37,7 +37,7 @@ class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
         //Serie lengh
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        var sql_query = databaseAccess.count_AudioToSyllabePosition(index_serie+1)
+        var sql_query = databaseAccess.countAudioToSyllabePosition(index_serie+1)
         length_serie = sql_query
         //databaseAccess.close()
 
@@ -54,7 +54,7 @@ class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
 
     fun init_serie_data(databaseAccess : DatabaseAccess){
         //databaseAccess.open()
-        var sql_query = databaseAccess.get_AudioToSyllabePosition(index_serie+1,index_in_serie+1)
+        var sql_query = databaseAccess.getAudioToSyllabePosition(index_serie+1,index_in_serie+1)
         //databaseAccess.close()
 
         proposal = sql_query[0].toString().split("-")

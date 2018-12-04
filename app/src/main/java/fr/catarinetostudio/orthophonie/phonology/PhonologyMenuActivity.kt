@@ -6,10 +6,10 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.AdapterView
 import android.widget.ListView
-import fr.catarinetostudio.orthophonie.Ads
+import fr.catarinetostudio.orthophonie.utils.Ads
 import fr.catarinetostudio.orthophonie.MainActivity
-import fr.catarinetostudio.orthophonie.ModuleMenuItem
-import fr.catarinetostudio.orthophonie.ModuleMenuListAdapter
+import fr.catarinetostudio.orthophonie.utils.ModuleMenuItem
+import fr.catarinetostudio.orthophonie.utils.ModuleMenuListAdapter
 import fr.catarinetostudio.orthophonie.*
 import fr.catarinetostudio.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity
 import fr.catarinetostudio.orthophonie.phonology.memoryPhono.MemoryPhonoMenuActivity
@@ -25,7 +25,7 @@ class PhonologyMenuActivity : AppCompatActivity() {
 
         Ads(this)
 
-        val menu_title = arrayOf(
+        val menuTitle = arrayOf(
                 getString(R.string.title_AudioToWordPhono),
                 getString(R.string.title_MemoryPhono),
                 getString(R.string.title_PictureToPhonemePhono),
@@ -33,7 +33,7 @@ class PhonologyMenuActivity : AppCompatActivity() {
                 getString(R.string.title_AudioToSyllablePositionPhono)
         )
 
-        val menu_des = arrayOf(
+        val menuDes = arrayOf(
                 getString(R.string.des_AudioToWordPhono),
                 getString(R.string.des_MemoryPhono),
                 getString(R.string.des_PictureToPhonemePhono),
@@ -41,7 +41,7 @@ class PhonologyMenuActivity : AppCompatActivity() {
                 getString(R.string.des_AudioToSyllablePositionPhono)
         )
 
-        val activity_list = arrayOf(
+        val activityList = arrayOf(
                 AudioToWordPhonoMenuActivity::class.java,
                 MemoryPhonoMenuActivity::class.java,
                 PictureToPhonemePhonoMenuActivity::class.java,
@@ -49,7 +49,7 @@ class PhonologyMenuActivity : AppCompatActivity() {
                 AudioToSyllablePositionPhonoMenuActivity::class.java
         )
 
-        val menu_picture = arrayOf(
+        val menuPicture = arrayOf(
                 "AudioToWordPhono",
                 "MemoryPhono",
                 "PictureToPhonemePhono",
@@ -59,19 +59,19 @@ class PhonologyMenuActivity : AppCompatActivity() {
 
         val menuList = ArrayList<ModuleMenuItem>()
 
-        for (i in 0..menu_picture.lastIndex) {
-            menuList.add(ModuleMenuItem(menu_title[i], menu_des[i], menu_picture[i], activity_list[i]))
+        for (i in 0..menuPicture.lastIndex) {
+            menuList.add(ModuleMenuItem(menuTitle[i], menuDes[i], menuPicture[i], activityList[i]))
         }
 
         val menuAdapter = ModuleMenuListAdapter(this, R.layout.module_menu_list_layout, menuList)
 
-        var list = findViewById(R.id.list_menu) as ListView
+        val list = findViewById<ListView>(R.id.list_menu)
 
         list.adapter = menuAdapter
 
 
-        list.onItemClickListener = AdapterView.OnItemClickListener{ adapter, v, position, id ->
-            var intent = Intent(this, activity_list[position])
+        list.onItemClickListener = AdapterView.OnItemClickListener{ _, _, position, _ ->
+            val intent = Intent(this, activityList[position])
             startActivity(intent)
             finish()
         }

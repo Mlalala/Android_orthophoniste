@@ -34,10 +34,9 @@
 
     <!-- Visual titles -->
     <string name="title_MemorySyllablesVisu">Trouver les paires de syllabes</string>
-    <string name="des_MemorySyllablesVisu">\nzegrhtzfbdsfgraeg</string>
+    <string name="des_MemorySyllablesVisu">"\nEn cliquant sur une paire de \"cartes\" celles-ci se révèlent. L'objectif est de sélectionner une paire de cartes identiques. Si vous vous trompez les cartes se retournent et il vous faut recommencer"</string>
     <string name="title_SearchSyllableVisu">Confusion visuelles des syllabes</string>
-    <string name="des_SearchSyllableVisu">\nqerbedfvhjkjhaaaaaa</string>
-
+    <string name="des_SearchSyllableVisu">"\nUne fenêtre s'ouvre et vous donne la lettre à trouver. Il vous faut alors cliquer sur toutes les cases contenant cette lettre le plus vite possible."</string>
 
     <!-- Menu titles -->
     <string name="settings">Paramètre</string>

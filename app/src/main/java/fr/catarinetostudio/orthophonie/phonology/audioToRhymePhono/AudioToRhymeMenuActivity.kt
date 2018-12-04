@@ -7,7 +7,7 @@ import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import fr.catarinetostudio.orthophonie.R
-import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
 import fr.catarinetostudio.orthophonie.phonology.PhonologyMenuActivity
 
 class AudioToRhymeMenuActivity: AppCompatActivity() {
@@ -19,7 +19,7 @@ class AudioToRhymeMenuActivity: AppCompatActivity() {
 
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        var phonology_list = databaseAccess.get_menu_AudioToRhyme()
+        var phonology_list = databaseAccess.getMenuAudioToRhyme()
 
 
         adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,phonology_list)

@@ -2,14 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.catarinetostudio.orthophonie">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.android.permission.ACCESS_NETWORK_STATE"/>
+
+    <supports-screens
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="false"/>
+
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:screenOrientation="portrait">
+        android:screenOrientation="portrait"
+        android:fullBackupContent="true"
+        android:allowBackup="true">
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -27,56 +38,112 @@
         </activity>
 
         <!-- Phonology -->
-        <activity android:label="@string/title_phono" android:name="fr.catarinetostudio.orthophonie.phonology.PhonologyMenuActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:label="@string/title_phono"
+            android:name="fr.catarinetostudio.orthophonie.phonology.PhonologyMenuActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:label="@string/title_AudioToWordPhono" android:name="fr.catarinetostudio.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoActivity" android:screenOrientation="portrait"></activity>
-        <activity android:label="@string/title_AudioToWordPhono" android:name="fr.catarinetostudio.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:label="@string/title_AudioToWordPhono"
+            android:name="fr.catarinetostudio.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:label="@string/title_AudioToWordPhono"
+            android:name="fr.catarinetostudio.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:label="@string/title_MemoryPhono" android:name="fr.catarinetostudio.orthophonie.phonology.memoryPhono.MemoryPhonoActivity" android:screenOrientation="portrait"></activity>
-        <activity android:label="@string/title_MemoryPhono" android:name="fr.catarinetostudio.orthophonie.phonology.memoryPhono.MemoryPhonoMenuActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:label="@string/title_MemoryPhono"
+            android:name="fr.catarinetostudio.orthophonie.phonology.memoryPhono.MemoryPhonoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:label="@string/title_MemoryPhono"
+            android:name="fr.catarinetostudio.orthophonie.phonology.memoryPhono.MemoryPhonoMenuActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:label="@string/title_PictureToPhonemePhono" android:name="fr.catarinetostudio.orthophonie.phonology.pictureToPhonemePhono.PictureToPhonemePhonoActivity" android:screenOrientation="portrait"></activity>
-        <activity android:label="@string/title_PictureToPhonemePhono" android:name="fr.catarinetostudio.orthophonie.phonology.pictureToPhonemePhono.PictureToPhonemePhonoMenuActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:label="@string/title_PictureToPhonemePhono"
+            android:name="fr.catarinetostudio.orthophonie.phonology.pictureToPhonemePhono.PictureToPhonemePhonoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:label="@string/title_PictureToPhonemePhono"
+            android:name="fr.catarinetostudio.orthophonie.phonology.pictureToPhonemePhono.PictureToPhonemePhonoMenuActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:label="@string/title_AudioToRhyme" android:name="fr.catarinetostudio.orthophonie.phonology.audioToRhymePhono.AudioToRhymeMenuActivity" android:screenOrientation="portrait"></activity>
-        <activity android:label="@string/title_AudioToRhyme" android:name="fr.catarinetostudio.orthophonie.phonology.audioToRhymePhono.AudioToRhymeActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:label="@string/title_AudioToRhyme"
+            android:name="fr.catarinetostudio.orthophonie.phonology.audioToRhymePhono.AudioToRhymeMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:label="@string/title_AudioToRhyme"
+            android:name="fr.catarinetostudio.orthophonie.phonology.audioToRhymePhono.AudioToRhymeActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:label="@string/title_AudioToSyllablePositionPhono" android:name="fr.catarinetostudio.orthophonie.phonology.audioToSyllablePositionPhono.AudioToSyllablePositionPhonoMenuActivity" android:screenOrientation="portrait"></activity>
-        <activity android:label="@string/title_AudioToSyllablePositionPhono" android:name="fr.catarinetostudio.orthophonie.phonology.audioToSyllablePositionPhono.AudioToSyllablePositionPhonoActivty" android:screenOrientation="portrait"></activity>
+        <activity
+            android:label="@string/title_AudioToSyllablePositionPhono"
+            android:name="fr.catarinetostudio.orthophonie.phonology.audioToSyllablePositionPhono.AudioToSyllablePositionPhonoMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:label="@string/title_AudioToSyllablePositionPhono"
+            android:name="fr.catarinetostudio.orthophonie.phonology.audioToSyllablePositionPhono.AudioToSyllablePositionPhonoActivty"
+            android:screenOrientation="portrait" />
 
 
         <!-- Articulation -->
-        <activity android:label="@string/title_arti" android:name="fr.catarinetostudio.orthophonie.articulation.DescriptionArtiActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:label="@string/title_arti"
+            android:name="fr.catarinetostudio.orthophonie.articulation.DescriptionArtiActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:label="@string/title_ArticulationLevel" android:name="fr.catarinetostudio.orthophonie.articulation.DescriptionArtiLevel" android:screenOrientation="portrait"></activity>
+        <activity
+            android:label="@string/title_ArticulationLevel"
+            android:name="fr.catarinetostudio.orthophonie.articulation.DescriptionArtiLevel"
+            android:screenOrientation="portrait" />
 
-        <activity android:label="@string/title_ArticulationSerie" android:name="fr.catarinetostudio.orthophonie.articulation.DescriptionArtiSerie" android:screenOrientation="portrait"></activity>
+        <activity
+            android:label="@string/title_ArticulationSerie"
+            android:name="fr.catarinetostudio.orthophonie.articulation.DescriptionArtiSerie"
+            android:screenOrientation="portrait" />
 
         <!-- Visual -->
-        <activity android:label="@string/title_visu" android:name="fr.catarinetostudio.orthophonie.visual.VisualMenuActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:label="@string/title_visu"
+            android:name="fr.catarinetostudio.orthophonie.visual.VisualMenuActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:label="@string/title_MemorySyllablesVisu" android:name="fr.catarinetostudio.orthophonie.visual.memorySyllabesVisu.MemorySyllabesVisuActivity" android:screenOrientation="portrait"></activity>
-        <activity android:label="@string/title_MemorySyllablesVisu" android:name="fr.catarinetostudio.orthophonie.visual.memorySyllabesVisu.MemorySyllabesVisuMenuActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:label="@string/title_MemorySyllablesVisu"
+            android:name="fr.catarinetostudio.orthophonie.visual.memorySyllabesVisu.MemorySyllabesVisuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:label="@string/title_MemorySyllablesVisu"
+            android:name="fr.catarinetostudio.orthophonie.visual.memorySyllabesVisu.MemorySyllabesVisuMenuActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:label="@string/title_SearchSyllableVisu" android:name="fr.catarinetostudio.orthophonie.visual.searchSyllableVisu.SearchSyllableVisuActivity" android:screenOrientation="portrait"></activity>
-        <activity android:label="@string/title_SearchSyllableVisu" android:name="fr.catarinetostudio.orthophonie.visual.searchSyllableVisu.SearchSyllableVisuMenuActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:label="@string/title_SearchSyllableVisu"
+            android:name="fr.catarinetostudio.orthophonie.visual.searchSyllableVisu.SearchSyllableVisuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:label="@string/title_SearchSyllableVisu"
+            android:name="fr.catarinetostudio.orthophonie.visual.searchSyllableVisu.SearchSyllableVisuMenuActivity"
+            android:screenOrientation="portrait" />
 
         <!-- Memory -->
-        <activity android:label="@string/title_memo" android:name="fr.catarinetostudio.orthophonie.memory.MemoryMenuActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:label="@string/title_memo"
+            android:name="fr.catarinetostudio.orthophonie.memory.MemoryMenuActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:label="@string/title_AudioToOrderMemo" android:name="fr.catarinetostudio.orthophonie.memory.AudioToOrderMemo.AudioToOrderMemoMenuActivity" android:screenOrientation="portrait"></activity>
-        <activity android:label="@string/title_AudioToOrderMemo" android:name="fr.catarinetostudio.orthophonie.memory.AudioToOrderMemo.AudioToOrderMemoActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:label="@string/title_AudioToOrderMemo"
+            android:name="fr.catarinetostudio.orthophonie.memory.AudioToOrderMemo.AudioToOrderMemoMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:label="@string/title_AudioToOrderMemo"
+            android:name="fr.catarinetostudio.orthophonie.memory.AudioToOrderMemo.AudioToOrderMemoActivity"
+            android:screenOrientation="portrait" />
 
     </application>
-
-    <supports-screens
-        android:smallScreens="true"
-        android:normalScreens="true"
-        android:largeScreens="true"
-        android:xlargeScreens="false"/>
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
 </manifest>

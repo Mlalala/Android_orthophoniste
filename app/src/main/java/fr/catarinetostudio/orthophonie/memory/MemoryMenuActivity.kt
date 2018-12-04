@@ -8,6 +8,9 @@ import android.widget.AdapterView
 import android.widget.ListView
 import fr.catarinetostudio.orthophonie.*
 import fr.catarinetostudio.orthophonie.memory.AudioToOrderMemo.AudioToOrderMemoMenuActivity
+import fr.catarinetostudio.orthophonie.utils.Ads
+import fr.catarinetostudio.orthophonie.utils.ModuleMenuItem
+import fr.catarinetostudio.orthophonie.utils.ModuleMenuListAdapter
 
 class MemoryMenuActivity : AppCompatActivity() {
 

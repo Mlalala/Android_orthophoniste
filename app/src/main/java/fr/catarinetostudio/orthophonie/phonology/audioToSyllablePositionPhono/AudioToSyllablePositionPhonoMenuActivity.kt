@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
 import fr.catarinetostudio.orthophonie.R
-import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
 import fr.catarinetostudio.orthophonie.phonology.PhonologyMenuActivity
 
 class AudioToSyllablePositionPhonoMenuActivity : AppCompatActivity() {
@@ -20,7 +20,7 @@ class AudioToSyllablePositionPhonoMenuActivity : AppCompatActivity() {
 
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        var phonology_list = databaseAccess.get_MenuAudioToSyllabePosition()
+        var phonology_list = databaseAccess.getMenuAudioToSyllabePosition()
 
 
         adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,phonology_list)

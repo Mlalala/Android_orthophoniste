@@ -1,13 +1,14 @@
-package fr.catarinetostudio.orthophonie
+package fr.catarinetostudio.orthophonie.utils
 
 import android.app.Activity
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import fr.catarinetostudio.orthophonie.R
 
 class Ads {
 
-    var mAdView : AdView
+    private var mAdView : AdView
 
     constructor(ac : Activity) {
         MobileAds.initialize(ac, ac.getString(R.string.ad_app_id))

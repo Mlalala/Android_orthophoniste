@@ -1,4 +1,4 @@
-package fr.catarinetostudio.orthophonie.db_utils
+package fr.catarinetostudio.orthophonie.utils
 
 import android.content.Context
 

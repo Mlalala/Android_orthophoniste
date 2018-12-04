@@ -13,7 +13,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import fr.catarinetostudio.orthophonie.R
-import fr.catarinetostudio.orthophonie.db_utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
 
 class AudioToRhymeActivity: AppCompatActivity() {
 
@@ -35,7 +35,7 @@ class AudioToRhymeActivity: AppCompatActivity() {
 
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        var sql_query = databaseAccess.count_AudioToRhyme(index_serie+1)
+        var sql_query = databaseAccess.countAudioToRhyme(index_serie+1)
         length_serie = sql_query
 
         init_serie_data(databaseAccess)
@@ -47,7 +47,7 @@ class AudioToRhymeActivity: AppCompatActivity() {
     }
 
     fun init_serie_data(databaseAccess : DatabaseAccess){
-        var sql_query = databaseAccess.get_AudioToRhyme(index_serie+1,index_in_serie+1)
+        var sql_query = databaseAccess.getAudioToRhyme(index_serie+1,index_in_serie+1)
 
         proposal = sql_query[0].toString().split("-")
         answer = sql_query[1].toInt()
