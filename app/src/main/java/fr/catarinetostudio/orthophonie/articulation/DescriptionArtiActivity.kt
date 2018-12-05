@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 import fr.catarinetostudio.orthophonie.MainActivity
 import fr.catarinetostudio.orthophonie.R
 import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
@@ -25,7 +27,7 @@ class DescriptionArtiActivity : AppCompatActivity(){
 
 
         adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,articulation_lettre)
-        var listview = findViewById(R.id.list_menu) as ListView
+        var listview = findViewById<ListView>(R.id.list_menu)
         listview.adapter = adapter_simple
 
 
@@ -36,6 +38,11 @@ class DescriptionArtiActivity : AppCompatActivity(){
             startActivity(intent)
             finish()
         }
+
+        val mAdView : AdView
+        mAdView = this.findViewById(R.id.adViewBottom)
+        val adRequestBottom = AdRequest.Builder().build()
+        mAdView.loadAd(adRequestBottom)
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
