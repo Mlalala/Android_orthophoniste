@@ -6,31 +6,29 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.Toast
 import fr.catarinetostudio.orthophonie.R
 import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
 import fr.catarinetostudio.orthophonie.phonology.PhonologyMenuActivity
 
 class AudioToSyllablePositionPhonoMenuActivity : AppCompatActivity() {
-    private var adapter_simple : ArrayAdapter<String>? = null
+    private var adapterSimple : ArrayAdapter<String>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.simple_list_layout)
 
-        var databaseAccess = DatabaseAccess.getInstance(this)
+        val databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        var phonology_list = databaseAccess.getMenuAudioToSyllabePosition()
+        val phonologyList = databaseAccess.getMenuAudioToSyllabePosition()
 
 
-        adapter_simple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,phonology_list)
-        var listview = findViewById(R.id.list_menu) as ListView
-        listview.adapter = adapter_simple
+        adapterSimple = ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,phonologyList)
+        val listview = findViewById<ListView>(R.id.list_menu)
+        listview.adapter = adapterSimple
 
 
-        listview.setOnItemClickListener { parent, view, position, id ->
-            Toast.makeText(this, "Position Clicked:"+" "+position, Toast.LENGTH_LONG).show()
-            var intent = Intent(this, AudioToSyllablePositionPhonoActivty::class.java)
+        listview.setOnItemClickListener { _, _, position, _ ->
+            val intent = Intent(this, AudioToSyllablePositionPhonoActivty::class.java)
             intent.putExtra("EXTRA_POSITION",position)
             startActivity(intent)
             finish()

@@ -18,22 +18,22 @@ class MemoryMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.simple_list_layout)
 
-        val menu_title = arrayOf<String>(
+        val menuTitle = arrayOf<String>(
                 getString(R.string.title_AudioToOrderMemo),
                 getString(R.string.title_SymbolsMemo)
         )
 
-        val menu_des = arrayOf<String>(
+        val menuDes = arrayOf<String>(
                 getString(R.string.des_AudioToOrderMemo),
                 getString(R.string.des_SymbolsMemo)
         )
 
-        val activity_list = arrayOf(
+        val activityList = arrayOf(
                 AudioToOrderMemoMenuActivity::class.java,
                 MainActivity::class.java
         )
 
-        val menu_picture = arrayOf(
+        val menuPicture = arrayOf(
                 "sample",
                 "sample"
         )
@@ -41,19 +41,19 @@ class MemoryMenuActivity : AppCompatActivity() {
 
         val menuList = ArrayList<ModuleMenuItem>()
 
-        for (i in 0..menu_picture.lastIndex) {
-            menuList.add(ModuleMenuItem(menu_title[i], menu_des[i], menu_picture[i], activity_list[i]))
+        for (i in 0..menuPicture.lastIndex) {
+            menuList.add(ModuleMenuItem(menuTitle[i], menuDes[i], menuPicture[i], activityList[i]))
         }
 
         val menuAdapter = ModuleMenuListAdapter(this, R.layout.module_menu_list_layout, menuList)
 
-        var list = findViewById(R.id.list_menu) as ListView
+        val list = findViewById<ListView>(R.id.list_menu)
 
         list.adapter = menuAdapter
 
 
-        list.onItemClickListener = AdapterView.OnItemClickListener{ adapter, v, position, id ->
-            var intent = Intent(this, activity_list[position])
+        list.onItemClickListener = AdapterView.OnItemClickListener{ _, _, position, _ ->
+            val intent = Intent(this, activityList[position])
             startActivity(intent)
             finish()
         }

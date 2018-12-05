@@ -37,6 +37,7 @@
             </intent-filter>
         </activity>
 
+
         <!-- Phonology -->
         <activity
             android:label="@string/title_phono"
@@ -104,6 +105,7 @@
             android:label="@string/title_ArticulationSerie"
             android:name="fr.catarinetostudio.orthophonie.articulation.DescriptionArtiSerie"
             android:screenOrientation="portrait" />
+
 
         <!-- Visual -->
         <activity

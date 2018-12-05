@@ -17,81 +17,73 @@ import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
 
 class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
 
-    private var index_in_serie : Int = 0
-    private var index_serie : Int = 0
+    private var indexInSerie : Int = 0
+    private var indexSerie : Int = 0
     private var proposal : List<String>? = null
     private var answer : Int = 0
     private var mot : String = ""
 
     private var media : MediaPlayer? = null
 
-    private var length_serie : Int = 0
+    private var lengthSerie : Int = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.audio_syllable_position_layout)
 
-        index_serie = intent.getIntExtra("EXTRA_POSITION",0)
+        indexSerie = intent.getIntExtra("EXTRA_POSITION",0)
 
-        //Serie lengh
-        var databaseAccess = DatabaseAccess.getInstance(this)
+        val databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        var sql_query = databaseAccess.countAudioToSyllabePosition(index_serie+1)
-        length_serie = sql_query
-        //databaseAccess.close()
+        val sqlQuery = databaseAccess.countAudioToSyllabePosition(indexSerie+1)
+        lengthSerie = sqlQuery
 
-        //init proposals, answer and audio
-        init_serie_data(databaseAccess)
-        //Change all the strings and audio of the current serie item
-        display_phono(proposal!!, answer, databaseAccess)
+        initSerieData(databaseAccess)
+        displayPhono(proposal!!, answer, databaseAccess)
 
-        //Play audio one time
         media?.reset()
-        media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarinetostudio.orthophonie"))
+        media = MediaPlayer.create(this, resources.getIdentifier("audiotowordphono"+(indexSerie+1).toString() +(indexInSerie+1).toString(),"raw","fr.catarinetostudio.orthophonie"))
         media!!.start()
     }
 
-    fun init_serie_data(databaseAccess : DatabaseAccess){
-        //databaseAccess.open()
-        var sql_query = databaseAccess.getAudioToSyllabePosition(index_serie+1,index_in_serie+1)
-        //databaseAccess.close()
+    private fun initSerieData(databaseAccess : DatabaseAccess){
+        val sqlQuery = databaseAccess.getAudioToSyllabePosition(indexSerie+1,indexInSerie+1)
 
-        proposal = sql_query[0].toString().split("-")
-        answer = sql_query[1].toInt()
-        mot=sql_query[2]
+        proposal = sqlQuery[0].split("-")
+        answer = sqlQuery[1].toInt()
+        mot=sqlQuery[2]
     }
 
-    fun display_phono(proposals : List<String>, answer: Int, databaseAccess : DatabaseAccess) {
+    private fun displayPhono(proposals : List<String>, answer: Int, databaseAccess : DatabaseAccess) {
         val textview = findViewById<TextView>(R.id.phono_text_serie)
-        textview.text = "Série " + (index_serie + 1).toString() + " - " + (index_in_serie + 1).toString()
+        textview.text = "Série " + (indexSerie + 1).toString() + " - " + (indexInSerie + 1).toString()
 
         val texviewMot = findViewById<TextView>(R.id.phono_syllabe)
         texviewMot.text = "Où se trouve le " + mot +" ?"
 
-        val button1 = findViewById(R.id.phono_button1) as Button
+        val button1 = findViewById<Button>(R.id.phono_button1)
         button1.text = proposals[0]
         button1.setOnClickListener {isCorrect(answer,0, databaseAccess)}
 
-        val button2 = findViewById(R.id.phono_button2) as Button
+        val button2 = findViewById<Button>(R.id.phono_button2)
         button2.text = proposals[1]
         button2.setOnClickListener {isCorrect(answer,1, databaseAccess)}
 
-        val button3 = findViewById(R.id.phono_button3) as Button
+        val button3 = findViewById<Button>(R.id.phono_button3)
         button3.text = proposals[2]
         button3.setOnClickListener {isCorrect(answer,2, databaseAccess)}
 
-        val audio_view = findViewById<ImageView>(R.id.imagePlay)
+        val audioView = findViewById<ImageView>(R.id.imagePlay)
 
-        audio_view.setOnClickListener {
-            //Toast.makeText(this, "Play", Toast.LENGTH_LONG).show()
+        audioView.setOnClickListener {
             media?.reset()
-            media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "raw", "fr.catarinetostudio.orthophonie"))
+            media = MediaPlayer.create(this, resources.getIdentifier("audiotowordphono" + (indexSerie + 1).toString() + (indexInSerie + 1).toString(), "raw", "fr.catarinetostudio.orthophonie"))
             media!!.start()
         }
     }
 
-    fun isCorrect(answer : Int, response : Int, databaseAccess : DatabaseAccess){
+    private fun isCorrect(answer : Int, response : Int, databaseAccess : DatabaseAccess){
         if (answer == response) {
             manageItem("CORRECT !", databaseAccess)
         }
@@ -100,7 +92,7 @@ class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
         }
     }
 
-    fun manageItem(title : String,databaseAccess : DatabaseAccess) {
+    private fun manageItem(title : String, databaseAccess : DatabaseAccess) {
         val builder = AlertDialog.Builder(this)
 
         val inflater = this.layoutInflater
@@ -108,26 +100,23 @@ class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
 
         builder.setTitle(title).setView(dialogView)
 
-
-        // Add the buttons
         if (title == "CORRECT !"){
-            if (index_in_serie < length_serie){
+            if (indexInSerie < lengthSerie){
                 builder.setCancelable(false)
-                builder.setPositiveButton("Suivant") { dialog, id ->
-                    index_in_serie += 1
-                    //init proposals, answer and audio
-                    init_serie_data(databaseAccess)
-                    //Play audio one time
+                builder.setPositiveButton("Suivant") { _, _ ->
+                    indexInSerie += 1
+                    initSerieData(databaseAccess)
+
                     media?.reset()
-                    media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarinetostudio.orthophonie"))
+                    media = MediaPlayer.create(this, resources.getIdentifier("audiotowordphono"+(indexSerie+1).toString() +(indexInSerie+1).toString(),"raw","fr.catarinetostudio.orthophonie"))
                     media!!.start()
-                    //Change all the strings and audio of the current serie item
-                    display_phono(proposal!!, answer, databaseAccess)
+
+                    displayPhono(proposal!!, answer, databaseAccess)
                 }
             }
             else {
                 builder.setCancelable(false)
-                builder.setPositiveButton("Revenir au menu") { dialog, id ->
+                builder.setPositiveButton("Revenir au menu") { _, _ ->
                     val intent = Intent(this, AudioToSyllablePositionPhonoMenuActivity::class.java)
                     databaseAccess.close()
                     startActivity(intent)
@@ -136,7 +125,6 @@ class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
             }
         }
 
-        // Create the AlertDialog
         val dialog = builder.create()
         dialog.show()
     }
@@ -155,7 +143,7 @@ class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun manageMenu(title : String, text : String) {
+    private fun manageMenu(title : String, text : String) {
         val builder = AlertDialog.Builder(this)
 
         val inflater = this.layoutInflater
@@ -163,7 +151,7 @@ class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
 
         builder.setTitle(title).setView(dialogView)
         builder.setMessage(text)
-        builder.setPositiveButton("Suggestion") { dialog, id ->
+        builder.setPositiveButton("Suggestion") { _, _ ->
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "lamontagnettestudio@gmail.com"))
             intent.putExtra(Intent.EXTRA_SUBJECT, "Suggestion pour l'activitée " + getString(R.string.title_AudioToRhyme) +" de l'Application Android Orthophonie")
             startActivity(intent)
