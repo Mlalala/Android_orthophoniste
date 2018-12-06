@@ -13,6 +13,7 @@ import android.view.MenuInflater
 import android.widget.TextView
 import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
 import fr.catarinetostudio.orthophonie.R
+import fr.catarinetostudio.orthophonie.utils.Help
 
 
 class AudioToWordPhonoActivity : AppCompatActivity(){
@@ -127,27 +128,9 @@ class AudioToWordPhonoActivity : AppCompatActivity(){
 
     override fun onOptionsItemSelected(item: android.view.MenuItem?): Boolean {
         when (item!!.itemId){
-            R.id.action_help  -> manageMenu(getString(R.string.help),getString(R.string.help_AudioToWordPhono))
+            R.id.action_help  -> Help(this@AudioToWordPhonoActivity, getString(R.string.help_AudioToWordPhono), getString(R.string.title_AudioToWordPhono), "helptest")
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun manageMenu(title : String, text : String) {
-        val builder = AlertDialog.Builder(this)
-
-        val inflater = this.layoutInflater
-        val dialogView = inflater.inflate(R.layout.alert_text_layout, null)
-
-        builder.setTitle(title).setView(dialogView)
-        builder.setMessage(text)
-        builder.setPositiveButton(getString(R.string.suggestion)) { _, _ ->
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + getString(R.string.email)))
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Suggestion pour l'activitée " + getString(R.string.title_AudioToWordPhono) +" de l'Application Android Orthophonie")
-            startActivity(intent)
-        }
-
-        val dialog = builder.create()
-        dialog.show()
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {

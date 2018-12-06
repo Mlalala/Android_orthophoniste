@@ -34,7 +34,7 @@
 
     <!-- Visual titles -->
     <string name="title_MemorySyllablesVisu">Trouver les paires de syllabes</string>
-    <string name="des_MemorySyllablesVisu">"\nEn cliquant sur une paire de \"cartes\" celles-ci se révèlent. L'objectif est de sélectionner une paire de cartes identiques. Si vous vous trompez les cartes se retournent et il vous faut recommencer"</string>
+    <string name="des_MemorySyllablesVisu">"\nEn cliquant sur une paire de \"cartes\" celles-ci se révèlent. L'objectif est de sélectionner une paire de cartes identiques. Si vous vous trompez, les cartes se retournent et il vous faut recommencer"</string>
     <string name="title_SearchSyllableVisu">Confusion visuelles des syllabes</string>
     <string name="des_SearchSyllableVisu">"\nUne fenêtre s'ouvre et vous donne la lettre à trouver. Il vous faut alors cliquer sur toutes les cases contenant cette lettre le plus vite possible."</string>
 
@@ -48,6 +48,7 @@
     <string name="studio">Catarineto Studio</string>
 
     <!-- Help Content -->
+    <string name="help_play">Écouter l\'aide audio</string>
     <string name="help_MemoryPhono">Aide MemoryPhono</string>
     <string name="help_AudioToWordPhono">Aide AudioToWordPhono</string>
     <string name="help_PictureToPhonemePhono">Aide PictureToPhonemePhono</string>

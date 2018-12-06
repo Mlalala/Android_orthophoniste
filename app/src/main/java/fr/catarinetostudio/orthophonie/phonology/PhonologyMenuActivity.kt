@@ -26,33 +26,33 @@ class PhonologyMenuActivity : AppCompatActivity() {
         Ads(this)
 
         val menuTitle = arrayOf(
+                getString(R.string.title_PictureToPhonemePhono),
                 getString(R.string.title_AudioToWordPhono),
                 getString(R.string.title_MemoryPhono),
-                getString(R.string.title_PictureToPhonemePhono),
                 getString(R.string.title_AudioToRhyme),
                 getString(R.string.title_AudioToSyllablePositionPhono)
         )
 
         val menuDes = arrayOf(
+                getString(R.string.des_PictureToPhonemePhono),
                 getString(R.string.des_AudioToWordPhono),
                 getString(R.string.des_MemoryPhono),
-                getString(R.string.des_PictureToPhonemePhono),
                 getString(R.string.des_AudioToRhyme),
                 getString(R.string.des_AudioToSyllablePositionPhono)
         )
 
         val activityList = arrayOf(
+                PictureToPhonemePhonoMenuActivity::class.java,
                 AudioToWordPhonoMenuActivity::class.java,
                 MemoryPhonoMenuActivity::class.java,
-                PictureToPhonemePhonoMenuActivity::class.java,
                 AudioToRhymeMenuActivity::class.java,
                 AudioToSyllablePositionPhonoMenuActivity::class.java
         )
 
         val menuPicture = arrayOf(
+                "PictureToPhonemePhono",
                 "AudioToWordPhono",
                 "MemoryPhono",
-                "PictureToPhonemePhono",
                 "sample",
                 "sample"
         )
