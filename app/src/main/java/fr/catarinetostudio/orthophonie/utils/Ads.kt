@@ -1,16 +1,16 @@
 package fr.catarinetostudio.orthophonie.utils
 
+import android.Manifest
 import android.app.Activity
+import android.content.pm.PackageManager
+import android.support.v4.content.ContextCompat
+import android.widget.Toast
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import fr.catarinetostudio.orthophonie.R
 
-class Ads/*
-        mAdView = ac.findViewById(R.id.adViewTop)
-        val adRequestTop = AdRequest.Builder().build()
-        mAdView.loadAd(adRequestTop)
-        */(ac: Activity) {
+class Ads (ac: Activity) {
 
     private var mAdView : AdView
 

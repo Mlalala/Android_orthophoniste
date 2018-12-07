@@ -1,6 +1,7 @@
 package fr.catarinetostudio.orthophonie
 
 import android.app.AlertDialog
+import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
@@ -17,6 +18,9 @@ import fr.catarinetostudio.orthophonie.phonology.PhonologyMenuActivity
 import fr.catarinetostudio.orthophonie.utils.MainMenuItem
 import fr.catarinetostudio.orthophonie.utils.MainMenuListAdapter
 import fr.catarinetostudio.orthophonie.visual.VisualMenuActivity
+import android.content.pm.PackageManager
+import android.support.v4.content.PermissionChecker.checkCallingOrSelfPermission
+import fr.catarinetostudio.orthophonie.utils.Ads
 
 
 class MainActivity : AppCompatActivity() {
@@ -36,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     )
 
     private val activitylist = arrayOf(
-            DescriptionArtiActivity::class.java,
+            MainActivity::class.java, //DescriptionArtiActivity::class.java,
             PhonologyMenuActivity::class.java,
             VisualMenuActivity::class.java,
             MemoryMenuActivity::class.java
@@ -45,6 +49,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         val menuList = ArrayList<MainMenuItem>()
 
@@ -64,16 +69,19 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
-        var mAdView : AdView
-        /*
+        checkWriteExternalPermission()
+
+        /*var mAdView : AdView
+
         mAdView = this.findViewById(R.id.adViewTop)
         val adRequestTop = AdRequest.Builder().build()
         mAdView.loadAd(adRequestTop)
-        */
+
 
         mAdView = this.findViewById(R.id.adViewBottom)
         val adRequestBottom = AdRequest.Builder().build()
-        mAdView.loadAd(adRequestBottom)
+        mAdView.loadAd(adRequestBottom)*/
+        Ads(this@MainActivity)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -107,6 +115,12 @@ class MainActivity : AppCompatActivity() {
 
         val dialog = builder.create()
         dialog.show()
+    }
+
+    private fun checkWriteExternalPermission(): Boolean {
+        val permission = android.Manifest.permission.ACCESS_FINE_LOCATION
+        val res = this.checkCallingOrSelfPermission(permission)
+        return res == PackageManager.PERMISSION_GRANTED
     }
 }
 

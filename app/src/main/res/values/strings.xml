@@ -41,7 +41,7 @@
     <!-- Menu titles -->
     <string name="settings">Paramètre</string>
     <string name="aboutus">À propos de nous</string>
-    <string name="help">Aide</string>
+    <string name="help">Consignes</string>
 
     <!-- About Us Content -->
     <string name="aboutus_content">"\nCette application a été conçue et réalisée dans le cadre d'un projet étudiant.\n\nMerci de reporter les bugs rencontrés."</string>
@@ -63,8 +63,12 @@
     <string name="email">catarineto.studio@gmail.com</string>
 
     <!-- Ads -->
-    <string name="ad_app_id">ca-app-pub-4476637068936049~2352185699</string>
+    <string name="ad_app_id">ca-app-pub-4476637068936049~4551637302</string>
     <string name="banner_id">ca-app-pub-3940256099942544/6300978111</string>
-    <!-- ca-app-pub-4476637068936049/1590478807 -->
+
+    <!-- TEST ID -->
+    <!-- ca-app-pub-3940256099942544/6300978111 -->
+    <!-- TRUE ID -->
+    <!-- ca-app-pub-4476637068936049/6198679321 -->
 
 </resources>

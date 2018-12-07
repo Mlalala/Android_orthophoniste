@@ -29,7 +29,7 @@ class MemoryMenuActivity : AppCompatActivity() {
         )
 
         val activityList = arrayOf(
-                AudioToOrderMemoMenuActivity::class.java,
+                MainActivity::class.java,//AudioToOrderMemoMenuActivity::class.java,
                 MainActivity::class.java
         )
 
@@ -38,14 +38,24 @@ class MemoryMenuActivity : AppCompatActivity() {
                 "sample"
         )
 
+        val menuAudio = arrayOf(
+                "helptest",
+                "helptest"
+        )
+
+        val menuAcTitle = arrayOf<String>(
+                getString(R.string.title_AudioToOrderMemo),
+                getString(R.string.title_SymbolsMemo)
+        )
+
 
         val menuList = ArrayList<ModuleMenuItem>()
 
         for (i in 0..menuPicture.lastIndex) {
-            menuList.add(ModuleMenuItem(menuTitle[i], menuDes[i], menuPicture[i], activityList[i]))
+            menuList.add(ModuleMenuItem(menuTitle[i], menuDes[i], menuPicture[i], menuAudio[i], activityList[i],menuAcTitle[i]))
         }
 
-        val menuAdapter = ModuleMenuListAdapter(this, R.layout.module_menu_list_layout, menuList)
+        val menuAdapter = ModuleMenuListAdapter(this@MemoryMenuActivity, R.layout.module_menu_list_layout, menuList)
 
         val list = findViewById<ListView>(R.id.list_menu)
 

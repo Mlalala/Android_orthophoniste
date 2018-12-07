@@ -45,8 +45,8 @@ class PhonologyMenuActivity : AppCompatActivity() {
                 PictureToPhonemePhonoMenuActivity::class.java,
                 AudioToWordPhonoMenuActivity::class.java,
                 MemoryPhonoMenuActivity::class.java,
-                AudioToRhymeMenuActivity::class.java,
-                AudioToSyllablePositionPhonoMenuActivity::class.java
+                MainActivity::class.java,//AudioToRhymeMenuActivity::class.java,
+                MainActivity::class.java//AudioToSyllablePositionPhonoMenuActivity::class.java
         )
 
         val menuPicture = arrayOf(
@@ -57,13 +57,31 @@ class PhonologyMenuActivity : AppCompatActivity() {
                 "sample"
         )
 
+        val menuAudio = arrayOf(
+                "helptest",
+                "helptest",
+                "helptest",
+                "helptest",
+                "helptest"
+        )
+
+        val menuAcTitle = arrayOf(
+                getString(R.string.title_PictureToPhonemePhono),
+                getString(R.string.title_AudioToWordPhono),
+                getString(R.string.title_MemoryPhono),
+                getString(R.string.title_AudioToRhyme),
+                getString(R.string.title_AudioToSyllablePositionPhono)
+        )
+
+
+
         val menuList = ArrayList<ModuleMenuItem>()
 
         for (i in 0..menuPicture.lastIndex) {
-            menuList.add(ModuleMenuItem(menuTitle[i], menuDes[i], menuPicture[i], activityList[i]))
+            menuList.add(ModuleMenuItem(menuTitle[i], menuDes[i], menuPicture[i], menuAudio[i] ,activityList[i],menuAcTitle[i]))
         }
 
-        val menuAdapter = ModuleMenuListAdapter(this, R.layout.module_menu_list_layout, menuList)
+        val menuAdapter = ModuleMenuListAdapter(this@PhonologyMenuActivity, R.layout.module_menu_list_layout, menuList)
 
         val list = findViewById<ListView>(R.id.list_menu)
 
