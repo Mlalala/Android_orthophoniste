@@ -24,8 +24,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-1209988960443824~4847019926"/>
-
+            android:value="@string/ad_app_id"/>
 
         <activity
             android:name="fr.catarinetostudio.orthophonie.MainActivity"

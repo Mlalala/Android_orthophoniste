@@ -18,8 +18,6 @@ import fr.catarinetostudio.orthophonie.phonology.PhonologyMenuActivity
 import fr.catarinetostudio.orthophonie.utils.MainMenuItem
 import fr.catarinetostudio.orthophonie.utils.MainMenuListAdapter
 import fr.catarinetostudio.orthophonie.visual.VisualMenuActivity
-import android.content.pm.PackageManager
-import android.support.v4.content.PermissionChecker.checkCallingOrSelfPermission
 import fr.catarinetostudio.orthophonie.utils.Ads
 
 
@@ -50,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        Ads(this@MainActivity)
 
         val menuList = ArrayList<MainMenuItem>()
 
@@ -69,8 +68,6 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
-        checkWriteExternalPermission()
-
         /*var mAdView : AdView
 
         mAdView = this.findViewById(R.id.adViewTop)
@@ -81,7 +78,7 @@ class MainActivity : AppCompatActivity() {
         mAdView = this.findViewById(R.id.adViewBottom)
         val adRequestBottom = AdRequest.Builder().build()
         mAdView.loadAd(adRequestBottom)*/
-        Ads(this@MainActivity)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -115,12 +112,6 @@ class MainActivity : AppCompatActivity() {
 
         val dialog = builder.create()
         dialog.show()
-    }
-
-    private fun checkWriteExternalPermission(): Boolean {
-        val permission = android.Manifest.permission.ACCESS_FINE_LOCATION
-        val res = this.checkCallingOrSelfPermission(permission)
-        return res == PackageManager.PERMISSION_GRANTED
     }
 }
 
