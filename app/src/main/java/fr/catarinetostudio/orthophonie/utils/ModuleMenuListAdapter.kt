@@ -10,9 +10,10 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.content.Intent
 import android.widget.ImageView
+import android.widget.Toast
 import fr.catarinetostudio.orthophonie.R
 
-class ModuleMenuListAdapter (context: Context, viewRes: Int, listMenu: ArrayList<ModuleMenuItem>): ArrayAdapter<ModuleMenuItem>(context,viewRes,listMenu) {
+class ModuleMenuListAdapter (context : Activity, viewRes: Int, listMenu: ArrayList<ModuleMenuItem>): ArrayAdapter<ModuleMenuItem>(context,viewRes,listMenu) {
 
     //private val res : Resources = context.resources
     private var listMenu : ArrayList<ModuleMenuItem> ?= null
@@ -34,21 +35,26 @@ class ModuleMenuListAdapter (context: Context, viewRes: Int, listMenu: ArrayList
 
         if (itemList != null) {
             val title = view!!.findViewById(R.id.module_title) as TextView
-            val des = view.findViewById(R.id.module_des) as TextView
+            //val des = view.findViewById(R.id.module_des) as TextView
             val webView = view.findViewById(R.id.web_view) as WebView
+            val helpImg = view.findViewById<ImageView>(R.id.help_click)
 
             webView.loadUrl("file:///android_asset/"+itemList.pic+".gif")
             webView.settings.loadWithOverviewMode = true
             webView.settings.useWideViewPort = true
 
             title.text = itemList.titre
-            des.text = itemList.des
+            //des.text = itemList.des
 
             val img = view.findViewById(R.id.clicimg) as ImageView
             img.setOnClickListener {
                 val intent = Intent(context, itemList.act)
                 (context as Activity).startActivity(intent)
                 (context as Activity).finish()
+            }
+
+            helpImg.setOnClickListener {
+                Help(context as Activity,itemList.des,itemList.titleAc,itemList.audio)
             }
         }
         return view!!

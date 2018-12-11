@@ -14,6 +14,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import fr.catarinetostudio.orthophonie.R
 import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.utils.Help
 
 class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
 
@@ -138,29 +139,10 @@ class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: android.view.MenuItem?): Boolean {
         when (item!!.itemId){
-            R.id.action_help  -> manageMenu(getString(R.string.help),getString(R.string.help_AudioTosyllable))
+            R.id.action_help  -> Help(this@AudioToSyllablePositionPhonoActivty, getString(R.string.help_AudioTosyllable), getString(R.string.title_AudioToSyllablePositionPhono), "helptest")
         }
         return super.onOptionsItemSelected(item)
     }
-
-    private fun manageMenu(title : String, text : String) {
-        val builder = AlertDialog.Builder(this)
-
-        val inflater = this.layoutInflater
-        val dialogView = inflater.inflate(R.layout.alert_text_layout, null)
-
-        builder.setTitle(title).setView(dialogView)
-        builder.setMessage(text)
-        builder.setPositiveButton("Suggestion") { _, _ ->
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "lamontagnettestudio@gmail.com"))
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Suggestion pour l'activitée " + getString(R.string.title_AudioToRhyme) +" de l'Application Android Orthophonie")
-            startActivity(intent)
-        }
-
-        val dialog = builder.create()
-        dialog.show()
-    }
-
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {

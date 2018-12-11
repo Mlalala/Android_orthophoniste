@@ -3,8 +3,8 @@
     package="fr.catarinetostudio.orthophonie">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <supports-screens
         android:smallScreens="true"
@@ -24,8 +24,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-1209988960443824~4847019926"/>
-
+            android:value="@string/ad_app_id"/>
 
         <activity
             android:name="fr.catarinetostudio.orthophonie.MainActivity"

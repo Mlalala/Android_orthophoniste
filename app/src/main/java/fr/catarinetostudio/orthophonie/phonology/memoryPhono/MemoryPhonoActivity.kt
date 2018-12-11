@@ -15,6 +15,7 @@ import android.widget.TableLayout
 import android.widget.TableRow
 import fr.catarinetostudio.orthophonie.R
 import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.utils.Help
 
 
 class MemoryPhonoActivity : AppCompatActivity() {
@@ -147,7 +148,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: android.view.MenuItem?): Boolean {
         when (item!!.itemId){
-            R.id.action_help  -> manageMenu(getString(R.string.help),getString(R.string.help_MemoryPhono))
+            R.id.action_help  -> Help(this@MemoryPhonoActivity, getString(R.string.help_MemoryPhono), getString(R.string.title_MemoryPhono), "helptest")
         }
         return super.onOptionsItemSelected(item)
     }

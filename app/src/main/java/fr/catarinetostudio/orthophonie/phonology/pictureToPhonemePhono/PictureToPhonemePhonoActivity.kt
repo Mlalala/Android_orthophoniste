@@ -3,7 +3,6 @@ package fr.catarinetostudio.orthophonie.phonology.pictureToPhonemePhono
 import android.app.AlertDialog
 import android.content.Intent
 import android.media.MediaPlayer
-import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
@@ -14,6 +13,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import fr.catarinetostudio.orthophonie.R
 import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
+import fr.catarinetostudio.orthophonie.utils.Help
 
 class PictureToPhonemePhonoActivity : AppCompatActivity(){
 
@@ -139,26 +139,8 @@ class PictureToPhonemePhonoActivity : AppCompatActivity(){
 
     override fun onOptionsItemSelected(item: android.view.MenuItem?): Boolean {
         when (item!!.itemId){
-            R.id.action_help  -> manageMenu(getString(R.string.help),getString(R.string.help_PictureToPhonemePhono))
+            R.id.action_help  -> Help(this@PictureToPhonemePhonoActivity, getString(R.string.help_PictureToPhonemePhono), getString(R.string.title_PictureToPhonemePhono), "helptest")
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun manageMenu(title : String, text : String) {
-        val builder = AlertDialog.Builder(this)
-
-        val inflater = this.layoutInflater
-        val dialogView = inflater.inflate(R.layout.alert_text_layout, null)
-
-        builder.setTitle(title).setView(dialogView)
-        builder.setMessage(text)
-        builder.setPositiveButton(getString(R.string.suggestion)) { _, _ ->
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + getString(R.string.email)))
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Suggestion pour l'activitée " + getString(R.string.title_PictureToPhonemePhono) +" de l'Application Android Orthophonie")
-            startActivity(intent)
-        }
-
-        val dialog = builder.create()
-        dialog.show()
     }
 }

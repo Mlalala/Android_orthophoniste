@@ -37,18 +37,28 @@ class VisualMenuActivity: AppCompatActivity() {
                 "SearchSyllableVisu"
         )
 
+        val menuaudio = arrayOf(
+                "helptest",
+                "helptest"
+        )
+
         val activitylist = arrayOf(
                 MemorySyllabesVisuMenuActivity::class.java,
                 SearchSyllableVisuMenuActivity::class.java
         )
 
+        val menuAcTitle = arrayOf(
+                getString(R.string.title_MemorySyllablesVisu),
+                getString(R.string.title_SearchSyllableVisu)
+        )
+
         val menuList = ArrayList<ModuleMenuItem>()
 
         for (i in 0..menupicture.lastIndex) {
-            menuList.add(ModuleMenuItem(menutitle[i], menudes[i], menupicture[i], activitylist[i]))
+            menuList.add(ModuleMenuItem(menutitle[i], menudes[i], menupicture[i], menuaudio[i],activitylist[i],menuAcTitle[i]))
         }
 
-        val menuAdapter = ModuleMenuListAdapter(this, R.layout.module_menu_list_layout, menuList)
+        val menuAdapter = ModuleMenuListAdapter(this@VisualMenuActivity, R.layout.module_menu_list_layout, menuList)
 
         val list = findViewById<ListView>(R.id.list_menu)
 

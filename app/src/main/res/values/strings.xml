@@ -34,20 +34,21 @@
 
     <!-- Visual titles -->
     <string name="title_MemorySyllablesVisu">Trouver les paires de syllabes</string>
-    <string name="des_MemorySyllablesVisu">"\nEn cliquant sur une paire de \"cartes\" celles-ci se révèlent. L'objectif est de sélectionner une paire de cartes identiques. Si vous vous trompez les cartes se retournent et il vous faut recommencer"</string>
+    <string name="des_MemorySyllablesVisu">"\nEn cliquant sur une paire de \"cartes\" celles-ci se révèlent. L'objectif est de sélectionner une paire de cartes identiques. Si vous vous trompez, les cartes se retournent et il vous faut recommencer"</string>
     <string name="title_SearchSyllableVisu">Confusion visuelles des syllabes</string>
     <string name="des_SearchSyllableVisu">"\nUne fenêtre s'ouvre et vous donne la lettre à trouver. Il vous faut alors cliquer sur toutes les cases contenant cette lettre le plus vite possible."</string>
 
     <!-- Menu titles -->
     <string name="settings">Paramètre</string>
     <string name="aboutus">À propos de nous</string>
-    <string name="help">Aide</string>
+    <string name="help">Consignes</string>
 
     <!-- About Us Content -->
     <string name="aboutus_content">"\nCette application a été conçue et réalisée dans le cadre d'un projet étudiant.\n\nMerci de reporter les bugs rencontrés."</string>
     <string name="studio">Catarineto Studio</string>
 
     <!-- Help Content -->
+    <string name="help_play">Écouter l\'aide audio</string>
     <string name="help_MemoryPhono">Aide MemoryPhono</string>
     <string name="help_AudioToWordPhono">Aide AudioToWordPhono</string>
     <string name="help_PictureToPhonemePhono">Aide PictureToPhonemePhono</string>
@@ -57,13 +58,17 @@
     <string name="help_AudioTosyllable">Aide AudioSyllablePosition</string>
 
     <!-- Buttons -->
-    <string name="suggestion">Suggestion</string>
+    <string name="suggestion">Contactez-nous</string>
     <string name="contact">Contactez-nous</string>
     <string name="email">catarineto.studio@gmail.com</string>
 
     <!-- Ads -->
-    <string name="ad_app_id">ca-app-pub-4476637068936049~2352185699</string>
+    <string name="ad_app_id">ca-app-pub-4476637068936049~4551637302</string>
     <string name="banner_id">ca-app-pub-3940256099942544/6300978111</string>
-    <!-- ca-app-pub-4476637068936049/1590478807 -->
+
+    <!-- TEST ID -->
+    <!-- ca-app-pub-3940256099942544/6300978111 -->
+    <!-- TRUE ID -->
+    <!-- ca-app-pub-4476637068936049/6198679321 -->
 
 </resources>

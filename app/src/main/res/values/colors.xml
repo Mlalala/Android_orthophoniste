@@ -10,5 +10,5 @@
     <color name="memoryDefault">#acaeaf</color>
     <color name="memoryError">#f96866</color>
 
-    <color name="backgroud">#ffffff</color>
+    <color name="background">#ffffff</color>
 </resources>
