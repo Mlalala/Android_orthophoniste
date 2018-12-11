@@ -17,8 +17,8 @@
 
     <ImageView
         android:id="@+id/imagePlay"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_margin="30dp"
         android:src="@drawable/playaudio" />
@@ -60,6 +60,16 @@
             android:layout_margin="5dp"
             android:textAllCaps="false"
             android:background="@color/memoryDefault"/>
+
+        <Button
+            android:id="@+id/memory_button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:layout_margin="5dp"
+            android:textAllCaps="false"
+            android:background="@color/memoryDefault"/>
+
 
     </LinearLayout>
 </LinearLayout>

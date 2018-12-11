@@ -12,6 +12,7 @@ import android.view.MenuInflater
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import fr.catarinetostudio.orthophonie.R
 import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
 
@@ -32,7 +33,7 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
     private val size_text = 18f
     private var nb_correct = 0
 
-    private var list_answer : ArrayList<String>? = null
+    private var list_answer = listOf<String>()
     private var element_0 : String = "0"
     private var element_1 : String = "1"
     private var element_2 : String = "2"
@@ -42,6 +43,7 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
         setContentView(R.layout.audio_to_order_layout)
 
         index_serie = intent.getIntExtra("EXTRA_POSITION",0)
+
 
         //Serie lengh
         var databaseAccess = DatabaseAccess.getInstance(this)
@@ -77,21 +79,21 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
 
         val button1 = findViewById(R.id.memory_button1) as Button
         button1.text = proposals[0]
-        button1.setOnClickListener {list_answer!!.add(element_0)}
+        button1.setOnClickListener {list_answer+=element_0; Toast.makeText(this, "size  = " + list_answer.size, Toast.LENGTH_LONG).show(); button1.setBackgroundColor(getColor(R.color.memorySelected))}
+        //button1.setBackgroundColor(getColor(R.color.memoryDefault))
+
 
         val button2 = findViewById(R.id.memory_button2) as Button
         button2.text = proposals[1]
-        button2.setOnClickListener {list_answer!!.add(element_1)}
+        button2.setOnClickListener {list_answer+=(element_1)}
 
         val button3 = findViewById(R.id.memory_button3) as Button
         button3.text = proposals[2]
-        button3.setOnClickListener {list_answer!!.add(element_2)}
+        button3.setOnClickListener {list_answer+=(element_2)}
 
-        serie_size = list_answer!!.size
-
-        if (serie_size == 3){
-            isCorrect(list_answer!!,answer,databaseAccess)
-        }
+        val button4 = findViewById(R.id.memory_button4) as Button
+        button4.text = "vérfier réponse"
+        button4.setOnClickListener {isCorrect(answer,databaseAccess); button1.setBackgroundColor(getColor(R.color.memoryDefault))}
 
 
 
@@ -105,13 +107,28 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
         }
     }
 
-    fun isCorrect(answer : ArrayList<String> , response : List<String>, databaseAccess : DatabaseAccess){
+    fun isCorrect(response : List<String>, databaseAccess : DatabaseAccess){
+        Toast.makeText(this, "anwer  = " + list_answer + "reponse =" + response, Toast.LENGTH_LONG).show()
+        if (list_answer == response){
+            manageItem("CORRECT !", databaseAccess)
+        }
+
+        list_answer = listOf()
+
+
+
+
+        //manageItem("CORRECT !", databaseAccess)
+
+
+        /*
         if (answer == response) {
             manageItem("CORRECT !", databaseAccess)
         }
         else{
             manageItem("FAUX !", databaseAccess)
         }
+        */
     }
 
     fun manageItem(title : String,databaseAccess : DatabaseAccess) {
