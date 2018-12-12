@@ -15,7 +15,7 @@ Articulation :
 
 Mémoire et attention :
 	- SymbolsMemo	Maxime
-	- AudioToOrderMemo	Maxime
+	- AudioToOrderMemo	Maxime ok (manque les audio)
 
 Visuel :
 	- MemorySyllablesVisu	Simon ok

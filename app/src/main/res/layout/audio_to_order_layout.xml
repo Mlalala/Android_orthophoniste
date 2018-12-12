@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="30dp"
-        android:layout_margin="15dp"
+        android:layout_margin="30dp"
         android:text="TextView" />
 
 
@@ -23,7 +23,7 @@
         android:layout_margin="30dp"
         android:src="@drawable/playaudio" />
 
-
+    <!-- Dynamic -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,42 +34,36 @@
         android:layout_margin="20dp"
         android:layout_marginBottom="40dp">
 
-        <Button
-            android:id="@+id/memory_button1"
+
+        <Spinner
+            android:id="@+id/spinner1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:layout_margin="5dp"
-            android:textAllCaps="false"
-            android:background="@color/memoryDefault"/>
+            android:layout_alignParentTop="true"
+            android:layout_margin="20dp" />
 
-        <Button
-            android:id="@+id/memory_button2"
+        <Spinner
+            android:id="@+id/spinner2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:layout_margin="5dp"
-            android:textAllCaps="false"
-            android:background="@color/memoryDefault"/>
+            android:layout_alignParentTop="true"
+            android:layout_margin="20dp" />
 
-        <Button
-            android:id="@+id/memory_button3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:layout_margin="5dp"
-            android:textAllCaps="false"
-            android:background="@color/memoryDefault"/>
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="20dp" />
 
-        <Button
-            android:id="@+id/memory_button4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:layout_margin="5dp"
-            android:textAllCaps="false"
-            android:background="@color/memoryDefault"/>
-
-
+    <Button
+        android:id="@+id/memory_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_margin="5dp"
+        android:textAllCaps="false"
+        android:background="@color/memoryDefault"/>
     </LinearLayout>
+
 </LinearLayout>

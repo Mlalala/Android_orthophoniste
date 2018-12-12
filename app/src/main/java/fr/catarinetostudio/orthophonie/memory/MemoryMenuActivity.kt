@@ -29,7 +29,7 @@ class MemoryMenuActivity : AppCompatActivity() {
         )
 
         val activityList = arrayOf(
-                MainActivity::class.java,//AudioToOrderMemoMenuActivity::class.java,
+                AudioToOrderMemoMenuActivity::class.java,//AudioToOrderMemoMenuActivity::class.java,
                 MainActivity::class.java
         )
 
