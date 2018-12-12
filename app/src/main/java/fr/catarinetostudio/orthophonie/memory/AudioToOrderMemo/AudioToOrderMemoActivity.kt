@@ -158,7 +158,7 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: android.view.MenuItem?): Boolean {
         when (item!!.itemId){
-            R.id.action_help  -> Help(this@AudioToOrderMemoActivity, "? TODO ?", getString(R.string.title_AudioToOrderMemo), "helptest")
+            R.id.action_help  -> Help(this@AudioToOrderMemoActivity, getString(R.string.help_AudioToOrderMemo), getString(R.string.title_AudioToOrderMemo), "helptest")
         }
         return super.onOptionsItemSelected(item)
     }
