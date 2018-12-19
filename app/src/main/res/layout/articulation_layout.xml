@@ -4,9 +4,52 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/articulation_menu"
+    <TextView
+        android:id="@+id/sonArticulation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/espaceVide"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:textSize="30sp" />
+
+
+    <WebView
+        android:id="@+id/web_view"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:focusable="false"
+        android:scrollbars="none"
+        android:layout_gravity="center"/>
+
+
+    <ImageView
+        android:id="@+id/imagePlay"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:src="@drawable/playaudio" />
+
+
+    <Button
+        android:id="@+id/buttonRecord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/record"/>
+
+    <Button
+        android:id="@+id/buttonPlayRecording"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/playRecord"/>
+
+
+
 
 </LinearLayout>

@@ -72,4 +72,9 @@
     <!-- TRUE ID -->
     <!-- ca-app-pub-4865783516552371/2936550145 -->
 
+    <string name="record">Record</string>
+    <string name="stopRecording">Stop Recording</string>
+    <string name="playRecord">Play Record</string>
+    <string name="stopPlayingRecord">Stop Playing Record</string>
+
 </resources>
