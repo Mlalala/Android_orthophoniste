@@ -145,6 +145,14 @@
             android:name="fr.catarinetostudio.orthophonie.memory.AudioToOrderMemo.AudioToOrderMemoActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:label="@string/title_SymbolsMemo"
+            android:name="fr.catarinetostudio.orthophonie.memory.SymbolMemo.SymbolMemoMenuActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:label="@string/title_SymbolsMemo"
+            android:name="fr.catarinetostudio.orthophonie.memory.SymbolMemo.SymbolMemoActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

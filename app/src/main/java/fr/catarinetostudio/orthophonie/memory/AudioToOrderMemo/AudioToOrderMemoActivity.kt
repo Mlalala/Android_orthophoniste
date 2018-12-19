@@ -9,9 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuInflater
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import fr.catarinetostudio.orthophonie.R
 import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
 import fr.catarinetostudio.orthophonie.utils.Help
@@ -22,27 +20,18 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
     private var index_serie : Int = 0
     private var proposal : List<String>? = null
     private var answer : List<String>? = null
-    private var mot : String = ""
 
     private var media : MediaPlayer? = null
 
     private var length_serie : Int = 0
-    private var serie_size : Int =  0
-    private var selected = ArrayList<Int>()
-    private var buttonlist = ArrayList<Button>()
-    private val size_text = 18f
-    private var nb_correct = 0
 
-    private var list_answer : ArrayList<String>? = null
-    private var element_0 : String = "0"
-    private var element_1 : String = "1"
-    private var element_2 : String = "2"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.audio_to_order_layout)
 
         index_serie = intent.getIntExtra("EXTRA_POSITION",0)
+
 
         //Serie lengh
         var databaseAccess = DatabaseAccess.getInstance(this)
@@ -76,23 +65,24 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
         val textview = findViewById<TextView>(R.id.audioToOrder_serie)
         textview.text = "Série " + (index_serie + 1).toString() + " - " + (index_in_serie + 1).toString()
 
-        val button1 = findViewById(R.id.memory_button1) as Button
-        button1.text = proposals[0]
-        button1.setOnClickListener {list_answer!!.add(element_0)}
+        val adapter = ArrayAdapter(
+                this, // Context
+                android.R.layout.simple_spinner_item, // Layout
+                proposals // Array
+        )
 
-        val button2 = findViewById(R.id.memory_button2) as Button
-        button2.text = proposals[1]
-        button2.setOnClickListener {list_answer!!.add(element_1)}
+        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+        val spinner1 = findViewById(R.id.spinner1) as Spinner
+        val spinner2 = findViewById(R.id.spinner2) as Spinner
+        val spinner3 = findViewById(R.id.spinner3) as Spinner
 
-        val button3 = findViewById(R.id.memory_button3) as Button
-        button3.text = proposals[2]
-        button3.setOnClickListener {list_answer!!.add(element_2)}
+        spinner1.adapter = adapter
+        spinner2.adapter = adapter
+        spinner3.adapter = adapter
 
-        serie_size = list_answer!!.size
-
-        if (serie_size == 3){
-            isCorrect(list_answer!!,answer,databaseAccess)
-        }
+        val button = findViewById(R.id.memory_button) as Button
+        button.text = "vérfier réponse"
+        button.setOnClickListener {isCorrect(spinner1,spinner2,spinner3,answer,databaseAccess)/*;  Toast.makeText(this, "spinner  = " + spinner1.getSelectedItem().toString(), Toast.LENGTH_LONG).show()*/}
 
 
 
@@ -106,13 +96,16 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
         }
     }
 
-    fun isCorrect(answer : ArrayList<String> , response : List<String>, databaseAccess : DatabaseAccess){
-        if (answer == response) {
+    fun isCorrect(spinner1 : Spinner, spinner2: Spinner, spinner3 : Spinner,response : List<String>, databaseAccess : DatabaseAccess){
+        //Toast.makeText(this, "reponse =" + response, Toast.LENGTH_LONG).show()
+        if ((spinner1.getSelectedItem().toString() == response[0]) && (spinner2.getSelectedItem().toString() == response[1]) && (spinner3.getSelectedItem().toString() == response[2])){
             manageItem("CORRECT !", databaseAccess)
         }
-        else{
+
+        else {
             manageItem("FAUX !", databaseAccess)
         }
+
     }
 
     fun manageItem(title : String,databaseAccess : DatabaseAccess) {
@@ -165,7 +158,7 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: android.view.MenuItem?): Boolean {
         when (item!!.itemId){
-            R.id.action_help  -> Help(this@AudioToOrderMemoActivity, "? TODO ?", getString(R.string.title_AudioToOrderMemo), "helptest")
+            R.id.action_help  -> Help(this@AudioToOrderMemoActivity, getString(R.string.help_AudioToOrderMemo), getString(R.string.title_AudioToOrderMemo), "helptest")
         }
         return super.onOptionsItemSelected(item)
     }

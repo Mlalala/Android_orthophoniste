@@ -321,6 +321,22 @@ private constructor(context: Context) {
         return list
     }
 
+    //symbol memo
+
+    fun getMenuSymbolMemo():ArrayList<String>{
+        val list = ArrayList<String>()
+        val cursor = database!!.rawQuery("SELECT serie,name FROM SymbolMemoMenu",null)
+        cursor.moveToFirst()
+        while (!cursor.isAfterLast) {
+            list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
+            cursor.moveToNext()
+        }
+        cursor.close()
+        return list
+    }
+
+
+
 
     fun open() {
         this.database = openHelper.writableDatabase
