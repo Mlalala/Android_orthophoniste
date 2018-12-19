@@ -11,3 +11,5 @@
 .externalNativeBuild
 
 \.idea/misc\.xml
+
+app/src/main/res/mipmap/ic_launcher_old\.png
