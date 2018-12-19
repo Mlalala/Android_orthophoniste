@@ -45,16 +45,16 @@ class PhonologyMenuActivity : AppCompatActivity() {
                 PictureToPhonemePhonoMenuActivity::class.java,
                 AudioToWordPhonoMenuActivity::class.java,
                 MemoryPhonoMenuActivity::class.java,
-                MainActivity::class.java,//AudioToRhymeMenuActivity::class.java,
-                MainActivity::class.java//AudioToSyllablePositionPhonoMenuActivity::class.java
+                AudioToRhymeMenuActivity::class.java,//AudioToRhymeMenuActivity::class.java,
+                AudioToSyllablePositionPhonoMenuActivity::class.java//AudioToSyllablePositionPhonoMenuActivity::class.java
         )
 
         val menuPicture = arrayOf(
                 "PictureToPhonemePhono",
                 "AudioToWordPhono",
                 "MemoryPhono",
-                "sample",
-                "sample"
+                "AudioToRhyme",
+                "AudioToSyllablePosition"
         )
 
         val menuAudio = arrayOf(

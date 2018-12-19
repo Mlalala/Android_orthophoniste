@@ -4,13 +4,33 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
+import android.view.MotionEvent
+import android.view.View
 import fr.catarinetostudio.orthophonie.R
 import fr.catarinetostudio.orthophonie.memory.MemoryMenuActivity
 
 class SymbolMemoActivity : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.simple_list_layout)
+        setContentView(R.layout.symbol_memo_layout)
+
+        val actionBar = supportActionBar
+
+        actionBar!!.hide()
+
+        //setContentView(R.layout.activity_shapes_view)
+
+        var listener = View.OnTouchListener(function = { view : View, motionEvent : MotionEvent ->
+
+            if (motionEvent.action == MotionEvent.ACTION_MOVE) {
+
+                view.y = motionEvent.rawY - view.height/2
+                view.x = motionEvent.rawX - view.width/2
+            }
+
+            true
+
+        })
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {

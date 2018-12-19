@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     )
 
     private val activitylist = arrayOf(
-            MainActivity::class.java, //DescriptionArtiActivity::class.java,
+            DescriptionArtiActivity::class.java, //DescriptionArtiActivity::class.java,
             PhonologyMenuActivity::class.java,
             VisualMenuActivity::class.java,
             MemoryMenuActivity::class.java
