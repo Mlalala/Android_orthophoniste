@@ -11,6 +11,8 @@ import fr.catarineto.orthophonie.MainActivity
 import fr.catarineto.orthophonie.utils.ModuleMenuItem
 import fr.catarineto.orthophonie.utils.ModuleMenuListAdapter
 import fr.catarineto.orthophonie.*
+import fr.catarineto.orthophonie.phonology.audioToRhymePhono.AudioToRhymeMenuActivity
+import fr.catarineto.orthophonie.phonology.audioToSyllablePositionPhono.AudioToSyllablePositionPhonoMenuActivity
 import fr.catarineto.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity
 import fr.catarineto.orthophonie.phonology.memoryPhono.MemoryPhonoMenuActivity
 import fr.catarineto.orthophonie.phonology.pictureToPhonemePhono.PictureToPhonemePhonoMenuActivity

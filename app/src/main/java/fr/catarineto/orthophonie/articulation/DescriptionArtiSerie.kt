@@ -1,39 +1,19 @@
 package fr.catarineto.orthophonie.articulation
 
 import android.Manifest
-import android.app.Activity
-import android.content.Context
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
-<<<<<<< HEAD:app/src/main/java/fr/catarineto/orthophonie/articulation/DescriptionArtiSerie.kt
-import android.view.KeyEvent
 import android.widget.ArrayAdapter
-import android.widget.ListView
 import fr.catarineto.orthophonie.R
 import fr.catarineto.orthophonie.utils.DatabaseAccess
-=======
 import android.os.Bundle
 import android.media.MediaPlayer
 import android.media.MediaRecorder
 import android.os.Build
-import android.os.Environment
-import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.webkit.WebView
 import android.widget.*
-import java.io.File
-import java.io.IOException
-import fr.catarinetostudio.orthophonie.R
-import fr.catarinetostudio.orthophonie.utils.Help
 import kotlinx.android.synthetic.main.articulation_layout.*
-import fr.catarinetostudio.orthophonie.utils.DatabaseAccess
-import fr.catarinetostudio.orthophonie.utils.ModuleMenuItem
-
->>>>>>> master:app/src/main/java/fr/catarinetostudio/orthophonie/articulation/DescriptionArtiSerie.kt
+import java.io.File
 
 class DescriptionArtiSerie : AppCompatActivity() {
     var mediaRecorder: MediaRecorder? = null

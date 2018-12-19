@@ -9,6 +9,7 @@ import android.net.Uri
 import android.view.Menu
 import android.view.MenuInflater
 import android.widget.Toast
+import fr.catarineto.orthophonie.articulation.DescriptionArtiActivity
 import fr.catarineto.orthophonie.memory.MemoryMenuActivity
 import fr.catarineto.orthophonie.phonology.PhonologyMenuActivity
 import fr.catarineto.orthophonie.utils.MainMenuItem

@@ -4,14 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
-<<<<<<< HEAD:app/src/main/java/fr/catarineto/orthophonie/memory/SymbolMemo/SymbolMemoActivity.kt
 import fr.catarineto.orthophonie.R
-=======
 import android.view.MotionEvent
 import android.view.View
-import fr.catarinetostudio.orthophonie.R
-import fr.catarinetostudio.orthophonie.memory.MemoryMenuActivity
->>>>>>> master:app/src/main/java/fr/catarinetostudio/orthophonie/memory/SymbolMemo/SymbolMemoActivity.kt
 
 class SymbolMemoActivity : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
