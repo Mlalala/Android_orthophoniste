@@ -61,16 +61,15 @@
     <!-- Buttons -->
     <string name="suggestion">Contactez-nous</string>
     <string name="contact">Contactez-nous</string>
-    <string name="email">catarineto.studio@gmail.com</string>
+    <string name="email">catarineto.s@gmail.com</string>
 
     <!-- Ads -->
-    <string name="ad_app_id">ca-app-pub-4476637068936049~4551637302</string>
+    <string name="ad_app_id">ca-app-pub-4865783516552371~9801341392</string>
     <string name="banner_id">ca-app-pub-3940256099942544/6300978111</string>
 
     <!-- TEST ID -->
     <!-- ca-app-pub-3940256099942544/6300978111 -->
     <!-- TRUE ID -->
-    <!-- ca-app-pub-4476637068936049/6198679321 -->
-    <!-- ca-app-pub-4476637068936049/5036036238 -->
+    <!-- ca-app-pub-4865783516552371/2936550145 -->
 
 </resources>

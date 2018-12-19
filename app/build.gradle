@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "fr.catarinetostudio.orthophonie"
+        applicationId "fr.catarineto.orthophonie"
         minSdkVersion 22
         targetSdkVersion 28
         versionCode 1
