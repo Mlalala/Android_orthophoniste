@@ -60,7 +60,10 @@ class MainActivity : AppCompatActivity() {
         list.adapter = menuAdapter
 
         list.setOnItemClickListener { _, _, position, _ ->
-            val intent = Intent(this,activitylist[position])
+            //val intent = Intent(this,activitylist[position])
+            val intent = Intent(this,MenuExercicesActivity::class.java)
+            intent.putExtra("EXTRA_POSITION",position)
+            ///
             startActivity(intent)
             finish()
         }
