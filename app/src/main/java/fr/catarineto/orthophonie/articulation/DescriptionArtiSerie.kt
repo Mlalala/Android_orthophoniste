@@ -13,6 +13,7 @@ import android.os.Build
 import android.webkit.WebView
 import android.widget.*
 import kotlinx.android.synthetic.main.articulation_layout.*
+import kotlinx.android.synthetic.main.articulation_layout.view.*
 import java.io.File
 
 class DescriptionArtiSerie : AppCompatActivity() {
@@ -161,6 +162,8 @@ class DescriptionArtiSerie : AppCompatActivity() {
         webView.loadUrl("file:///android_asset/AudioToWordPhono.gif")
         webView.settings.loadWithOverviewMode = true
         webView.settings.useWideViewPort = true
+        val button = findViewById(R.id.test) as ImageButton
+        button.setImageResource(R.drawable.ic_play_arti)
 
         return webView!!
     }
