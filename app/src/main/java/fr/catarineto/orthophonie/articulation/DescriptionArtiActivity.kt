@@ -204,7 +204,7 @@ class DescriptionArtiActivity : AppCompatActivity() {
         }
 
         val webView = findViewById(R.id.web_view) as WebView
-        webView.loadUrl("file:///android_asset/AudioToWordPhono.gif")
+        webView.loadUrl("file:///android_asset/sample.gif")
         webView.settings.loadWithOverviewMode = true
         webView.settings.useWideViewPort = true
 
