@@ -97,17 +97,17 @@
         <!-- Articulation -->
         <activity
             android:label="@string/title_arti"
-            android:name="fr.catarineto.orthophonie.articulation.DescriptionArtiActivity"
+            android:name="fr.catarineto.orthophonie.articulation.DescriptionArtiMenu"
             android:screenOrientation="portrait" />
 
         <activity
             android:label="@string/title_ArticulationLevel"
-            android:name="fr.catarineto.orthophonie.articulation.DescriptionArtiLevel"
+            android:name="fr.catarineto.orthophonie.articulation.DescriptionArtiSon"
             android:screenOrientation="portrait" />
 
         <activity
             android:label="@string/title_ArticulationSerie"
-            android:name="fr.catarineto.orthophonie.articulation.DescriptionArtiSerie"
+            android:name="fr.catarineto.orthophonie.articulation.DescriptionArtiActivity"
             android:screenOrientation="portrait" />
 
 

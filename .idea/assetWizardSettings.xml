@@ -51,7 +51,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/D:/Programmes/AndroidStudio/plugins/android/lib/android.jar!/images/material_design_icons/av/ic_fiber_manual_record_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/home/mlarieu/Documents/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/image/ic_brightness_1_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -61,10 +61,10 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="ff3322" />
-                            <entry key="outputName" value="ic_record_arti" />
+                            <entry key="color" value="ff0011" />
+                            <entry key="outputName" value="ic_stop_play_record" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\marti" />
+                            <entry key="sourceFile" value="$APPLICATION_HOME_DIR$/bin/C:\Users\marti" />
                           </map>
                         </option>
                       </PersistentState>

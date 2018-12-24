@@ -6,8 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.AdapterView
 import android.widget.ListView
-import android.widget.Toast
-import fr.catarineto.orthophonie.articulation.DescriptionArtiActivity
+import fr.catarineto.orthophonie.articulation.DescriptionArtiMenu
 import fr.catarineto.orthophonie.memory.AudioToOrderMemo.AudioToOrderMemoMenuActivity
 import fr.catarineto.orthophonie.memory.SymbolMemo.SymbolMemoMenuActivity
 import fr.catarineto.orthophonie.phonology.audioToRhymePhono.AudioToRhymeMenuActivity
@@ -40,7 +39,7 @@ class MenuExercicesActivity : AppCompatActivity() {
 
                 //TODO : Add Articulation in MemuExercicesActivity
                 //Toast.makeText(this,"TODO : Add Articulation in MemuExercicesActivity", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, DescriptionArtiActivity::class.java)
+                val intent = Intent(this, DescriptionArtiMenu::class.java)
                 startActivity(intent)
                 finish()
             }
