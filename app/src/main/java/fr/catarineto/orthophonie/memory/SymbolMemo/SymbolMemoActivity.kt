@@ -62,7 +62,7 @@ class SymbolMemoActivity : AppCompatActivity()  {
 
         //Toast.makeText(this,"list = " + list.size.toString(), Toast.LENGTH_SHORT).show()
 
-        val chronometer = findViewById<Chronometer>(R.id.chronometer)
+        val chronometer = findViewById(R.id.chronometer) as Chronometer
         chronometer.start()
 
 
@@ -159,7 +159,7 @@ class SymbolMemoActivity : AppCompatActivity()  {
 
         val buttoncheckanswer = findViewById<Button>(R.id.buttoncheckanswer)
         buttoncheckanswer.text = "check"
-        buttoncheckanswer.setOnClickListener { isCorrect() }
+        buttoncheckanswer.setOnClickListener { isCorrect(chronometer) }
 
         val consigne = findViewById(R.id.consigne) as TextView
         consigne.text = "Retenez les symboles et restituez les"
@@ -212,7 +212,7 @@ class SymbolMemoActivity : AppCompatActivity()  {
 
     }
 
-    private fun isCorrect(){
+    private fun isCorrect(chronometre : Chronometer){
 
         //Toast.makeText(this,"nombre random = ", Toast.LENGTH_SHORT).show()
         val builder = AlertDialog.Builder(this)
@@ -223,9 +223,11 @@ class SymbolMemoActivity : AppCompatActivity()  {
         //builder.setTitle("CORRECT").setView(dialogView)
 
         if((number_random_first_image == first_increment) && (number_random_second_image == second_increment) && (number_random_third_image == third_increment) && (number_random_fourth_image == fourth_increment) && (number_random_fifth_image == fifth_increment)){
+            chronometre.stop()
             builder.setTitle("CORRECT").setView(dialogView)
             builder.setPositiveButton("Nouvelle série") { _, _ -> startActivity(intent)
                 finish()}
+            //builder.setMessage(chronometre.drawingTime.toString())
         }
         else{
             builder.setTitle("FAUX").setView(dialogView)
