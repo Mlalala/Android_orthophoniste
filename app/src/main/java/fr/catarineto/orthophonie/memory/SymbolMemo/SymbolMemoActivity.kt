@@ -40,10 +40,6 @@ class SymbolMemoActivity : AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.symbol_memo_layout)
 
-        val actionBar = supportActionBar
-
-
-        actionBar!!.hide()
         number_random_first_image = Random.nextInt(0,list.size)
         val image1 = findViewById(R.id.symbol1) as ImageView
         choiceSymbol(image1, number_random_first_image)
@@ -66,12 +62,8 @@ class SymbolMemoActivity : AppCompatActivity()  {
 
         //Toast.makeText(this,"list = " + list.size.toString(), Toast.LENGTH_SHORT).show()
 
-        list_selection.add(list[number_random_first_image])
-        list_selection.add(list[number_random_second_image])
-        list_selection.add(list[number_random_third_image])
-        list_selection.add(list[number_random_fourth_image])
-        list_selection.add(list[number_random_fifth_image])
-
+        val chronometer = findViewById<Chronometer>(R.id.chronometer)
+        chronometer.start()
 
 
 
