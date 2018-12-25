@@ -8,7 +8,7 @@ import android.widget.AdapterView
 import android.widget.ListView
 import fr.catarineto.orthophonie.articulation.DescriptionArtiMenu
 import fr.catarineto.orthophonie.memory.AudioToOrderMemo.AudioToOrderMemoMenuActivity
-import fr.catarineto.orthophonie.memory.SymbolMemo.SymbolMemoMenuActivity
+import fr.catarineto.orthophonie.memory.SymbolMemo.SymbolMemoActivity
 import fr.catarineto.orthophonie.phonology.audioToRhymePhono.AudioToRhymeMenuActivity
 import fr.catarineto.orthophonie.phonology.audioToSyllablePositionPhono.AudioToSyllablePositionPhonoMenuActivity
 import fr.catarineto.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity
@@ -158,7 +158,7 @@ class MenuExercicesActivity : AppCompatActivity() {
 
                 val activityList = arrayOf(
                         AudioToOrderMemoMenuActivity::class.java,//AudioToOrderMemoMenuActivity::class.java,
-                        SymbolMemoMenuActivity::class.java
+                        SymbolMemoActivity::class.java
                 )
 
                 val menuPicture = arrayOf(

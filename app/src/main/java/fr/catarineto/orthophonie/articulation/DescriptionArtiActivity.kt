@@ -12,8 +12,11 @@ import android.media.MediaPlayer
 import android.media.MediaRecorder
 import android.os.Build
 import android.view.KeyEvent
+import android.view.Menu
+import android.view.MenuInflater
 import android.webkit.WebView
 import android.widget.*
+import fr.catarineto.orthophonie.utils.Help
 import kotlinx.android.synthetic.main.articulation_layout.*
 import java.io.File
 
@@ -223,6 +226,20 @@ class DescriptionArtiActivity : AppCompatActivity() {
             finish()
             true
         } else super.onKeyDown(keyCode, event)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.help,menu)
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: android.view.MenuItem?): Boolean {
+        when (item!!.itemId){
+            R.id.action_help  -> Help(this@DescriptionArtiActivity, getString(R.string.help_Articulation), getString(R.string.title_arti), "helptest")
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }
