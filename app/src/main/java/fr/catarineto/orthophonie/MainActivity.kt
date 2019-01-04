@@ -9,12 +9,8 @@ import android.net.Uri
 import android.view.Menu
 import android.view.MenuInflater
 import android.widget.Toast
-import fr.catarineto.orthophonie.articulation.DescriptionArtiMenu
-import fr.catarineto.orthophonie.memory.MemoryMenuActivity
-import fr.catarineto.orthophonie.phonology.PhonologyMenuActivity
 import fr.catarineto.orthophonie.utils.MainMenuItem
 import fr.catarineto.orthophonie.utils.MainMenuListAdapter
-import fr.catarineto.orthophonie.visual.VisualMenuActivity
 import fr.catarineto.orthophonie.utils.Ads
 
 
@@ -32,13 +28,6 @@ class MainActivity : AppCompatActivity() {
             R.drawable.phono,
             R.drawable.visu,
             R.drawable.memory
-    )
-
-    private val activitylist = arrayOf(
-            DescriptionArtiMenu::class.java, //DescriptionArtiMenu::class.java,
-            PhonologyMenuActivity::class.java,
-            VisualMenuActivity::class.java,
-            MemoryMenuActivity::class.java
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,25 +49,11 @@ class MainActivity : AppCompatActivity() {
         list.adapter = menuAdapter
 
         list.setOnItemClickListener { _, _, position, _ ->
-            //val intent = Intent(this,activitylist[position])
             val intent = Intent(this,MenuExercicesActivity::class.java)
             intent.putExtra("EXTRA_POSITION",position)
-            ///
             startActivity(intent)
             finish()
         }
-
-        /*var mAdView : AdView
-
-        mAdView = this.findViewById(R.id.adViewTop)
-        val adRequestTop = AdRequest.Builder().build()
-        mAdView.loadAd(adRequestTop)
-
-
-        mAdView = this.findViewById(R.id.adViewBottom)
-        val adRequestBottom = AdRequest.Builder().build()
-        mAdView.loadAd(adRequestBottom)*/
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

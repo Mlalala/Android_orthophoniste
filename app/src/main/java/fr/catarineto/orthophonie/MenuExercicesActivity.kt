@@ -26,8 +26,6 @@ class MenuExercicesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.simple_list_layout)
 
-        Ads(this)
-
         val extra = intent.getIntExtra("EXTRA_POSITION",0)
 
         when(extra){
