@@ -246,21 +246,23 @@ private constructor(context: Context) {
 
     //// ARTICULATION ////
 
-    fun getArticulationLevel(index_lettre: Int):ArrayList<String>{
+
+    fun getArticulationSon(num_letter: Int, num_son: Int):ArrayList<String>{
         val list = ArrayList<String>()
-        val cursor = database!!.rawQuery("SELECT lettre,name FROM DescriptionArtiSeries WHERE num = "  +  index_lettre.toString(),null)
+        val cursor = database!!.rawQuery("SELECT word FROM DescriptionArti WHERE numLetter = "  + "'" +  num_letter.toString() + "'" + "AND numSon = " + num_son.toString(),null)
         cursor.moveToFirst()
         while (!cursor.isAfterLast()) {
-            list.add(" " + cursor.getString(0) + " - " + cursor.getString(1))
+            list.add(" " + cursor.getString(0))
             cursor.moveToNext()
         }
         cursor.close()
         return list
     }
 
+
     fun getArticulationLetter():ArrayList<String>{
         val list = ArrayList<String>()
-        val cursor = database!!.rawQuery("SELECT letter FROM DescriptionArtiLettre",null)
+        val cursor = database!!.rawQuery("SELECT letter FROM DescriptionArtiMenu",null)
         cursor.moveToFirst()
         while (!cursor.isAfterLast) {
             list.add(" " + cursor.getString(0))
@@ -270,9 +272,9 @@ private constructor(context: Context) {
         return list
     }
 
-    fun getArticulationMot(num : Int, serie : Int):ArrayList<String>{
+    fun getArticulationMot(num : Int):ArrayList<String>{
         val list = ArrayList<String>()
-        val cursor = database!!.rawQuery("SELECT name FROM DescriptionArtiObjet WHERE num = " + "'" + num.toString() + "'" + "AND serie= "+ serie.toString(), null)
+        val cursor = database!!.rawQuery("SELECT word FROM DescriptionArti WHERE numLetter = " + "'" + num.toString() + "'" , null)
         //val cursor = database!!.rawQuery("SELECT name FROM DescriptionArtiObjet LEFT JOIN DescriptionArtiSeries ON WHERE lettre = " + "'" + lettre + "'" + "AND serie= "+ serie, null)
         cursor.moveToFirst()
         while (!cursor.isAfterLast) {

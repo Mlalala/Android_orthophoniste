@@ -6,9 +6,9 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.AdapterView
 import android.widget.ListView
-import android.widget.Toast
+import fr.catarineto.orthophonie.articulation.DescriptionArtiMenu
 import fr.catarineto.orthophonie.memory.AudioToOrderMemo.AudioToOrderMemoMenuActivity
-import fr.catarineto.orthophonie.memory.SymbolMemo.SymbolMemoMenuActivity
+import fr.catarineto.orthophonie.memory.SymbolMemo.SymbolMemoActivity
 import fr.catarineto.orthophonie.phonology.audioToRhymePhono.AudioToRhymeMenuActivity
 import fr.catarineto.orthophonie.phonology.audioToSyllablePositionPhono.AudioToSyllablePositionPhonoMenuActivity
 import fr.catarineto.orthophonie.phonology.audioToWordPhono.AudioToWordPhonoMenuActivity
@@ -38,7 +38,10 @@ class MenuExercicesActivity : AppCompatActivity() {
                 //////////////////
 
                 //TODO : Add Articulation in MemuExercicesActivity
-                Toast.makeText(this,"TODO : Add Articulation in MemuExercicesActivity", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this,"TODO : Add Articulation in MemuExercicesActivity", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, DescriptionArtiMenu::class.java)
+                startActivity(intent)
+                finish()
             }
 
             1 -> {
@@ -155,7 +158,7 @@ class MenuExercicesActivity : AppCompatActivity() {
 
                 val activityList = arrayOf(
                         AudioToOrderMemoMenuActivity::class.java,//AudioToOrderMemoMenuActivity::class.java,
-                        SymbolMemoMenuActivity::class.java
+                        SymbolMemoActivity::class.java
                 )
 
                 val menuPicture = arrayOf(

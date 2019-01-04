@@ -36,20 +36,56 @@
         android:layout_margin="30dp"
         android:src="@drawable/playaudio" />
 
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
 
-    <Button
+
+    <ImageButton
         android:id="@+id/buttonRecord"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/record"/>
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="left"
+        android:text="@string/record"
+        android:background="@color/background"/>
 
-    <Button
+        <TextView
+            android:id="@+id/text_record"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/espaceVide2"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:textSize="30sp" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+    <ImageButton
         android:id="@+id/buttonPlayRecording"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="@string/playRecord"
+        android:background="@color/background"
+        android:layout_gravity="left"/>
+
+    <TextView
+        android:id="@+id/text_play_record"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/playRecord"/>
-
-
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:textSize="30sp" />
+    </LinearLayout>
 
 
 </LinearLayout>

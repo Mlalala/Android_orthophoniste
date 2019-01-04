@@ -8,7 +8,7 @@ import android.widget.AdapterView
 import android.widget.ListView
 import fr.catarineto.orthophonie.*
 import fr.catarineto.orthophonie.memory.AudioToOrderMemo.AudioToOrderMemoMenuActivity
-import fr.catarineto.orthophonie.memory.SymbolMemo.SymbolMemoMenuActivity
+import fr.catarineto.orthophonie.memory.SymbolMemo.SymbolMemoActivity
 import fr.catarineto.orthophonie.utils.Ads
 import fr.catarineto.orthophonie.utils.ModuleMenuItem
 import fr.catarineto.orthophonie.utils.ModuleMenuListAdapter
@@ -31,7 +31,7 @@ class MemoryMenuActivity : AppCompatActivity() {
 
         val activityList = arrayOf(
                 AudioToOrderMemoMenuActivity::class.java,//AudioToOrderMemoMenuActivity::class.java,
-                SymbolMemoMenuActivity::class.java
+                SymbolMemoActivity::class.java
         )
 
         val menuPicture = arrayOf(

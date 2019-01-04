@@ -58,7 +58,7 @@
     <string name="help_AudioTosyllable">Aide AudioSyllablePosition</string>
     <string name="help_SymbolMemo">Aide SymbolMemo</string>
     <string name="help_AudioToOrderMemo">Aide AudioToOrderMemo</string>
-
+    <string name="help_Articulation">Aide Articulation</string>
     <!-- Buttons -->
     <string name="suggestion">Contactez-nous</string>
     <string name="contact">Contactez-nous</string>
