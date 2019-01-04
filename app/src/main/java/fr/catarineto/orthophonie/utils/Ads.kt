@@ -12,7 +12,7 @@ class Ads (ac: Activity) {
 
     init {
         MobileAds.initialize(ac, ac.getString(R.string.ad_app_id))
-        mAdView = ac.findViewById(R.id.adViewBottom)
+        mAdView = ac.findViewById(R.id.adView)
         val adRequestBottom = AdRequest.Builder().build()
         mAdView.loadAd(adRequestBottom)
     }

@@ -13,21 +13,9 @@
         android:layout_weight="1">
     </ListView>
 
-    <!--
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adViewTop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        ads:adSize="SMART_BANNER"
-        android:layout_weight="0"
-        ads:adUnitId="@string/banner_id">
-    </com.google.android.gms.ads.AdView>
-    -->
-
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adViewBottom"
+        android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"

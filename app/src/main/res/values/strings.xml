@@ -58,6 +58,7 @@
     <string name="help_AudioTosyllable">Aide AudioSyllablePosition</string>
     <string name="help_SymbolMemo">Aide SymbolMemo</string>
     <string name="help_AudioToOrderMemo">Aide AudioToOrderMemo</string>
+
     <!-- Buttons -->
     <string name="suggestion">Contactez-nous</string>
     <string name="contact">Contactez-nous</string>
@@ -65,7 +66,7 @@
 
     <!-- Ads -->
     <string name="ad_app_id">ca-app-pub-4865783516552371~9801341392</string>
-    <string name="banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_id">ca-app-pub-4865783516552371/2936550145</string>
 
     <!-- TEST ID -->
     <!-- ca-app-pub-3940256099942544/6300978111 -->
