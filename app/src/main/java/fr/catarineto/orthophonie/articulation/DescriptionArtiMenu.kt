@@ -33,7 +33,7 @@ class DescriptionArtiMenu : AppCompatActivity(){
 
         listview.setOnItemClickListener { parent, view, position, id ->
             //Toast.makeText(this, "Position Clicked:"+" "+position, Toast.LENGTH_LONG).show()
-            var intent = Intent(this, DescriptionArtiSon::class.java)
+            var intent = Intent(this, DescriptionArtiActivity::class.java)
             intent.putExtra("EXTRA_POSITION",position)
             startActivity(intent)
             finish()

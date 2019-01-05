@@ -96,7 +96,7 @@ class AudioToRhymeActivity: AppCompatActivity() {
         builder.setTitle(title).setView(dialogView)
 
         if (title == "CORRECT !"){
-            if (index_in_serie < length_serie){
+            if (index_in_serie < length_serie+1){
                 builder.setCancelable(false)
                 builder.setPositiveButton("Suivant") { dialog, id ->
                     index_in_serie += 1

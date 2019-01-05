@@ -38,11 +38,12 @@ class DescriptionArtiActivity : AppCompatActivity() {
     private var indexSerie : Int = 0
     private var state_button : Int = 1
     private var state_button_play_record = 1
+    private var index_letter: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.articulation_layout)
-        index_letter_level = intent.getIntArrayExtra("IntArray")
+        index_letter = intent.getIntExtra("EXTRA_POSITION",0)
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
         //var articulation_level = databaseAccess.getArticulationMot(index_letter_level[1] + 1)
@@ -215,8 +216,8 @@ class DescriptionArtiActivity : AppCompatActivity() {
     }
 
     private fun initSerieData(databaseAccess : DatabaseAccess){
-        val sqlQuery = databaseAccess.getArticulationSon(index_letter_level[1],index_letter_level[0])
-        son=sqlQuery[0]
+        val sqlQuery = databaseAccess.getArticulationLetter()
+        son=sqlQuery[index_letter]
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
