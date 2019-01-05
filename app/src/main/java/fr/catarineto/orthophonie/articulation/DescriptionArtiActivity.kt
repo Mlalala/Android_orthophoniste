@@ -68,10 +68,10 @@ class DescriptionArtiActivity : AppCompatActivity() {
         //val buttonRecord = findViewById(R.id.buttonRecord) as Button
         //val buttonPlayRecording =findViewById(R.id.buttonPlayRecording) as Button
         val imagebuttonrecord = findViewById(R.id.buttonRecord) as ImageButton
-        imagebuttonrecord.setImageResource(R.drawable.ic_play_arti)
+        imagebuttonrecord.setImageResource(R.drawable.ic_play_record_arti)
 
         val buttonPlayRecording =findViewById(R.id.buttonPlayRecording) as ImageButton
-        buttonPlayRecording.setImageResource(R.drawable.ic_play_record_arti)
+        buttonPlayRecording.setImageResource(R.drawable.ic_play_arti)
 
         mediaPlayer?.reset()
         mediaPlayer = MediaPlayer.create(this, resources.getIdentifier("testaudio","raw","fr.catarineto.orthophonie"))
@@ -87,7 +87,7 @@ class DescriptionArtiActivity : AppCompatActivity() {
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         val buttonRecord = findViewById(R.id.buttonRecord) as ImageButton
-        buttonRecord.setImageResource(R.drawable.ic_play_arti)
+        buttonRecord.setImageResource(R.drawable.ic_play_record_arti)
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if(requestCode == PERMISSION_REQUEST_CODE){
             if(grantResults[0] == PERMISSION_GRANTED){
@@ -113,7 +113,7 @@ class DescriptionArtiActivity : AppCompatActivity() {
             }else{
                 stopRecording()
                 enableDisableButtonPlayRecording(buttonPlayRecordingt)
-                buttonRecordt.setImageResource(R.drawable.ic_play_arti)
+                buttonRecordt.setImageResource(R.drawable.ic_play_record_arti)
                 state_button = 1
             }
         }
@@ -131,7 +131,7 @@ class DescriptionArtiActivity : AppCompatActivity() {
                 playRecording(buttonPlayRecordingt)
             }else{
                 state_button_play_record = 1
-                buttonPlayRecordingt.setImageResource(R.drawable.ic_play_record_arti)
+                buttonPlayRecordingt.setImageResource(R.drawable.ic_play_arti)
                 stopPlayingRecording()
             }
         }
@@ -179,7 +179,7 @@ class DescriptionArtiActivity : AppCompatActivity() {
         mediaPlayer!!.start()
         mediaPlayer!!.setOnCompletionListener {
             state_button_play_record = 1
-            buttonPlayRecordingt.setImageResource(R.drawable.ic_play_record_arti)
+            buttonPlayRecordingt.setImageResource(R.drawable.ic_play_arti)
         }
     }
 
@@ -194,10 +194,10 @@ class DescriptionArtiActivity : AppCompatActivity() {
         textview.text = "" + son
 
         val text_record = findViewById<TextView>(R.id.text_record)
-        text_record.text = "   record"
+        text_record.text = "   Record"
 
         val text_play_record =  findViewById<TextView>(R.id.text_play_record)
-        text_play_record.text = "   play record"
+        text_play_record.text = "   Play record"
 
         val audioView = findViewById<ImageView>(R.id.imagePlay)
 
@@ -208,7 +208,7 @@ class DescriptionArtiActivity : AppCompatActivity() {
         }
 
         val webView = findViewById(R.id.web_view) as WebView
-        webView.loadUrl("file:///android_asset/sample.gif")
+        webView.loadUrl("file:///android_asset/phoneme" + index_letter.toString() +  ".gif")
         webView.settings.loadWithOverviewMode = true
         webView.settings.useWideViewPort = true
 

@@ -42,7 +42,7 @@ class AudioToRhymeActivity: AppCompatActivity() {
         display_phono(proposal!!, answer, databaseAccess)
 
         media?.reset()
-        media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarineto.orthophonie"))
+        media = MediaPlayer.create(this, getResources().getIdentifier("audiotorhyme"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarineto.orthophonie"))
         media!!.start()
     }
 
@@ -73,7 +73,7 @@ class AudioToRhymeActivity: AppCompatActivity() {
 
         audio_view.setOnClickListener {
             media?.reset()
-            media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "raw", "fr.catarineto.orthophonie"))
+            media = MediaPlayer.create(this, getResources().getIdentifier("audiotorhyme" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "raw", "fr.catarineto.orthophonie"))
             media!!.start()
         }
     }
@@ -102,7 +102,7 @@ class AudioToRhymeActivity: AppCompatActivity() {
                     index_in_serie += 1
                     init_serie_data(databaseAccess)
                     media?.reset()
-                    media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarineto.orthophonie"))
+                    media = MediaPlayer.create(this, getResources().getIdentifier("audiotorhyme"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarineto.orthophonie"))
                     media!!.start()
                     display_phono(proposal!!, answer, databaseAccess)
                 }

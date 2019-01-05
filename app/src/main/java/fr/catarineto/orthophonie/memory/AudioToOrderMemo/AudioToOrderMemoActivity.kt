@@ -46,7 +46,7 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
 
         //Play audio one time
         media?.reset()
-        media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarineto.orthophonie"))
+        media = MediaPlayer.create(this, getResources().getIdentifier("audiotoorder"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarineto.orthophonie"))
         media!!.start()
     }
 
@@ -90,7 +90,7 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
         audio_view.setOnClickListener {
             //Toast.makeText(this, "Play", Toast.LENGTH_LONG).show()
             media?.reset()
-            media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "raw", "fr.catarineto.orthophonie"))
+            media = MediaPlayer.create(this, getResources().getIdentifier("audiotoorder" + (index_serie + 1).toString() + (index_in_serie + 1).toString(), "raw", "fr.catarineto.orthophonie"))
             media!!.start()
         }
     }
@@ -118,7 +118,7 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
 
         // Add the buttons
         if (title == "CORRECT !"){
-            if (index_in_serie < length_serie){
+            if (index_in_serie < length_serie+1){
                 builder.setCancelable(false)
                 builder.setPositiveButton("Suivant") { dialog, id ->
                     index_in_serie += 1
@@ -126,7 +126,7 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
                     init_serie_data(databaseAccess)
                     //Play audio one time
                     media?.reset()
-                    media = MediaPlayer.create(this, getResources().getIdentifier("audiotowordphono"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarineto.orthophonie"))
+                    media = MediaPlayer.create(this, getResources().getIdentifier("audiotoorder"+(index_serie+1).toString() +(index_in_serie+1).toString(),"raw","fr.catarineto.orthophonie"))
                     media!!.start()
                     //Change all the strings and audio of the current serie item
                     display_phono(proposal!!, answer!!, databaseAccess)

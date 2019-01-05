@@ -43,7 +43,7 @@ class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
         displayPhono(proposal!!, answer, databaseAccess)
 
         media?.reset()
-        media = MediaPlayer.create(this, resources.getIdentifier("audiotowordphono"+(indexSerie+1).toString() +(indexInSerie+1).toString(),"raw","fr.catarineto.orthophonie"))
+        media = MediaPlayer.create(this, resources.getIdentifier("audiotosyllabepos"+(indexSerie+1).toString() +(indexInSerie+1).toString(),"raw","fr.catarineto.orthophonie"))
         media!!.start()
     }
 
@@ -78,7 +78,7 @@ class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
 
         audioView.setOnClickListener {
             media?.reset()
-            media = MediaPlayer.create(this, resources.getIdentifier("audiotowordphono" + (indexSerie + 1).toString() + (indexInSerie + 1).toString(), "raw", "fr.catarineto.orthophonie"))
+            media = MediaPlayer.create(this, resources.getIdentifier("audiotosyllabepos" + (indexSerie + 1).toString() + (indexInSerie + 1).toString(), "raw", "fr.catarineto.orthophonie"))
             media!!.start()
         }
     }
@@ -108,7 +108,7 @@ class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
                     initSerieData(databaseAccess)
 
                     media?.reset()
-                    media = MediaPlayer.create(this, resources.getIdentifier("audiotowordphono"+(indexSerie+1).toString() +(indexInSerie+1).toString(),"raw","fr.catarineto.orthophonie"))
+                    media = MediaPlayer.create(this, resources.getIdentifier("audiotosyllabepos"+(indexSerie+1).toString() +(indexInSerie+1).toString(),"raw","fr.catarineto.orthophonie"))
                     media!!.start()
 
                     displayPhono(proposal!!, answer, databaseAccess)
