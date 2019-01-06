@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
 import android.support.annotation.IntegerRes
 import android.support.v7.app.AppCompatActivity
 import android.view.*
@@ -17,6 +18,7 @@ import java.util.concurrent.TimeUnit
 import kotlin.concurrent.timer
 import kotlin.random.Random
 import fr.catarineto.orthophonie.utils.Help
+import kotlin.concurrent.schedule
 
 class SymbolMemoActivity : AppCompatActivity()  {
     private var number_random_first_image : Int = 0
@@ -163,6 +165,9 @@ class SymbolMemoActivity : AppCompatActivity()  {
 
         val consigne = findViewById(R.id.consigne) as TextView
         consigne.text = "Retenez les symboles et restituez les"
+
+        val handler = Handler()
+        handler.postDelayed({ hideSymbol(image1);hideSymbol(image2);hideSymbol(image3);hideSymbol(image4);hideSymbol(image5) }, 10000)
 
 
 

@@ -12,19 +12,19 @@
     <string name="title_MemoryPhono">Trouver les paires de son (syllabes)</string>
     <string name="des_MemoryPhono">\nzef,ujygtfbdsqrhsdf</string>
     <string name="title_AudioToWordPhono">Du son au mot</string>
-    <string name="des_AudioToWordPhono">\nzrtesyrdhkb</string>
+    <string name="des_AudioToWordPhono">Choisissez le bon mot que vous avez entendu</string>
     <string name="title_PictureToPhonemePhono">De l\'image au phoneme</string>
-    <string name="des_PictureToPhonemePhono">\nretbetztbezvr</string>
+    <string name="des_PictureToPhonemePhono">Pour chaque image trouver le bon phoneme</string>
     <string name="title_AudioToSyllablePositionPhono">Trouver position phoneme</string>
-    <string name="des_AudioToSyllablePositionPhono">\nzthteryngfdono</string>
+    <string name="des_AudioToSyllablePositionPhono">Trouvez la position de la syllabe dans le mot entendu</string>
     <string name="title_AudioToRhyme">Ecouter puis trouver le mot qui rime</string>
-    <string name="des_AudioToRhyme">\nopiuhvgjkhbk</string>
+    <string name="des_AudioToRhyme">trouvez le mot qui rime par rapport au mot entendu</string>
 
     <!-- Memory titles -->
     <string name="title_SymbolsMemo">Regarder puis remetre les symboles dans l\'ordre </string>
-    <string name="des_SymbolsMemo">\naezretyrhtdgfqs</string>
+    <string name="des_SymbolsMemo">Retenez puis remetre les symboles dans l\'ordre</string>
     <string name="title_AudioToOrderMemo">Ecouter puis remetre les mots dans l\'ordre</string>
-    <string name="des_AudioToOrderMemo">\nazrgpihofubjniod</string>
+    <string name="des_AudioToOrderMemo">Mettez les mots dans l\'ordre que vous les avez entendu</string>
 
     <!-- Articulation titles -->
     <string name="title_DescriptionArti">Liste des phonemes avec audio (aide visuelle ?)</string>

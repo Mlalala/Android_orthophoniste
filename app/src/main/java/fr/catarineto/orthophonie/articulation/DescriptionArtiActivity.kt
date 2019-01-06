@@ -74,7 +74,7 @@ class DescriptionArtiActivity : AppCompatActivity() {
         buttonPlayRecording.setImageResource(R.drawable.ic_play_arti)
 
         mediaPlayer?.reset()
-        mediaPlayer = MediaPlayer.create(this, resources.getIdentifier("testaudio","raw","fr.catarineto.orthophonie"))
+        mediaPlayer = MediaPlayer.create(this, resources.getIdentifier("arti" + index_letter.toString(),"raw","fr.catarineto.orthophonie"))
         mediaPlayer!!.start()
 
 
@@ -203,7 +203,7 @@ class DescriptionArtiActivity : AppCompatActivity() {
 
         audioView.setOnClickListener {
             mediaPlayer?.reset()
-            mediaPlayer = MediaPlayer.create(this, resources.getIdentifier("testaudio", "raw", "fr.catarineto.orthophonie"))
+            mediaPlayer = MediaPlayer.create(this, resources.getIdentifier("arti" + index_letter.toString(), "raw", "fr.catarineto.orthophonie"))
             mediaPlayer!!.start()
         }
 

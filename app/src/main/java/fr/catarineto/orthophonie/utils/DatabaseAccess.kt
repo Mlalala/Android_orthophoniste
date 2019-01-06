@@ -122,7 +122,7 @@ private constructor(context: Context) {
             val cursor = database!!.rawQuery("SELECT serie,name FROM AudioToRhymeMenu",null)
             cursor.moveToFirst()
             while (!cursor.isAfterLast) {
-                list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
+                list.add("Série " + cursor.getString(0))
                 cursor.moveToNext()
             }
             cursor.close()
@@ -155,7 +155,7 @@ private constructor(context: Context) {
         val cursor = database!!.rawQuery("SELECT serie,name FROM SyllabePositionMenu",null)
         cursor.moveToFirst()
         while (!cursor.isAfterLast()) {
-            list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
+            list.add("Série " + cursor.getString(0))
             cursor.moveToNext()
         }
         cursor.close()
@@ -297,7 +297,7 @@ private constructor(context: Context) {
         val cursor = database!!.rawQuery("SELECT serie,name FROM AudioToOrderMemoMenu",null)
         cursor.moveToFirst()
         while (!cursor.isAfterLast) {
-            list.add("Série " + cursor.getString(0) + " - " + cursor.getString(1))
+            list.add("Série " + cursor.getString(0))
             cursor.moveToNext()
         }
         cursor.close()

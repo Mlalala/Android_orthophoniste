@@ -101,7 +101,7 @@ class AudioToSyllablePositionPhonoActivty  : AppCompatActivity() {
         builder.setTitle(title).setView(dialogView)
 
         if (title == "CORRECT !"){
-            if (indexInSerie < lengthSerie +1){
+            if (indexInSerie < 2){
                 builder.setCancelable(false)
                 builder.setPositiveButton("Suivant") { _, _ ->
                     indexInSerie += 1
