@@ -6,10 +6,10 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import fr.catarineto.orthophonie.MenuExercicesActivity
 import fr.catarineto.orthophonie.utils.Ads
 import fr.catarineto.orthophonie.R
 import fr.catarineto.orthophonie.utils.DatabaseAccess
-import fr.catarineto.orthophonie.visual.VisualMenuActivity
 
 class SearchSyllableVisuMenuActivity : AppCompatActivity(){
 
@@ -39,7 +39,8 @@ class SearchSyllableVisuMenuActivity : AppCompatActivity(){
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this, VisualMenuActivity::class.java)
+            val intent = Intent(this, MenuExercicesActivity::class.java)
+            intent.putExtra("EXTRA_POSITION",2)
             startActivity(intent)
             finish()
             true

@@ -6,10 +6,9 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.Toast
+import fr.catarineto.orthophonie.MenuExercicesActivity
 import fr.catarineto.orthophonie.R
 import fr.catarineto.orthophonie.utils.DatabaseAccess
-import fr.catarineto.orthophonie.memory.MemoryMenuActivity
 
 class AudioToOrderMemoMenuActivity : AppCompatActivity() {
     private var adapter_simple : ArrayAdapter<String>? = null
@@ -40,7 +39,8 @@ class AudioToOrderMemoMenuActivity : AppCompatActivity() {
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this, MemoryMenuActivity::class.java)
+            val intent = Intent(this, MenuExercicesActivity::class.java)
+            intent.putExtra("EXTRA_POSITION",3)
             startActivity(intent)
             finish()
             true

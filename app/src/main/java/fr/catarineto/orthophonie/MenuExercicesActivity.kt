@@ -160,8 +160,8 @@ class MenuExercicesActivity : AppCompatActivity() {
                 )
 
                 val menuPicture = arrayOf(
-                        "sample",
-                        "sample"
+                        "AudioToOrder",
+                        "Symbol"
                 )
 
                 val menuAudio = arrayOf(

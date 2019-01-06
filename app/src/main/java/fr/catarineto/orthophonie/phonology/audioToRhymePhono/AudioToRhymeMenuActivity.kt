@@ -6,9 +6,9 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import fr.catarineto.orthophonie.MenuExercicesActivity
 import fr.catarineto.orthophonie.R
 import fr.catarineto.orthophonie.utils.DatabaseAccess
-import fr.catarineto.orthophonie.phonology.PhonologyMenuActivity
 
 class AudioToRhymeMenuActivity: AppCompatActivity() {
     private var adapter_simple : ArrayAdapter<String>? = null
@@ -38,7 +38,8 @@ class AudioToRhymeMenuActivity: AppCompatActivity() {
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this, PhonologyMenuActivity::class.java)
+            val intent = Intent(this, MenuExercicesActivity::class.java)
+            intent.putExtra("EXTRA_POSITION",1)
             startActivity(intent)
             finish()
             true

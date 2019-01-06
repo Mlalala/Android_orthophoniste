@@ -3,22 +3,14 @@ package fr.catarineto.orthophonie.memory.SymbolMemo
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.os.Handler
-import android.support.annotation.IntegerRes
 import android.support.v7.app.AppCompatActivity
 import android.view.*
 import fr.catarineto.orthophonie.R
 import android.widget.*
-import fr.catarineto.orthophonie.memory.MemoryMenuActivity
-import kotlinx.android.synthetic.main.symbol_memo_layout.*
-import java.lang.Thread.sleep
-import java.util.*
-import java.util.concurrent.TimeUnit
-import kotlin.concurrent.timer
+import fr.catarineto.orthophonie.MenuExercicesActivity
 import kotlin.random.Random
 import fr.catarineto.orthophonie.utils.Help
-import kotlin.concurrent.schedule
 
 class SymbolMemoActivity : AppCompatActivity()  {
     private var number_random_first_image : Int = 0
@@ -191,7 +183,8 @@ class SymbolMemoActivity : AppCompatActivity()  {
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
-            val intent = Intent(this, MemoryMenuActivity::class.java)
+            val intent = Intent(this, MenuExercicesActivity::class.java)
+            intent.putExtra("EXTRA_POSITION",3)
             startActivity(intent)
             finish()
             true

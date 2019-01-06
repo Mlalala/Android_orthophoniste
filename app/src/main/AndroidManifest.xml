@@ -43,10 +43,6 @@
             android:screenOrientation="portrait" />
 
         <!-- Phonology -->
-        <activity
-            android:label="@string/title_phono"
-            android:name="fr.catarineto.orthophonie.phonology.PhonologyMenuActivity"
-            android:screenOrientation="portrait" />
 
         <activity
             android:label="@string/title_AudioToWordPhono"
@@ -112,10 +108,6 @@
 
 
         <!-- Visual -->
-        <activity
-            android:label="@string/title_visu"
-            android:name="fr.catarineto.orthophonie.visual.VisualMenuActivity"
-            android:screenOrientation="portrait" />
 
         <activity
             android:label="@string/title_MemorySyllablesVisu"
@@ -136,10 +128,6 @@
             android:screenOrientation="portrait" />
 
         <!-- Memory -->
-        <activity
-            android:label="@string/title_memo"
-            android:name="fr.catarineto.orthophonie.memory.MemoryMenuActivity"
-            android:screenOrientation="portrait" />
 
         <activity
             android:label="@string/title_AudioToOrderMemo"

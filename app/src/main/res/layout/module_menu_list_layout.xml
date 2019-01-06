@@ -11,12 +11,12 @@
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:layout_width="150dp"
-        android:layout_height="232dp"
+        android:layout_height="231dp"
         android:orientation="vertical">
         <WebView
             android:id="@+id/web_view"
             android:layout_width="150dp"
-            android:layout_height="232dp"
+            android:layout_height="231dp"
             android:focusable="false"
             android:scrollbars="none"/>
 
