@@ -13,7 +13,6 @@ import fr.catarineto.orthophonie.utils.MainMenuItem
 import fr.catarineto.orthophonie.utils.MainMenuListAdapter
 import fr.catarineto.orthophonie.utils.Ads
 
-
 class MainActivity : AppCompatActivity() {
 
     private val mainmenutitle = arrayOf(
@@ -89,5 +88,3 @@ class MainActivity : AppCompatActivity() {
         dialog.show()
     }
 }
-
-

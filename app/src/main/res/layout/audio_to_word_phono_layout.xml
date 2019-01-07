@@ -18,7 +18,7 @@
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_margin="30dp"
-        android:src="@drawable/playaudio" />
+        android:src="@drawable/playaudio"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,6 +46,6 @@
             android:layout_margin="5dp"
             android:textAllCaps="false"
             android:background="@color/memoryDefault"/>
-
     </LinearLayout>
+
 </LinearLayout>

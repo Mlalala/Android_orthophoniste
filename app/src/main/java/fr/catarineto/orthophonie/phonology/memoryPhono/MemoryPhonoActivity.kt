@@ -3,7 +3,6 @@ package fr.catarineto.orthophonie.phonology.memoryPhono
 import android.app.AlertDialog
 import android.content.Intent
 import android.media.MediaPlayer
-import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Gravity
@@ -16,7 +15,6 @@ import android.widget.TableRow
 import fr.catarineto.orthophonie.R
 import fr.catarineto.orthophonie.utils.DatabaseAccess
 import fr.catarineto.orthophonie.utils.Help
-
 
 class MemoryPhonoActivity : AppCompatActivity() {
 
@@ -64,7 +62,7 @@ class MemoryPhonoActivity : AppCompatActivity() {
             for (j in 0..1){
                 val button = Button(this)
                 button.textSize = 0f
-                button.setAllCaps(false)
+                button.isAllCaps = false
                 button.text = listElements[j+i*2]
                 button.layoutParams = buttonParam
                 button.setBackgroundColor(getColor(R.color.memoryDefault))
@@ -116,10 +114,8 @@ class MemoryPhonoActivity : AppCompatActivity() {
                     }
                 }).start()
             }
-
         }
     }
-
 
     private fun manageItem() {
         val builder = AlertDialog.Builder(this)
@@ -151,24 +147,6 @@ class MemoryPhonoActivity : AppCompatActivity() {
             R.id.action_help  -> Help(this@MemoryPhonoActivity, getString(R.string.help_MemoryPhono), getString(R.string.title_MemoryPhono), "helptest")
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun manageMenu(title : String, text : String) {
-        val builder = AlertDialog.Builder(this)
-
-        val inflater = this.layoutInflater
-        val dialogView = inflater.inflate(R.layout.alert_text_layout, null)
-
-        builder.setTitle(title).setView(dialogView)
-        builder.setMessage(text)
-        builder.setPositiveButton(getString(R.string.suggestion)) { _, _ ->
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + getString(R.string.email)))
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Suggestion pour l'activitée " + getString(R.string.title_MemoryPhono) +" de l'Application Android Orthophonie")
-            startActivity(intent)
-        }
-
-        val dialog = builder.create()
-        dialog.show()
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
