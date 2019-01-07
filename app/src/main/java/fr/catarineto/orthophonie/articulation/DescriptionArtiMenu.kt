@@ -38,10 +38,6 @@ class DescriptionArtiMenu : AppCompatActivity(){
             finish()
         }
 
-        val mAdView : AdView
-        mAdView = this.findViewById(R.id.adViewBottom)
-        val adRequestBottom = AdRequest.Builder().build()
-        mAdView.loadAd(adRequestBottom)
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
