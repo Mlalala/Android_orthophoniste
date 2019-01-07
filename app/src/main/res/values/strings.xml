@@ -10,30 +10,30 @@
 
     <!-- Phonology titles -->
     <string name="title_MemoryPhono">Trouver les paires de son (syllabes)</string>
-    <string name="des_MemoryPhono">\nzef,ujygtfbdsqrhsdf</string>
+    <string name="des_MemoryPhono">Trouvez les paires de son</string>
     <string name="title_AudioToWordPhono">Du son au mot</string>
     <string name="des_AudioToWordPhono">Choisissez le bon mot que vous avez entendu</string>
     <string name="title_PictureToPhonemePhono">De l\'image au phoneme</string>
-    <string name="des_PictureToPhonemePhono">Pour chaque image trouver le bon phoneme</string>
-    <string name="title_AudioToSyllablePositionPhono">Trouver position phoneme</string>
+    <string name="des_PictureToPhonemePhono">Pour chaque image trouvez le bon phoneme</string>
+    <string name="title_AudioToSyllablePositionPhono">Trouvez position phoneme</string>
     <string name="des_AudioToSyllablePositionPhono">Trouvez la position de la syllabe dans le mot entendu</string>
-    <string name="title_AudioToRhyme">Ecouter puis trouver le mot qui rime</string>
-    <string name="des_AudioToRhyme">trouvez le mot qui rime par rapport au mot entendu</string>
+    <string name="title_AudioToRhyme">Ecouter puis trouvez le mot qui rime</string>
+    <string name="des_AudioToRhyme">Trouvez le mot qui rime par rapport au mot entendu</string>
 
     <!-- Memory titles -->
-    <string name="title_SymbolsMemo">Regarder puis remetre les symboles dans l\'ordre </string>
-    <string name="des_SymbolsMemo">Retenez puis remetre les symboles dans l\'ordre</string>
-    <string name="title_AudioToOrderMemo">Ecouter puis remetre les mots dans l\'ordre</string>
+    <string name="title_SymbolsMemo">Regardez puis remettre les symboles dans l\'ordre </string>
+    <string name="des_SymbolsMemo">Retenez puis remettre les symboles dans l\'ordre</string>
+    <string name="title_AudioToOrderMemo">Ecoutez puis remettre les mots dans l\'ordre</string>
     <string name="des_AudioToOrderMemo">Mettez les mots dans l\'ordre que vous les avez entendu</string>
 
     <!-- Articulation titles -->
     <string name="title_DescriptionArti">Liste des phonemes avec audio (aide visuelle ?)</string>
-    <string name="title_AudioRecordListenArti">Teste ton articulation</string>
+    <string name="title_AudioRecordListenArti">Teste son articulation</string>
     <string name="title_ArticulationLevel">Niveau articulation</string>
     <string name="title_ArticulationSerie">Série articulation</string>
 
     <!-- Visual titles -->
-    <string name="title_MemorySyllablesVisu">Trouver les paires de syllabes</string>
+    <string name="title_MemorySyllablesVisu">Trouvez les paires de syllabes</string>
     <string name="des_MemorySyllablesVisu">"\nEn cliquant sur une paire de \"cartes\" celles-ci se révèlent. L'objectif est de sélectionner une paire de cartes identiques. Si vous vous trompez, les cartes se retournent et il vous faut recommencer"</string>
     <string name="title_SearchSyllableVisu">Confusion visuelles des syllabes</string>
     <string name="des_SearchSyllableVisu">"\nUne fenêtre s'ouvre et vous donne la lettre à trouver. Il vous faut alors cliquer sur toutes les cases contenant cette lettre le plus vite possible."</string>
