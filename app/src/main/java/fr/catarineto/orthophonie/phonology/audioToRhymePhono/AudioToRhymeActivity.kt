@@ -98,7 +98,7 @@ class AudioToRhymeActivity: AppCompatActivity() {
         if (title == "CORRECT !"){
             if (index_in_serie < length_serie+1){
                 builder.setCancelable(false)
-                builder.setPositiveButton("Suivant") { dialog, id ->
+                builder.setPositiveButton("Suivant") { _, _ ->
                     index_in_serie += 1
                     init_serie_data(databaseAccess)
                     media?.reset()
@@ -109,7 +109,7 @@ class AudioToRhymeActivity: AppCompatActivity() {
             }
             else {
                 builder.setCancelable(false)
-                builder.setPositiveButton("Revenir au menu") { dialog, id ->
+                builder.setPositiveButton("Revenir au menu") { _, _ ->
                     val intent = Intent(this, AudioToRhymeMenuActivity::class.java)
                     databaseAccess.close()
                     startActivity(intent)

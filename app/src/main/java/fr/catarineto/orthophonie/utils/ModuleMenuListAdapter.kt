@@ -14,7 +14,6 @@ import fr.catarineto.orthophonie.R
 
 class ModuleMenuListAdapter (context : Activity, viewRes: Int, listMenu: ArrayList<ModuleMenuItem>): ArrayAdapter<ModuleMenuItem>(context,viewRes,listMenu) {
 
-    //private val res : Resources = context.resources
     private var listMenu : ArrayList<ModuleMenuItem> ?= null
     private  var viewRes : Int = 0
 

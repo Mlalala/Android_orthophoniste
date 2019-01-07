@@ -25,8 +25,7 @@ class SymbolMemoActivity : AppCompatActivity()  {
     private var fourth_increment : Int = 0
     private var fifth_increment : Int = 0
 
-    private var list= arrayOf(R.drawable.check,R.drawable.close,R.drawable.cloud,R.drawable.round,R.drawable.star, R.drawable.triangle);
-    private var list_selection = arrayListOf<Int>()
+    private var list= arrayOf(R.drawable.check,R.drawable.close,R.drawable.cloud,R.drawable.round,R.drawable.star, R.drawable.triangle)
 
 
 
@@ -54,7 +53,6 @@ class SymbolMemoActivity : AppCompatActivity()  {
         val image5 = findViewById(R.id.symbol5) as ImageView
         choiceSymbol(image5, number_random_fifth_image)
 
-        //Toast.makeText(this,"list = " + list.size.toString(), Toast.LENGTH_SHORT).show()
 
         val chronometer = findViewById(R.id.chronometer) as Chronometer
         chronometer.start()
@@ -161,24 +159,6 @@ class SymbolMemoActivity : AppCompatActivity()  {
         val handler = Handler()
         handler.postDelayed({ hideSymbol(image1);hideSymbol(image2);hideSymbol(image3);hideSymbol(image4);hideSymbol(image5) }, 10000)
 
-
-
-
-
-        //hideSymbol(image1)
-        //hideSymbol(image2)
-        //hideSymbol(image3)
-        //hideSymbol(image4)
-        //hideSymbol(image5)
-
-        //Toast.makeText(this,"nombre random = " + number_random.toString(), Toast.LENGTH_SHORT).show()
-
-        //setContentView(R.layout.activity_shapes_view)
-
-
-
-
-
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
@@ -212,20 +192,17 @@ class SymbolMemoActivity : AppCompatActivity()  {
 
     private fun isCorrect(chronometre : Chronometer){
 
-        //Toast.makeText(this,"nombre random = ", Toast.LENGTH_SHORT).show()
         val builder = AlertDialog.Builder(this)
         val inflater = this.layoutInflater
         var intent = Intent(this, SymbolMemoActivity::class.java)
 
         val dialogView = inflater.inflate(R.layout.alert_layout, null)
-        //builder.setTitle("CORRECT").setView(dialogView)
 
         if((number_random_first_image == first_increment) && (number_random_second_image == second_increment) && (number_random_third_image == third_increment) && (number_random_fourth_image == fourth_increment) && (number_random_fifth_image == fifth_increment)){
             chronometre.stop()
             builder.setTitle("CORRECT").setView(dialogView)
             builder.setPositiveButton("Nouvelle série") { _, _ -> startActivity(intent)
                 finish()}
-            //builder.setMessage(chronometre.drawingTime.toString())
         }
         else{
             builder.setTitle("FAUX").setView(dialogView)

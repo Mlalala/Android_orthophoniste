@@ -30,12 +30,7 @@ class DescriptionArtiActivity : AppCompatActivity() {
     val AUDIO_PERMISSION = Manifest.permission.RECORD_AUDIO
     val PERMISSION_REQUEST_CODE = 100
 
-    private var index_letter_level: IntArray = intArrayOf(0)
-
-    private var adapter_simple : ArrayAdapter<String>? = null
     private var son : String = ""
-    private var indexInSerie : Int = 0
-    private var indexSerie : Int = 0
     private var state_button : Int = 1
     private var state_button_play_record = 1
     private var index_letter: Int = 0
@@ -46,22 +41,6 @@ class DescriptionArtiActivity : AppCompatActivity() {
         index_letter = intent.getIntExtra("EXTRA_POSITION",0)
         var databaseAccess = DatabaseAccess.getInstance(this)
         databaseAccess.open()
-        //var articulation_level = databaseAccess.getArticulationMot(index_letter_level[1] + 1)
-        //var articulation_level = databaseAccess.getArticulationSon(index_letter_level[1],index_letter_level[0])
-
-        //adapter_simple = ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, articulation_level)
-
-        //var son = findViewById(R.id.sonArticulation) as TextView
-        //son.text = "test"
-
-        /*
-        listview.setOnItemClickListener { parent, view, position, id ->
-            //Toast.makeText(this, "Position Clicked:"+" "+position, Toast.LENGTH_LONG).show()
-            var intent = Intent(this, DescriptionArtiSon::class.java)
-            intent.putExtra("EXTRA_POSITION", position)
-            startActivity(intent)
-            finish()
-        }*/
 
         FILE_RECORDING = "${externalCacheDir.absolutePath}/recorder.aac"
 
@@ -118,10 +97,6 @@ class DescriptionArtiActivity : AppCompatActivity() {
             }
         }
 
-        /*
-        buttonRecordt.setOnClickListener{
-            record(buttonRecordt)
-        }*/
     }
 
     private fun setButtonPlayRecordingListener(buttonPlayRecordingt : ImageButton){
@@ -212,7 +187,7 @@ class DescriptionArtiActivity : AppCompatActivity() {
         webView.settings.loadWithOverviewMode = true
         webView.settings.useWideViewPort = true
 
-        return webView!!
+        return webView
     }
 
     private fun initSerieData(databaseAccess : DatabaseAccess){

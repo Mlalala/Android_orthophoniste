@@ -24,6 +24,7 @@
         android:layout_width="300dp"
         android:layout_height="150dp"
         android:focusable="false"
+        android:focusableInTouchMode="false"
         android:scrollbars="none"
         android:layout_gravity="center"/>
 
@@ -35,6 +36,13 @@
         android:layout_gravity="center"
         android:layout_margin="30dp"
         android:src="@drawable/playaudio" />
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="bottom">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -86,6 +94,9 @@
         android:layout_gravity="center"
         android:textSize="30sp" />
     </LinearLayout>
+
+    </LinearLayout>
+
 
 
 </LinearLayout>
