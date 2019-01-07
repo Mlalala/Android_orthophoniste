@@ -96,7 +96,6 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
     }
 
     fun isCorrect(spinner1 : Spinner, spinner2: Spinner, spinner3 : Spinner,response : List<String>, databaseAccess : DatabaseAccess){
-        //Toast.makeText(this, "reponse =" + response, Toast.LENGTH_LONG).show()
         if ((spinner1.getSelectedItem().toString() == response[0]) && (spinner2.getSelectedItem().toString() == response[1]) && (spinner3.getSelectedItem().toString() == response[2])){
             manageItem("CORRECT !", databaseAccess)
         }
@@ -120,7 +119,7 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
         if (title == "CORRECT !"){
             if (index_in_serie < length_serie+1){
                 builder.setCancelable(false)
-                builder.setPositiveButton("Suivant") { dialog, id ->
+                builder.setPositiveButton("Suivant") { _, _ ->
                     index_in_serie += 1
                     //init proposals, answer and audio
                     init_serie_data(databaseAccess)
@@ -134,7 +133,7 @@ class AudioToOrderMemoActivity : AppCompatActivity() {
             }
             else {
                 builder.setCancelable(false)
-                builder.setPositiveButton("Revenir au menu") { dialog, id ->
+                builder.setPositiveButton("Revenir au menu") { _, _ ->
                     val intent = Intent(this, AudioToOrderMemoMenuActivity::class.java)
                     databaseAccess.close()
                     startActivity(intent)

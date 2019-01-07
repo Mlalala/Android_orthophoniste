@@ -27,7 +27,7 @@ class AudioToOrderMemoMenuActivity : AppCompatActivity() {
         listview.adapter = adapter_simple
 
 
-        listview.setOnItemClickListener { parent, view, position, id ->
+        listview.setOnItemClickListener { _, _, position, _ ->
             //Toast.makeText(this, "Position Clicked:"+" "+position, Toast.LENGTH_LONG).show()
             var intent = Intent(this, AudioToOrderMemoActivity::class.java)
             intent.putExtra("EXTRA_POSITION",position)

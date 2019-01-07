@@ -34,9 +34,6 @@ class MenuExercicesActivity : AppCompatActivity() {
                 //////////////////
                 // ARTICULATION //
                 //////////////////
-
-                //TODO : Add Articulation in MemuExercicesActivity
-                //Toast.makeText(this,"TODO : Add Articulation in MemuExercicesActivity", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, DescriptionArtiMenu::class.java)
                 startActivity(intent)
                 finish()
